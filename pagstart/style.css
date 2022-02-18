@@ -50,10 +50,11 @@ body {
 
 .container {
     display: grid;
-    width: 96%;
-    margin: 0 auto;
+    width:240px;
+    margin-left: 15px;
     gap: 1.8rem;
     grid-template-columns: 14rem auto 23rem;
+    background: var(--color-primary);
 }
 
 a {
@@ -195,5 +196,5 @@ aside .sidebar a:hover {
 .top {
     background: gray;
     width: 100vw;
-    height: 85px;
+    height: 80px;
 }
