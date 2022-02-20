@@ -49,9 +49,8 @@ body {
 }
 
 .container {
-    display: grid;
+    padding-left: 10px;
     width:240px;
-    margin-left: 15px;
     gap: 1.8rem;
     grid-template-columns: 14rem auto 23rem;
     background: var(--color-primary);
@@ -91,26 +90,45 @@ p {
     color: var(--color-dark)
 }
 
-aside {
-    height: 100vh;
 
-}
-
-aside .top {
-    background: white;
+/*--------------------header--------------------*/
+header  {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1.4rem;
 }
 
-aside .logo {
+header h1 {
+    position: absolute;
+    text-align: center;
+    padding-top: 4px;
+    left: 35%;
+}
+
+.right {
+    position: absolute;
     display: flex;
-    gap: 3rem;
+    margin: 5px;
+    padding-top: 10px;
+    left: 77%;
+    
 }
 
-aside .close {
+.right .btn-login a {
+    margin-right: 10px;
+    color: var(--color-black);
 }
+
+.right .btn-shopping-cart a {
+    margin-right: 10px;
+    color: var(--color-black);
+}
+
+.btn-menu a {
+    position: absolute;
+    padding-top: 15px;
+    padding-left: 10px;
+    color: var(--color-black);
+}
+
 
 /*----------------SIDEBAR-----------------*/
 aside .sidebar {
@@ -157,44 +175,101 @@ aside .sidebar a:hover {
 }
 
 
-/*--------------------Right--------------------*/
-.top .right {
-    position: absolute;
+aside {
+    height: 100vh;
+}
+
+aside .top {
     display: flex;
-    justify-content: end;
-    margin: 5px;
-    left: 88%;
-    top: 7%;
-}
-
-.right .btn-login a {
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
     margin-right: 10px;
-    color: var(--color-black);
 }
 
-.right .btn-shopping-cart a {
-    margin-right: 10px;
-    color: var(--color-black);
-}
-
-.top .btn-menu a {
-    position: absolute;
-    top:7%;
-
-    color: var(--color-black);
-}
-
-
-.top h1 {
-    position: absolute;
+aside .logo {
     display: flex;
-    left: 50%;
-    top: 6%;
-    text-decoration: italic;
+ 
 }
 
-.top {
-    background: gray;
-    width: 100vw;
-    height: 80px;
+
+/*--------------------media caries--------------------*/
+@media (min-width: 769px) {
+    .btn-menu {
+        display: none;
+    }
+}
+
+
+@media (max-width: 768px) {
+    aside {
+        display: none;
+    }
+    .btn-menu {
+        width: 40px;
+        position: absolute;
+        margin-left: -25px;
+    }
+
+    /*fullscreen*/
+    .container.on {
+        position: absolute;
+        top: 1;
+        left: 0;
+
+        width: 30vw;
+        height: 100vh;
+
+        z-index: 10;
+    }
+
+    .container.on aside {
+        display: block;
+    }
+
+    .container.on .btn-menu {
+        position: absolute;
+        right: 0;
+        padding-right: 50px;
+        top: 1px;
+    }
+
+}
+
+@media (max-width: 460px) {
+    aside {
+        display: none;
+    }
+
+    .btn-menu {
+        width: 40px;
+        position: absolute;
+        margin-left: -25px;
+    }
+
+    /*fullscreen*/
+    .container.on {
+        position: absolute;
+        top: 1;
+        left: 0;
+        
+
+        width: 100vw;
+        height: 100vh;
+
+        z-index: 10;
+    }
+
+    .container.on aside {
+        display: block;
+    }
+
+    .container.on .btn-menu {
+        position: absolute;
+        right: 0;
+        padding-right: 50px;
+        top: 1px;
+    }
+
+
 }
