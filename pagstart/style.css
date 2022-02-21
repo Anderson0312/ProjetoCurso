@@ -8,7 +8,7 @@
     --color-dark: #363949;
     --color-dark-variant: #677483;
     --color-primary-variant: #ff7782;
-    --color-background: #f6f6f9;
+    --color-background: #bebec7;
 
 }
 
@@ -93,21 +93,23 @@ p {
 
 /*--------------------header--------------------*/
 header  {
+    position: relative;
     display: flex;
+    height: 8%;
+    background: var(--color-primary);
 }
 
 header h1 {
-    position: absolute;
-    text-align: center;
-    padding-top: 4px;
-    left: 35%;
+    margin: auto;
+    margin-top: 1px;
+
 }
 
 .right {
     position: absolute;
     display: flex;
     margin: 5px;
-    padding-top: 10px;
+    padding-top: 9px;
     left: 77%;
     
 }
@@ -124,7 +126,7 @@ header h1 {
 
 .btn-menu a {
     position: absolute;
-    padding-top: 15px;
+    padding-top: 10px;
     padding-left: 10px;
     color: var(--color-black);
 }
@@ -192,11 +194,47 @@ aside .logo {
  
 }
 
+.container.on {
+    position: absolute;
+    top: 2rem;
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.233);
+}
+
 
 /*--------------------media caries--------------------*/
 @media (min-width: 769px) {
-    .btn-menu {
+    aside {
         display: none;
+    }
+    .btn-menu {
+        width: 40px;
+        position: absolute;
+        margin-left: -25px;
+        top: 2.3rem;
+    }
+
+    /*sidebar open*/
+    .container.on {
+        position: absolute;
+        top: 1;
+        left: 0;
+
+        width: 20vw;
+        height: 100vh;
+
+        z-index: 10;
+    }
+
+    .container.on aside {
+        display: block;
+    }
+
+    .container.on .btn-menu {
+        position: absolute;
+        right: 0;
+        padding-right: 50px;
+        padding-top: 5px;
+        top: 1px;
     }
 }
 
@@ -209,9 +247,10 @@ aside .logo {
         width: 40px;
         position: absolute;
         margin-left: -25px;
+        top: 2.3rem;
     }
 
-    /*fullscreen*/
+    /*sidebar open*/
     .container.on {
         position: absolute;
         top: 1;
@@ -231,6 +270,7 @@ aside .logo {
         position: absolute;
         right: 0;
         padding-right: 50px;
+        padding-top: 3px;
         top: 1px;
     }
 
@@ -245,16 +285,17 @@ aside .logo {
         width: 40px;
         position: absolute;
         margin-left: -25px;
+        top: 2.2rem;
     }
 
-    /*fullscreen*/
+    /*sidebar open*/
     .container.on {
         position: absolute;
         top: 1;
         left: 0;
         
 
-        width: 100vw;
+        width: 77vw;
         height: 100vh;
 
         z-index: 10;
@@ -267,7 +308,7 @@ aside .logo {
     .container.on .btn-menu {
         position: absolute;
         right: 0;
-        padding-right: 50px;
+        padding-right: 45px;
         top: 1px;
     }
 
