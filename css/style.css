@@ -14,7 +14,7 @@
 }
 
 
-
+/*--------------------BASE--------------------*/
 
 * {
     margin: 0;
@@ -302,7 +302,7 @@ img {
 
 
 .products:hover .img {
-    transform: translate(-1.5rem, -3.5rem) rotate(-20deg);
+    transform: translate(-1.5rem, -3rem) rotate(-20deg);
 }
 
 .products:hover .product-data {
