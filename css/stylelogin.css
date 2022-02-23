@@ -57,7 +57,7 @@ header h1 {
 /*--------------------Main--------------------*/
 
 .loginbox {
-    height: 50vh;
+    height: 60vh;
     text-align: center;
     margin: auto;
 }
@@ -97,6 +97,30 @@ header h1 {
     color: var(--color-primary); 
     padding-top: 2px;
 }
+
+.checkbox {
+    font-weight: 100;
+    font-size: .8rem;
+    padding: 7px;
+}
+
+.checkbox .chk {
+    border: 5px solid var(--color-dark);
+    background-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+form p {
+    font-size: .7rem;
+    padding-top: 5px;
+    padding-bottom: 2px;
+}
+
+form a {
+    color: rgb(80, 80, 241);
+}
+
+
 /*--------------------end Main--------------------*/
 
 /*----------------footer start-----------------*/
@@ -156,3 +180,30 @@ footer .copy {
 }
 
 /*--------------------- footer end -------------------*/
+
+@media (min-width: 768px) {
+    .loginbox {
+        width: 550px;
+        height: 60vh;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .loginbox {
+        width: 80%;
+        height: 60vh;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+@media (max-width: 425px) {
+    .loginbox {
+        width: 90%;
+        height: 60vh;
+        text-align: center;
+        margin: auto;
+    }
+}
