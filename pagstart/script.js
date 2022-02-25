@@ -1,6 +1,6 @@
 //menu section
 
-let show = true;
+var show = true;
 
 const menuSection = document.querySelector ('.container')
 const menubtn = menuSection.querySelector ('.btn-menu')

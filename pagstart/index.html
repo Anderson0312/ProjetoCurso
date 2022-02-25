@@ -12,6 +12,35 @@
 
 
 
+    <link rel="stylesheet"  href="../src/css/lightslider.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../src/js/lightslider.js"></script> 
+
+
+    <script>
+    	 $(document).ready(function() {
+			$("#content-slider").lightSlider({
+                loop:true,
+                keyPress:true
+            });
+            $('#image-gallery').lightSlider({
+                gallery:true,
+                item:1,
+                thumbItem:9,
+                slideMargin: 0,
+                speed:500,
+                auto:true,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }  
+            });
+		});
+    </script>
+
+
+
+
 </head>
 <body>
     <div class="overside">
@@ -28,8 +57,12 @@
             </div>
         </div>
     </header>
+
+
     <!----------------- END OF HEADER -------------------->
-    <div class="container on">
+
+
+    <div class="container ">
         <button class="btn-menu">
             <a href="#"><span class="material-icons-sharp">menu</span></a>
         </button>
@@ -58,14 +91,22 @@
             </div>
         </aside>
     </div>
+
+
     <!----------------- END OF ASIDE -------------------->
+
+
     <div class="banner">
         <picture>
             <source media="(max-width: 425px)" srcset="../imgbanner/bannerpq2.jpeg">
             <img src="../imgbanner/bannerG.jpeg" alt="">
         </picture>
     </div>
+
+
     <!----------------- END OF BANNER -------------------->
+
+
     <div class="title-colecion">
         <h1>NOVA COLEÇÃO</h1>
     </div>
@@ -81,20 +122,92 @@
             </div>
         </div>
     </div>
-    <!----------------- END OF CARD PRODUCT -------------------->
-    <div class="title-colecion">
-        <h1>TESTE TEST</h1>
-    </div>
-    <div class="card-content">
-        <div class="card">
-            <img src="/imgproduct/RealMadridPrinc.png" alt="">
-            <p class = "product-title">Real Madrid</p>
-            <span class="product-price"> R$129,90</span>
-            <p class="product-desc"> Camisa Original do Real Madrid</p>
-        </div>
-    </div>
+
 
     <!----------------- END OF CARD PRODUCT -------------------->
+
+    <div class="title-colecion">
+        <h1>MAIS VENDIDAS</h1>
+    </div>
+    <div class="item">
+        <ul id="content-slider" class="content-slider">
+            <li>
+                <div class="card-content">
+                    <div class="card">
+                        <img src="/imgproduct/RealMadridPrinc.png" alt="">
+                        <p class = "product-title">Real Madrid Principal</p>
+                        <span class="product-price"> R$129,90</span>
+                        <p class="product-desc"> Camisa Original do Real Madrid</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card-content">
+                    <div class="card">
+                        <img src="/imgproduct/IMG_1609-768x768.png" alt="">
+                        <p class = "product-title">Barcelona</p>
+                        <span class="product-price"> R$129,90</span>
+                        <p class="product-desc"> Camisa Original do Real Madrid</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card-content">
+                    <div class="card">
+                        <img src="/imgproduct/BarcelonaPrinc.png" alt="">
+                        <p class = "product-title">Barcelona Principal</p>
+                        <span class="product-price"> R$129,90</span>
+                        <p class="product-desc"> Camisa Original do Real Madrid</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card-content">
+                    <div class="card">
+                        <img src="/imgproduct/IMG_0604-768x768.png" alt="">
+                        <p class = "product-title">Real Madrid</p>
+                        <span class="product-price"> R$129,90</span>
+                        <p class="product-desc"> Camisa Original do Real Madrid</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card-content">
+                    <div class="card">
+                        <img src="/imgproduct/IMG_1179-768x768.png" alt="">
+                        <p class = "product-title">Real Madrid</p>
+                        <span class="product-price"> R$129,90</span>
+                        <p class="product-desc"> Camisa Original do Real Madrid</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card-content">
+                    <div class="card">
+                        <img src="/imgproduct/RealMadrid.png" alt="">
+                        <p class = "product-title">Real Madrid</p>
+                        <span class="product-price"> R$129,90</span>
+                        <p class="product-desc"> Camisa Original do Real Madrid</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card-content">
+                    <div class="card">
+                        <img src="/imgproduct/RealMadrid.png" alt="">
+                        <p class = "product-title">Real Madrid</p>
+                        <span class="product-price"> R$129,90</span>
+                        <p class="product-desc"> Camisa Original do Real Madrid</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <!----------------- END OF CARD PRODUCT -------------------->
+
 
     <footer>
         <div class="midiass">

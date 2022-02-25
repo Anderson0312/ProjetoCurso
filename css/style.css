@@ -108,7 +108,7 @@ header h1 {
 
 }
 
-.right {
+.header .right {
     position: absolute;
     display: flex;
     margin: 5px;
@@ -182,6 +182,7 @@ aside .sidebar a:hover {
 
 aside {
     height: 100vh;
+    
 }
 
 aside .top {
@@ -349,7 +350,7 @@ img {
     background-color: var(--color-primary);
     text-align:center;
     border-radius:  20px;
-    /*box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.356);*/
+    box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.356);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -534,6 +535,5 @@ footer .copy {
         padding-right: 45px;
         top: 1px;
     }
-
 
 }
