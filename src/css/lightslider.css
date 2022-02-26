@@ -167,13 +167,13 @@
     opacity: 1;
 }
 .lSAction > .lSPrev {
-    background-color: rgba(0, 0, 0, 0.329);
+    background-color: rgba(0, 0, 0, 0.445);
     border-radius: 50%;
     background-position: 0 0;
     left: 10px;
 }
 .lSAction > .lSNext {
-    background-color: rgba(0, 0, 0, 0.329);
+    background-color: rgba(0, 0, 0, 0.445);
     border-radius: 50%;
     background-position: -32px 0;
     right: 10px;

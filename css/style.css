@@ -358,6 +358,13 @@ img {
     box-sizing:  border-box;
 }
 
+.card:hover {
+    background-color: var(--color-background);
+    transform-style: preserve-3d; 
+    transform: scale(1);
+    transition: all ease 0.2s;
+}
+
 .product-desc {
     font-size: .6rem;
     margin-bottom: 4px;
@@ -460,6 +467,7 @@ footer .copy {
         padding-top: 5px;
         top: 1px;
     }
+
 }
 
 
@@ -496,6 +504,12 @@ footer .copy {
         padding-right: 50px;
         padding-top: 3px;
         top: 1px;
+    }
+
+    /*card-pruduct*/
+    
+    .product-price {
+        font-size: 14px;
     }
 
 }
