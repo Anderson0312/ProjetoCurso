@@ -20,7 +20,9 @@ if ($page_title == '') {
     <title>Loja Camisa</title>
 
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Sharp">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -53,7 +55,7 @@ if ($page_title == '') {
 		});
     </script>
 
-
+    <script src="script.js"></script>
 
 
 </head>
@@ -62,13 +64,13 @@ if ($page_title == '') {
         <span>Aproveite o frete grátis em pedidos acima de 200!</span>
     </div>
     <header class="header">
-        <h1>LojaLoja</h1>
+        <h1><a href="index.php">LojaLoja</a></h1>
         <div class="right">
             <div class="btn-login">
-                <a href="login.html"><span class="material-icons-sharp">person</span></a>
+                <a href="login.php"><span class="material-icons-sharp">person</span></a>
             </div>
             <div class="btn-shopping-cart">
-                <a href="cart.html"><span class="material-icons-sharp">shopping_cart</span></a>
+                <a href="cart.php"><span class="material-icons-sharp">shopping_cart</span></a>
             </div>
         </div>
     </header>
@@ -85,7 +87,7 @@ if ($page_title == '') {
             <div class="top">
                 <div class="logo">
                     <img src="" alt="">
-                    <a href="index.html">
+                    <a href="index.php">
                         <h2>LojaLoja</h2>
                     </a>
                 </div>

@@ -45,7 +45,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
                 <p class="product-title">Barcelona</p>
                 <span class="product-price"> R$129,90</span>
                 <p class="product-description"> Camisa Original do Barcelona</p>
-                <a href="cart.html" class="product-btn">Comprar</a>
+                <a href="cart.php" class="product-btn">Comprar</a>
             </div>
         </div>
     </div>

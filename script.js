@@ -2,8 +2,8 @@
 
 var show = true;
 
-const menuSection = document.querySelector ('.container')
-const menubtn = menuSection.querySelector ('.btn-menu')
+const menuSection = document.querySelector ('.container');
+const menubtn = menuSection.querySelector ('.btn-menu');
 
 
 menubtn.addEventListener('click', () => {
