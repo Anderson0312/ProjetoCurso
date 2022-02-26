@@ -25,7 +25,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
 
 <div class="banner">
         <picture>
-            <source media="(max-width: 425px)" srcset="../imgbanner/bannerpq2.jpeg">
+            <source media="(max-width: 426px)" srcset="../imgbanner/bannerpq2.jpeg">
             <img src="../imgbanner/bannerG.jpeg" alt="">
         </picture>
     </div>

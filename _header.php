@@ -21,6 +21,7 @@ if ($page_title == '') {
 
 
     <link rel="stylesheet" href="/css/style.css">
+   
 
 
 
@@ -56,7 +57,7 @@ if ($page_title == '') {
     </script>
 
     <script src="script.js"></script>
-
+    
 
 </head>
 <body>
@@ -64,7 +65,7 @@ if ($page_title == '') {
         <span>Aproveite o frete grátis em pedidos acima de 200!</span>
     </div>
     <header class="header">
-        <h1><a href="index.php">LojaLoja</a></h1>
+    <h1><a href="index.php">LojaLoja</a></h1>
         <div class="right">
             <div class="btn-login">
                 <a href="login.php"><span class="material-icons-sharp">person</span></a>

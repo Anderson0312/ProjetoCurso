@@ -43,13 +43,12 @@ body {
 
 
 /*--------------------Main--------------------*/
-header h1 {
+header h2 {
     color: var(--color-primary);
     text-align: center;
-    padding: 1px;
+    padding: 25px;
     text-transform: uppercase;
 }
-
 
 
 .loginbox {
