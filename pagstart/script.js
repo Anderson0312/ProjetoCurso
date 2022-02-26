@@ -17,17 +17,3 @@ menubtn.addEventListener('click', () => {
 
 
 
-
-// Documento JavaScript
-/*
- $ ( documento ). pronto ( função () { 
-    $ ( '#autoLargura' ). lightSlider ({
-        autoWidth : true ,
-        laço : verdadeiro ,
-        onSliderLoad : function () {  
-            $ ( '#autoLargura' ). removeClass ( 'cS-hidden' );
-        } 
-    });  
-  });
-  
-*/
