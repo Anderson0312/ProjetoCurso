@@ -1,7 +1,7 @@
 <?php
 
 // Inclui arquivo de configuração
-require_once $_SERVER['DOCUMENT_ROOT'] . "/_config.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/_confg.php";
 
 
 // Define o titilo dessa pagina
