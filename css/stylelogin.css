@@ -46,8 +46,8 @@ body {
 header h1 {
     color: var(--color-primary);
     text-align: center;
-    padding: 25px;
     text-transform: uppercase;
+    padding: 3px;
 }
 
 
