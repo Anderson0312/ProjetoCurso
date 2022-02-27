@@ -43,6 +43,12 @@ body {
 
 /*--------------------header--------------------*/
 .card-content {
+<<<<<<< Updated upstream
     background-color:#363949;
 }
+=======
+    background-color: blue;
+}
+
+>>>>>>> Stashed changes
 /*--------------------end header--------------------*/
