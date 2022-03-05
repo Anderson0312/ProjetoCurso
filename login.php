@@ -18,7 +18,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
 <link rel="stylesheet" href="css/stylelogin.css">
 
 <main class="loginbox ">
-        <form>
+        <form action="">
 
             <div class = 'text-information'>
                 <h2>Entrar</h2>
