@@ -34,24 +34,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
     <!----------------- END OF BANNER -------------------->
 
 
-    <div class="title-colecion">
-        <h1>NOVA COLEÇÃO</h1>
-    </div>
-    <div class="container-product">
-        <div class="products">
-            <img class = 'img' src="../imgproduct/Barcelona.png" alt="Camisa Barcelona">
-
-            <div class="product-data">
-                <p class="product-title">Barcelona</p>
-                <span class="product-price"> R$129,90</span>
-                <p class="product-description"> Camisa Original do Barcelona</p>
-                <a href="cart.php" class="product-btn">Comprar</a>
-            </div>
-        </div>
-    </div>
-
-
-    <!----------------- END OF CARD PRODUCT -------------------->
 
                    
     <!----------------- CARD PRODUCT BEST SELLER  -------------------->
@@ -139,6 +121,24 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
 
     <!----------------- END OF CARD PRODUCT BEST SELLER ---------------->
 
+    <div class="title-colecion">
+        <h1>NOVA COLEÇÃO</h1>
+    </div>
+    <div class="container-product">
+        <div class="products">
+            <img class = 'img' src="../imgproduct/Barcelona.png" alt="Camisa Barcelona">
+
+            <div class="product-data">
+                <p class="product-title">Barcelona</p>
+                <span class="product-price"> R$129,90</span>
+                <p class="product-description"> Camisa Original do Barcelona</p>
+                <a href="cart.php" class="product-btn">Comprar</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!----------------- END OF CARD PRODUCT -------------------->
 
 
 

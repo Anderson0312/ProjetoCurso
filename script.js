@@ -3,10 +3,10 @@
 var show = true;
 
 const menuSection = document.querySelector ('.container');
-const menubtn = menuSection.querySelector ('.btn-menu');
+const menubtn = document.querySelector ('.btn-menu');
+console.log(menuSection);
 
-
-menubtn.addEventListener('click', () => {
+ menubtn.addEventListener('click', () => {
 
     document.body.style.overflow = show ? 'hidden' : 'initial'
     
