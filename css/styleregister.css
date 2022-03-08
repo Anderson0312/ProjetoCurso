@@ -48,12 +48,13 @@ body {
 }
 
 label {
-    font-weight: 800;
+    font-weight: 600;
     font-size: 0.84rem;
 }
 
 .text-information {
     text-align: center;
+    padding-bottom: 20px;
 }
 
 .dados{
@@ -69,7 +70,7 @@ label {
 
 
 .dadosp {
-    background-color: var(--color-primary-variant);
+    background-color: #c8c8ce;
     width: 100%;
     margin: auto;
     margin-bottom: 10px;
@@ -83,7 +84,8 @@ label {
 
 .button {
     width: 100%;
-    margin-bottom: 20px;
+    text-align: center;
+
 }
 
 .txtbutton {

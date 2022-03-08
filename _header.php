@@ -17,7 +17,7 @@ if ($page_title == '') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Camisa</title>
+    <title>MGL</title>
 
 
     <link rel="stylesheet" href="/css/style.css">
@@ -65,7 +65,7 @@ if ($page_title == '') {
         <span>Aproveite o frete grátis em pedidos acima de 200!</span>
     </div>
     <header class="header">
-    <h1><a href="index.php">LojaLoja</a></h1>
+    <h1 class="title"> <a href="index.php"><?php echo $site_name; ?></a></h1>
         <div class="right">
             <div class="btn-login">
                 <a href="login.php"><span class="material-icons-sharp">person</span></a>

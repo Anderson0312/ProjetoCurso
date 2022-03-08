@@ -1,7 +1,7 @@
 
     <footer>
         <div class="midiass">
-            <h3 class="h3foot">LojaLoja</h3>
+            <h3 class="h3foot"><?php echo $site_name ?></h3>
             <p > </p>
             <ul class="social-list">
                 <li><a href="#"><i class='bx bxl-facebook-circle' ></i></a></li>

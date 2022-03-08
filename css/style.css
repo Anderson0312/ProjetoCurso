@@ -105,6 +105,7 @@ header  {
 header h1 {
     margin: auto;
     margin-top: 1px;
+    color: black;
 }
 
 .header .right {
@@ -133,6 +134,9 @@ header h1 {
     color: var(--color-black);
 }
 
+.title a {
+    color: black;
+}
 
 /*----------------SIDEBAR-----------------*/
 aside .sidebar {
@@ -376,7 +380,6 @@ img {
 /*----------------footer start-----------------*/
 footer {
     bottom:0;
-    position: fixed;
     width: 100%;
     text-align: center;
     align-items: center;
