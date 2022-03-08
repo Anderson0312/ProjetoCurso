@@ -126,7 +126,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
     <main class="registerbox ">
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
             <input type="hidden" name="send" value="true">
+        <?php echo $feedback; ?>
 
+        <?php if ($show_form) : ?>
             <div class = 'text-information'>
                 <h2>Cadastro</h2>
                 <p>Por favor, preencha os campos abaixo para criar sua conta na loja</p>
@@ -139,7 +141,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
 
             <div >
                 <label for="email">E-mail *</label>
-                <input type="text" name="email" id="email" class="dados" placeholder="Seu e-mail principal." >
+                <input type="text" name="email" id="email" class="dados" placeholder="Seu e-mail principal." autofocus>
             </div>
 
             <div>
@@ -178,7 +180,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
 
             <div>
                 <label for="phone">Telefone Principal*</label>
-                <input type="number" name="phone" id="phone" class="dados">
+                <input type="text" name="phone" id="phone" class="dados">
             </div>
 
             <div class="dadosp">
@@ -200,7 +202,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
                 <label></label>
                 <button type="submit" class="txtbutton" >CADASTRAR</button>
             </div>
-
+        <?php endif; ?>
         </form>
 
     </main>

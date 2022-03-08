@@ -27,7 +27,7 @@ CREATE TABLE registros (
     registros_senha1 VARCHAR(20) NOT NULL,
     registros_senha2 VARCHAR(20) NOT NULL,
     registros_telefone INT NOT NULL,
-    registros_nomeentrega VARCHAR(255)L,
+    registros_nomeentrega VARCHAR(255),
     registros_cep INT NOT NULL,
 
     registros_status ENUM('analysis', 'confirmed', 'deleted') NOT NULL DEFAULT 'analysis'
