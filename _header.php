@@ -43,7 +43,7 @@ if ($page_title == '') {
             });
             $('#image-gallery').lightSlider({
                 gallery:true,
-                item:3,
+                item:1,
                 thumbItem:9,
                 slideMargin: 0,
                 speed:500,
@@ -109,3 +109,5 @@ if ($page_title == '') {
             </div>
         </aside>
     </div>
+
+    
