@@ -84,7 +84,10 @@ body {
 
 .button .txtbutton {
     color: var(--color-primary); 
+    font-weight: bold;
     padding-top: 2px;
+    background-color: black;
+    width: 90%;
 }
 
 .checkbox {
