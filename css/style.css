@@ -375,10 +375,12 @@ img {
 
 /*----------------footer start-----------------*/
 footer {
-    position: relative;
+    bottom:0;
+    position: fixed;
     width: 100%;
     text-align: center;
     align-items: center;
+
 }
 
 footer .midiass {

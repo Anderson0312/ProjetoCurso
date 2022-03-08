@@ -32,14 +32,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
 
 
     <!----------------- END OF BANNER -------------------->
-<<<<<<< HEAD
-                  
-=======
 
-
-
-                   
->>>>>>> cc626fd0119c367b9ccb8114ce0441f5535e4b08
     <!----------------- CARD PRODUCT BEST SELLER  -------------------->
 
     <div class="title-colecion">
@@ -125,10 +118,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
 
     <!----------------- END OF CARD PRODUCT BEST SELLER ---------------->
 
-<<<<<<< HEAD
-    
-=======
->>>>>>> cc626fd0119c367b9ccb8114ce0441f5535e4b08
+
     <div class="title-colecion">
         <h1>NOVA COLEÇÃO</h1>
     </div>
