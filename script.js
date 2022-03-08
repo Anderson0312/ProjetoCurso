@@ -4,7 +4,7 @@ var show = true;
 
 const menuSection = document.querySelector ('.container');
 const menubtn = document.querySelector ('.btn-menu');
-console.log(menuSection);
+
 
  menubtn.addEventListener('click', () => {
 
@@ -14,6 +14,5 @@ console.log(menuSection);
     show = !show;
 
 })
-
 
 
