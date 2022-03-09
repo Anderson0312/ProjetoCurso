@@ -208,3 +208,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
     </main>
 
 
+
+<?php
+
+// Inclui o rodapé da página
+require_once $_SERVER['DOCUMENT_ROOT'] . "/_footer.php";
+
+?>

@@ -45,6 +45,7 @@ body {
     height: 100vh;
     margin: auto;
     width: 90%;
+
 }
 
 label {
@@ -92,3 +93,18 @@ label {
     text-align: center;
 }
 
+footer {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .registerbox {
+        width: 550px;
+        height: 60vh;
+        margin: auto;
+    }
+
+}
