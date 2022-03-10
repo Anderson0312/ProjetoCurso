@@ -67,30 +67,82 @@ INSERT INTO `registros` (
 
 
 
--- Cria tabela para armazenar os artigos para test do aplicativo.
-CREATE TABLE articles (
-    article_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    article_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    article_title VARCHAR(127) NOT NULL,
-    article_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
-    article_intro VARCHAR(255) NOT NULL,
-    article_body LONGTEXT NOT NULL,
-    article_author INT NOT NULL,
-    article_status ENUM('on', 'off', 'deleted') NOT NULL DEFAULT 'on'
+-- Cria tabela para armazenar os {} para test do aplicativo.
+CREATE TABLE shirts (
+    shirts_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    shirts_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    shirts_title VARCHAR(127) NOT NULL,
+    shirts_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
+    shirts_descript VARCHAR(255) NOT NULL,
+    shirts_team VARCHAR(50) NOT NULL,
+    shirts_zise VARCHAR(50) NOT NULL,
+    shirts_colors VARCHAR(50) NOT NULL,
+    shirts_price INT NOT NULL,
+    shirts_amount INT NOT NULL,
+    shirts_status ENUM('on', 'off', 'deleted') NOT NULL DEFAULT 'on'
 );
 
 
--- Insere alguns artigos para testes.
-INSERT INTO `articles` (
-    `article_title`, 
-    `article_image`, 
-    `article_intro`, 
-    `article_body`, 
-    `article_author`
+-- Insere alguns {} para testes.
+INSERT INTO `shirts` (
+    `shirts_title`, 
+    `shirts_image`, 
+    `shirts_descript`, 
+    `shirts_team`,
+    `shirts_zise`, 
+    `shirts_colors`,
+    `shirts_amount`,
+    `shirts_price`
 ) VALUES (
-    'Primeiro artigo do site',
-    'https://picsum.photos/200', 
-    'Este é o primeiro artigo que escrevemos para este site sem sentido.', 
-    '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil obcaecati id recusandae minus porro laudantium rem. Similique repellendus incidunt ad labore unde voluptates, recusandae at, expedita magnam iure facere quia?</p><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum aperiam laboriosam enim harum accusantium quae mollitia repellendus illum, consequuntur impedit possimus, hic quas reiciendis odit! Incidunt harum blanditiis ullam sunt!</p><h3>Links:</h3><ul> <li><a href="http://catabits.com.br" target="_blank">Site do Fessô</a></li> <li><a href="https://americanas.com" target="_blank">Site Hackeado</a></li> <li><a href="https://www.rj.senac.br" target="_blank">Senac RJ</a></li></ul><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque quod suscipit ratione commodi, corrupti tempore mollitia accusantium in eligendi dolores dicta dolore, accusamus tenetur omnis, dolor ducimus! Iure, ad ea!</p><div> <img src="https://picsum.photos/400/200" alt="Imagem aleatória"></div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam maxime a saepe voluptatum laborum magnam, temporibus blanditiis aspernatur, nihil vero consequuntur quidem perferendis aliquam. Rem voluptatibus consequuntur neque ex explicabo!</p><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores amet fugiat possimus quae voluptates animi placeat. Veniam aut corporis cumque explicabo perspiciatis voluptatem, molestiae eveniet beatae eligendi ipsam. Harum, facilis?</p>', 
-    '1'
+    'Flamengo Principal',
+    '/imgproduct/Camisaflabranca.png',
+    'Camisa Original do Flamengo',
+    'Flamengo',
+    'P',
+    'Whith',
+    '100',
+    '129.90'
+);
+
+-- Insere alguns {} para testes.
+INSERT INTO `shirts` (
+    `shirts_title`, 
+    `shirts_image`, 
+    `shirts_descript`, 
+    `shirts_team`,
+    `shirts_zise`, 
+    `shirts_colors`,
+    `shirts_amount`,
+    `shirts_price`
+) VALUES (
+    'Flamengo Principal',
+    '/imgproduct/Camisaflavermelha.png',
+    'Camisa Original do Flamengo',
+    'Flamengo',
+    'P',
+    'red',
+    '100',
+    '129.90'
+);
+
+
+-- Insere alguns {} para testes.
+INSERT INTO `shirts` (
+    `shirts_title`, 
+    `shirts_image`, 
+    `shirts_descript`, 
+    `shirts_team`,
+    `shirts_zise`, 
+    `shirts_colors`,
+    `shirts_amount`,
+    `shirts_price`
+) VALUES (
+    'Flamengo Reserva',
+    '/imgproduct/Camisaflapreta.png',
+    'Camisa Original do Flamengo',
+    'Flamengo',
+    'P',
+    'Black',
+    '100',
+    '129.90'
 );
