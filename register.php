@@ -28,7 +28,7 @@ if (isset($_POST['send'])) {
     $senha1 = sanitize('senha1', 'email');
     $senha2 = sanitize('senha2', 'email');
     $telefone = sanitize('phone', 'string');
-    $nomedest = sanitize('receber', 'string');
+    $nomedest = sanitize('receber ', 'string');
     $cep = sanitize('cep', 'string');
 
     if ($email === '' or $cpf === '' or $nomecomplet === '' or $datanasci === '' or $genero === '' or $senha1 === '' or $senha2 === '' or $telefone === '' or $nomedest === '' or $cep === '') :
