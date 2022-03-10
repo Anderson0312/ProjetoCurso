@@ -88,7 +88,7 @@ if ($page_title == '') {
             <div class="top">
                 <div class="logo">
                     <img src="" alt="">
-                    <a href="index.php">
+                    <a href="/pagsprincipais/index.php">
                         <h2>LojaLoja</h2>
                     </a>
                 </div>

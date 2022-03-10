@@ -1,7 +1,7 @@
 <?php
 
 // Inclui arquivo de configuração
-require_once $_SERVER['DOCUMENT_ROOT'] . "/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 
 /*******************************************
  * Seu código PHP desta página entra aqui! *

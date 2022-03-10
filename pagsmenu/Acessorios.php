@@ -1,7 +1,7 @@
 <?php
 
 // Inclui arquivo de configuração
-require_once $_SERVER['DOCUMENT_ROOT'] . "/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 
 
 // Define o titilo dessa pagina
@@ -11,7 +11,7 @@ $page_title = '';
 $page_menu = "index";
 
 // Inclui o cbeçalho da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 ?>
 
@@ -48,6 +48,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
 <?php
 
 // Inclui o rodapé da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/_footer.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
 
 ?>
