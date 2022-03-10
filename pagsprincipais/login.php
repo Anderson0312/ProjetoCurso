@@ -45,7 +45,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/_header.php";
                 <label >Lembrar-me</label>
             </div>
 
-            <p id="register">Esqueceu sua senha? <a href="#" class="txtefet">Clique aqui</a> para recebê-la por e-mail </p>
+            <p id="">Esqueceu sua senha? <a href="#" class="txtefet">Clique aqui</a> para recebê-la por e-mail </p>
 
             <p id="register"><a href="register.php" class="txtefet">Efetuar cadastrado</a> </p>
 
