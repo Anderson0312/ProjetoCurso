@@ -21,7 +21,7 @@ if ($page_title == '') {
 
 
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="css/stylelogin.css">
+    <link rel="stylesheet" href="/css/stylelogin.css">
 
 
 
@@ -65,13 +65,13 @@ if ($page_title == '') {
         <span>Aproveite o frete grátis em pedidos acima de 200!</span>
     </div>
     <header class="header">
-    <h1 class="title"> <a href="index.php"><?php echo $site_name; ?></a></h1>
+    <h1 class="title"> <a href="/pagsprincipais/index.php"><?php echo $site_name; ?></a></h1>
         <div class="right">
             <div class="btn-login">
-                <a href="login.php"><span class="material-icons-sharp">person</span></a>
+                <a href="/pagsprincipais/login.php"><span class="material-icons-sharp">person</span></a>
             </div>
             <div class="btn-shopping-cart">
-                <a href="cart.php"><span class="material-icons-sharp">shopping_cart</span></a>
+                <a href="/pagsprincipais/cart.php"><span class="material-icons-sharp">shopping_cart</span></a>
             </div>
         </div>
     </header>
@@ -94,17 +94,17 @@ if ($page_title == '') {
                 </div>
             </div>
             <div class="sidebar">
-                <a href="" class="active">
+                <a href="/pagsmenu/newcolecion.php" class="active">
                     <h3>Nova coleção</h3>
                 </a>
-                <a href="">
-                    <h3>Roupas</h3>
+                <a href="/pagsmenu/Brasileiros.php">
+                    <h3>Nacionais</h3>
                 </a>
-                <a href="">
+                <a href="/pagsmenu/Acessorios.php">
                     <h3>Acessorios</h3>
                 </a>
-                <a href="">
-                    <h3>Headwear</h3>
+                <a href="/pagsmenu/Casacos.php">
+                    <h3>Casacos</h3>
                 </a>
             </div>
         </aside>
