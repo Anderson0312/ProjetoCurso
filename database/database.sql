@@ -62,12 +62,12 @@ INSERT INTO `registros` (
 
 
 
+-----------------------------products of website---------------------------
 
 
 
 
-
--- Cria tabela para armazenar os {} para test do aplicativo.
+-- Cria tabela para armazenar os {shirts} para test do aplicativo.
 CREATE TABLE shirts (
     shirts_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     shirts_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -145,4 +145,58 @@ INSERT INTO `shirts` (
     'Black',
     '100',
     '129.90'
+);
+
+
+
+
+
+
+
+-- Cria tabela para armazenar os {coats} para test do aplicativo.
+CREATE TABLE coats (
+    coats_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    coats_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    coats_title VARCHAR(127) NOT NULL,
+    coats_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
+    coats_descript VARCHAR(255) NOT NULL,
+    coats_team VARCHAR(50) NOT NULL,
+    coats_zise VARCHAR(50) NOT NULL,
+    coats_colors VARCHAR(50) NOT NULL,
+    coats_price INT NOT NULL,
+    coats_amount INT NOT NULL,
+    coats_status ENUM('on', 'off', 'deleted') NOT NULL DEFAULT 'on'
+);
+
+
+
+-- Cria tabela para armazenar os {newcolecion} para test do aplicativo.
+CREATE TABLE newcolecion (
+    newcolecion_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    newcolecion_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    newcolecion_title VARCHAR(127) NOT NULL,
+    newcolecion_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
+    newcolecion_descript VARCHAR(255) NOT NULL,
+    newcolecion_team VARCHAR(50) NOT NULL,
+    newcolecion_zise VARCHAR(50) NOT NULL,
+    newcolecion_colors VARCHAR(50) NOT NULL,
+    newcolecion_price INT NOT NULL,
+    newcolecion_amount INT NOT NULL,
+    newcolecion_status ENUM('on', 'off', 'deleted') NOT NULL DEFAULT 'on'
+);
+
+
+-- Cria tabela para armazenar os {newcolecion} para test do aplicativo.
+CREATE TABLE accessories (
+    accessories_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    accessories_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    accessories_title VARCHAR(127) NOT NULL,
+    accessories_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
+    accessories_descript VARCHAR(255) NOT NULL,
+    accessories_team VARCHAR(50) NOT NULL,
+    accessories_zise VARCHAR(50) NOT NULL,
+    accessories_colors VARCHAR(50) NOT NULL,
+    accessories_price INT NOT NULL,
+    accessories_amount INT NOT NULL,
+    accessories_status ENUM('on', 'off', 'deleted') NOT NULL DEFAULT 'on'
 );

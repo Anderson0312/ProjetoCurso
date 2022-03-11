@@ -31,13 +31,13 @@ while ($art = $res->fetch_assoc()) {
 
     $shirts_list .= <<<HTML
 
-<div class="shirts-item">
+<div class="product-item">
 
-    <div class="shirts-item-img">
+    <div class="product-item-img">
         <a href="/pagsmenu/brasileiro.php?id={$art['shirts_id']}"><img src="{$art['shirts_image']}" alt="{$art['shirts_title']}"></a>
     </div>
 
-    <div class="shirts-item-desc">
+    <div class="product-item-desc">
         <h3><a href="/pagsmenu/brasileiro.php?id={$art['shirts_id']}">{$art['shirts_title']}</a></h3>
         <p class="description">{$art['shirts_descript']}</p>
         <span class="product-price">R$ {$art['shirts_price']}</span>
@@ -66,7 +66,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 <?php // Conteúdo ?>
 
-<link rel="stylesheet" href="/css/styleitens.css">
 
 <!----------------- CONTEUDO-------------------->
 
