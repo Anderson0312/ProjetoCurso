@@ -88,3 +88,32 @@ img {
     margin-bottom: 4px;
     color: var(--color-dark-variant);
 }
+
+
+
+
+
+
+
+
+
+@media (max-width: 460px) {
+    .title-colecion {
+        font-weight: 500;
+    }
+    .container-catalogo {
+        display: flex;
+        width: 95%;
+        margin: auto;
+        flex-wrap: wrap;
+    }
+    .shirts-item {
+        width: 42%;
+        height: auto;
+    } 
+
+    .shirts-item-desc {
+        font-size: .3rem;
+        padding: 0 2px;
+    }
+    }

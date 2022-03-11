@@ -118,7 +118,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 
     <!----------------- END OF CARD PRODUCT BEST SELLER ---------------->
 
-
+<!-- 
     <div class="title-colecion">
         <h1>NOVA COLEÇÃO</h1>
     </div>
@@ -133,7 +133,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
                 <a href="cart.php" class="product-btn">Comprar</a>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!----------------- END OF CARD PRODUCT -------------------->
