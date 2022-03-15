@@ -23,7 +23,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 <!----------------- END OF ASIDE -------------------->
 
 
-<div class="banner">
+    <div class="banner">
         <picture>
             <source media="(max-width: 426px)" srcset="../imgbanner/bannerpq2.jpeg">
             <img src="../imgbanner/bannerG.jpeg" alt="">

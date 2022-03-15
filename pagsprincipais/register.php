@@ -8,42 +8,71 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  *******************************************/
 
 // Variáveis desta página
-$email = $cpf = $nomecomplet = $datanasci = $genero = $senha1 = $senha2 = $telefone = $nomedest = $cep = $feedback = '';
+
+$form = [
+    "email" => '',
+    "cpf" => '',
+    'name' => '',
+    'birth' => '',
+    'genero' => '',
+    'password' => '',
+    'password2' => '',
+    'telefone' => '',
+    'nomedest' => '',
+    'cep' => '',
+    'feedback' => ''
+];
 
 // Variável que exibe/oculta Registro.
 $show_form = true;
 
 // Detecta se o registro foi enviado...
-if (isset($_POST['send'])) {
+if (isset($_POST['send'])) :
 
-    // Se foi enviado, processa o registro...
+    // Obtém os valores dos campos, sanitiza e armazena nas variáveis.
+    // Atenção! A função "sanitize()" está em "/phpconfgs/_config.php".
+
+    $form['email'] = sanitize('email', 'email');
+    $form['cpf'] = sanitize('cpf', 'string');
+    $form['name'] = sanitize('nome', 'string');
+    $form['birth'] = sanitize('user_birth', 'string');
+    $form['genero'] = sanitize('genero', 'string');
+    $form['password'] = sanitize('password', 'string');
+    $form['password2'] = sanitize('password2', 'string');
+    $form['telefone'] = sanitize('phone', 'string');
+    $form['nomedest'] = sanitize('receber', 'string');
+    $form['cep'] = sanitize('cep', 'string');
 
     // Verifica se todos os campos form preenchidos
-
-    $email = sanitize('email', 'email');
-    $cpf = sanitize('cpf', 'string');
-    $nomecomplet = sanitize('nome', 'string');
-    $datanasci = sanitize('user_birth', 'string');
-    $genero = sanitize('genero', 'string');
-    $senha1 = sanitize('senha1', 'email');
-    $senha2 = sanitize('senha2', 'email');
-    $telefone = sanitize('phone', 'string');
-    $nomedest = sanitize('receber', 'string');
-    $cep = sanitize('cep', 'string');
-
-    if ($email === '' or $cpf === '' or $nomecomplet === '' or $datanasci === '' or $genero === '' or $senha1 === '' or $senha2 === '' or $telefone === '' or $nomedest === '' or $cep === '') :
+    if ($form['email'] === '' or $form['cpf'] === '' or $form['name'] === '' or $form['birth'] === '' or $form['genero'] === '' or $form['password'] === '' or $form['password2'] === '' or $form['telefone'] === '' or $form['nomedest'] === '' or $form['cep'] === '') :
         $feedback = '<h3 style="color:red">Erro: por favor, preencha todos os campos!</h3>';
+
+    // Verifica se as senhas digitadas coincidem
+    elseif ($form['password'] !== $form['password2']) :
+        $form['feedback'] = '<h3 style="color:red">Erro: as senhas não coincidem!</h3>';
+        $form['password'] = $form['password2'] = '';
+
+    elseif (!validateDate($form['birth'])) :
+        $form['feedback'] = '<h3 style="color:red">Erro: a data de nascimento está incorreta!</h3>';
+        $form['birth'] = '';
+
     else :
 
         /*
-    // Isso é somente para testes. Remova depois dos testes.
-    echo '<pre>';
-    print_r($_POST);
-    echo '</pre><hr><hr>';
-    */
+        // Pesquisa pelo e-mail
+        $sql = "SELECT user_id FROM `registros` WHERE registros_email = 'contato@test.net';";
+        $res = $conn->query($sql);
 
+        // Se e-mail existe
+        if ($res->num_rows > 0) :
+            $form['feedback'] = '<h3 style="color:red">Erro: este e-mail já está em uso!</h3>';
+
+        else :
+            */
+
+            // Cria a query para salvar no banco de dados.
     // Insere registro no banco de dados
-    $sql = <<<SQL
+        $sql = <<<SQL
 
     INSERT INTO registros (
         registros_email,
@@ -51,33 +80,40 @@ if (isset($_POST['send'])) {
         registros_nome,
         registros_Nascimento,
         registros_genero,
-        registros_senha1,
-        registros_senha2,
+        registros_senha,
         registros_telefone,
         registros_nomeentrega,
         registros_cep
         
     ) VALUES (
-        '{$email}',
-        '{$cpf}',
-        '{$nomecomplet}',
-        '{$datanasci}',
-        '{$genero}',
-        '{$senha1}',
-        '{$senha2}',
-        '{$telefone}',
-        '{$nomedest}',
-        '{$cep}'
+        '{$form['email']}',
+        '{$form['cpf']}',
+        '{$form['name']}',
+        '{$form['birth']}',
+        '{$form['genero']}',
+        SHA2('{$form['password']}', 512)
+        '{$form['telefone']}',
+        '{$form['nomedest']}',
+        '{$form['cep']}'
     );
 
-    SQL;
+SQL;
 
 
-
+    // Salva registros no banco de dados.
     $conn->query($sql);
 
+    // Obtém somente primeiro nome do rementente.
+    $first_name = explode(" ", $form['name'])[0];
+
     // Cria mensagem de confirmação.
-    $feedback = '<h3 style="color:green">Oba! Seu contato foi enviado!</h3>';
+    $form['feedback'] = <<<OUT
+        
+    <h3>Olá {$first_name}!</h3>
+    <p>Seu cadastro foi criado com sucesso.</p>
+    <p><em>Obrigado...</em></p
+
+OUT;
 
     // Oculto o registro.
     $show_form = false;
@@ -103,7 +139,9 @@ if (isset($_POST['send'])) {
         @mail($to, $sj, $msg);
 
     endif;
-}
+
+endif; // if (isset($_POST['send']))
+
 
 
 
@@ -124,11 +162,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <link rel="stylesheet" href="/css/styleregister.css">
 
     <main class="registerbox ">
+
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+
             <input type="hidden" name="send" value="true">
-        <?php echo $feedback; ?>
+
+        <?php echo $form['feedback']; ?>
 
         <?php if ($show_form) : ?>
+
             <div class = 'text-information'>
                 <h2>Cadastro</h2>
                 <p>Por favor, preencha os campos abaixo para criar sua conta na loja</p>
@@ -169,13 +211,13 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
             </div>
 
             <div>
-                <label for="senha1">Informa a Senha *</label>
-                <input type="password" name="senha1" id="senha1" class="dados">
+                <label for="password">Informa a Senha *</label>
+                <input type="password" name="password" id="password" class="dados">
             </div>
 
             <div>
-                <label for="senha2">Confirme a Senha *</label>
-                <input type="password" name="senha2" id="senha2" class="dados">
+                <label for="password2">Confirme a Senha *</label>
+                <input type="password" name="password2" id="password2" class="dados">
             </div>
 
             <div>
@@ -202,7 +244,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
                 <label></label>
                 <button type="submit" class="txtbutton" >CADASTRAR</button>
             </div>
+
         <?php endif; ?>
+
         </form>
 
     </main>

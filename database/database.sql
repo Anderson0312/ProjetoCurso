@@ -24,8 +24,7 @@ CREATE TABLE registros (
     registros_nome VARCHAR(255) NOT NULL,
     registros_Nascimento DATE NOT NULL,
     registros_genero VARCHAR(20) NOT NULL,
-    registros_senha1 VARCHAR(20) NOT NULL,
-    registros_senha2 VARCHAR(20) NOT NULL,
+    registros_senha VARCHAR(255) NOT NULL,
     registros_telefone INT NOT NULL,
     registros_nomeentrega VARCHAR(255),
     registros_cep INT NOT NULL,
@@ -34,17 +33,16 @@ CREATE TABLE registros (
 );
 
 -- Teste de inserção na tabela 'registros'.
-INSERT INTO `registros` (
-    `registros_email`,
-    `registros_cpf`,
-    `registros_nome`,
-    `registros_Nascimento`,
-    `registros_genero`,
-    `registros_senha1`,
-    `registros_senha2`,
-    `registros_telefone`,
-    `registros_nomeentrega`,
-    `registros_cep`
+INSERT INTO registros (
+    registros_email,
+    registros_cpf,
+    registros_nome,
+    registros_Nascimento,
+    registros_genero,
+    registros_senha,
+    registros_telefone,
+    registros_nomeentrega,
+    registros_cep
     
 ) VALUES (
     'joca@silva.com',
@@ -52,8 +50,7 @@ INSERT INTO `registros` (
     'Joca da Silva',
     '2022/03/07',
     'masculino',
-    '050200',
-    '050200',
+    SHA2('050200', 512),
     '21989419431',
     'anderson moura',
     '2198461'
@@ -67,7 +64,16 @@ INSERT INTO `registros` (
 
 
 
--- Cria tabela para armazenar os {} para test do aplicativo.
+
+
+
+
+-----------------------------products of website---------------------------
+
+
+
+
+-- Cria tabela para armazenar os {shirts} para test do aplicativo.
 CREATE TABLE shirts (
     shirts_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     shirts_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -145,4 +151,58 @@ INSERT INTO `shirts` (
     'Black',
     '100',
     '129.90'
+);
+
+
+
+
+
+
+
+-- Cria tabela para armazenar os {coats} para test do aplicativo.
+CREATE TABLE coats (
+    coats_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    coats_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    coats_title VARCHAR(127) NOT NULL,
+    coats_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
+    coats_descript VARCHAR(255) NOT NULL,
+    coats_team VARCHAR(50) NOT NULL,
+    coats_zise VARCHAR(50) NOT NULL,
+    coats_colors VARCHAR(50) NOT NULL,
+    coats_price INT NOT NULL,
+    coats_amount INT NOT NULL,
+    coats_status ENUM('on', 'off', 'deleted') NOT NULL DEFAULT 'on'
+);
+
+
+
+-- Cria tabela para armazenar os {newcolecion} para test do aplicativo.
+CREATE TABLE newcolecion (
+    newcolecion_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    newcolecion_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    newcolecion_title VARCHAR(127) NOT NULL,
+    newcolecion_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
+    newcolecion_descript VARCHAR(255) NOT NULL,
+    newcolecion_team VARCHAR(50) NOT NULL,
+    newcolecion_zise VARCHAR(50) NOT NULL,
+    newcolecion_colors VARCHAR(50) NOT NULL,
+    newcolecion_price INT NOT NULL,
+    newcolecion_amount INT NOT NULL,
+    newcolecion_status ENUM('on', 'off', 'deleted') NOT NULL DEFAULT 'on'
+);
+
+
+-- Cria tabela para armazenar os {newcolecion} para test do aplicativo.
+CREATE TABLE accessories (
+    accessories_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    accessories_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    accessories_title VARCHAR(127) NOT NULL,
+    accessories_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
+    accessories_descript VARCHAR(255) NOT NULL,
+    accessories_team VARCHAR(50) NOT NULL,
+    accessories_zise VARCHAR(50) NOT NULL,
+    accessories_colors VARCHAR(50) NOT NULL,
+    accessories_price INT NOT NULL,
+    accessories_amount INT NOT NULL,
+    accessories_status ENUM('on', 'off', 'deleted') NOT NULL DEFAULT 'on'
 );
