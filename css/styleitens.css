@@ -42,7 +42,7 @@ body {
 
 /*--------------------ITENS--------------------*/
 
-img {
+.img_itens {
     max-width: 90%;
     height: auto;
     filter: drop-shadow(5px 10px 15px rgb(8,9,13,.4));

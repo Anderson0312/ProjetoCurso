@@ -34,7 +34,7 @@ while ($art = $res->fetch_assoc()) {
 <div class="product-item">
 
     <div class="product-item-img">
-        <a href="/pagsmenu/brasileiro.php?id={$art['shirts_id']}"><img src="{$art['shirts_image']}" alt="{$art['shirts_title']}"></a>
+        <a href="/pagsmenu/brasileiro.php?id={$art['shirts_id']}"><img src="{$art['shirts_image']}" class="img_itens" alt="{$art['shirts_title']}"></a>
     </div>
 
     <div class="product-item-desc">

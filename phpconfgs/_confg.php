@@ -37,6 +37,9 @@
         $conn->query('SET lc_time_names = pt_BR');
         
 
+    // Define o fuso horário (opcional).
+    date_default_timezone_set('America/Sao_Paulo');
+
     /*
     // Consulta de teste. Apague depois de testar.
     $result = $conn->query("SELECT * FROM articles");
@@ -106,3 +109,11 @@
         // Retorna o valor do campo já sanitizado.
         return $field_value;
     }
+
+    // Valida datas
+
+function validateDate($date, $format ='Y-m-d') 
+{
+    $d = Datetime::createFromFormat($format, $date);
+    return $d && $d->format($format) == $date;
+}
