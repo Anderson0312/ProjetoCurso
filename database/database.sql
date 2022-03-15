@@ -21,11 +21,11 @@ CREATE TABLE registros (
     registros_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     registros_email VARCHAR(255) NOT NULL,
     registros_cpf VARCHAR(255) NOT NULL,
-    registros_nome VARCHAR(255) NOT NULL,
-    registros_Nascimento DATE NOT NULL,
+    registros_name VARCHAR(255) NOT NULL,
+    registros_birth DATE NOT NULL,
     registros_genero VARCHAR(20) NOT NULL,
-    registros_senha VARCHAR(255) NOT NULL,
-    registros_telefone INT NOT NULL,
+    registros_password VARCHAR(255) NOT NULL,
+    registros_telefone bigint NOT NULL,
     registros_nomeentrega VARCHAR(255),
     registros_cep INT NOT NULL,
 
@@ -33,17 +33,17 @@ CREATE TABLE registros (
 );
 
 -- Teste de inserção na tabela 'registros'.
-INSERT INTO registros (
-    registros_email,
-    registros_cpf,
-    registros_nome,
-    registros_Nascimento,
-    registros_genero,
-    registros_senha,
-    registros_telefone,
-    registros_nomeentrega,
-    registros_cep
-    
+    INSERT INTO registros (
+        registros_email,
+        registros_cpf,
+        registros_name,
+        registros_birth,
+        registros_genero,
+        registros_password,
+        registros_telefone,
+        registros_nomeentrega,
+        registros_cep
+           
 ) VALUES (
     'joca@silva.com',
     '17749771760',

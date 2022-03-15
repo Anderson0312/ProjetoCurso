@@ -45,7 +45,7 @@ if (isset($_POST['send'])) :
 
     // Verifica se todos os campos form preenchidos
     if ($form['email'] === '' or $form['cpf'] === '' or $form['name'] === '' or $form['birth'] === '' or $form['genero'] === '' or $form['password'] === '' or $form['password2'] === '' or $form['telefone'] === '' or $form['nomedest'] === '' or $form['cep'] === '') :
-        $feedback = '<h3 style="color:red">Erro: por favor, preencha todos os campos!</h3>';
+        $form['feedback'] = '<h3 style="color:red">Erro: por favor, preencha todos os campos!</h3>';
 
     // Verifica se as senhas digitadas coincidem
     elseif ($form['password'] !== $form['password2']) :
@@ -77,10 +77,10 @@ if (isset($_POST['send'])) :
     INSERT INTO registros (
         registros_email,
         registros_cpf,
-        registros_nome,
-        registros_Nascimento,
+        registros_name,
+        registros_birth,
         registros_genero,
-        registros_senha,
+        registros_password,
         registros_telefone,
         registros_nomeentrega,
         registros_cep
@@ -91,7 +91,7 @@ if (isset($_POST['send'])) :
         '{$form['name']}',
         '{$form['birth']}',
         '{$form['genero']}',
-        SHA2('{$form['password']}', 512)
+        SHA2('{$form['password']}', 512),
         '{$form['telefone']}',
         '{$form['nomedest']}',
         '{$form['cep']}'
@@ -129,9 +129,9 @@ OUT;
 
     Contato enviado pelo site para confirmação de conta:
 
-    Data: {$now}
-    Remetente: {$nomecomplet}
-    E-mail: {$email}
+    Data: {}
+    Remetente: {}
+    E-mail: {}
     -----------------------------
     
     MSG;

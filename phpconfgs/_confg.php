@@ -19,7 +19,7 @@
         if ($_SERVER['SERVER_NAME'] == $key) :
 
             // Conexão com MySQL/MariaDB usando "mysqli" (orientada a objetos)
-            @$conn = new mysqli($v['server'], $value['user'], $value['password'], $value['database']);
+            @$conn = new mysqli($value['server'], $value['user'], $value['password'], $value['database']);
 
             // Trata possíveis exceções
             if ($conn->connect_error) die("Falha de conexão com o banco e dados: " . $conn->connect_error);
@@ -39,6 +39,14 @@
 
     // Define o fuso horário (opcional).
     date_default_timezone_set('America/Sao_Paulo');
+
+
+/******************************************************
+ * Gera variáveis do tema à partir do banco de dados. *
+ ******************************************************/
+
+    // Obtém variáveis e seus valores do banco de dados
+
 
     /*
     // Consulta de teste. Apague depois de testar.
