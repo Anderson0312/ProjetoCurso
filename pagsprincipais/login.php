@@ -48,7 +48,7 @@ if (isset($_POST['send'])) :
         FROM `registros`
         WHERE registros_email = '{$form['email']}'
         AND registros_password = SHA2('{$form['password']}', 512)
-        AND registros_status = 'on';
+        AND registros_status = 'confirmed';
 
 SQL;
 
