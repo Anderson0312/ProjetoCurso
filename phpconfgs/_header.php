@@ -24,6 +24,7 @@ if ($page_title == '') {
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/stylelogin.css">
     <link rel="stylesheet" href="/css/styleitens.css">
+    
 
 
 
@@ -70,7 +71,7 @@ if ($page_title == '') {
     <h1 class="title"> <a href="/pagsprincipais/index.php"><?php echo $site_name; ?></a></h1>
         <div class="right">
             <div class="btn-login">
-                <a href="/pagsprincipais/login.php"><span class="material-icons-sharp">person</span></a>
+                <a href="/user/login.php"><span class="material-icons-sharp">person</span></a>
             </div>
             <div class="btn-shopping-cart">
                 <a href="/pagsprincipais/cart.php"><span class="material-icons-sharp">shopping_cart</span></a>

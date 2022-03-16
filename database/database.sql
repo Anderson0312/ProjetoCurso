@@ -29,7 +29,7 @@ CREATE TABLE registros (
     registros_nomeentrega VARCHAR(255),
     registros_cep INT NOT NULL,
 
-    registros_status ENUM('analysis', 'confirmed', 'deleted') NOT NULL DEFAULT 'analysis'
+    registros_status ENUM('analysis', 'confirmed', 'deleted') NOT NULL DEFAULT 'confirmed'
 );
 
 -- Teste de inserção na tabela 'registros'.
