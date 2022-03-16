@@ -103,7 +103,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
             <?php echo $form['feedback']; ?>
 
             <?php if ($show_form) : ?>
-                
+
                 <div class = 'text-information'>
                     <h2>Entrar</h2>
                     <p>Entre com seu email e senha para continuar</p>
