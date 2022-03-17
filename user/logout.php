@@ -6,12 +6,19 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 /*******************************************
  * Seu código PHP desta página entra aqui! *
  *******************************************/
+// Se não estiver logado, vai para a 'index'.
+if (!isset($_COOKIE['user'])) header('Location: /pagsprincipais/index.php');
 
-$form = [
-    'id' => '',
-    'name' => ''
+// Realmente quer sair
+if (isset($_GET['logout'])) :
 
-];
+    // Destroi o cookie
+    setcookie('user', NULL, time() - 3600, '/');
+
+    // Redireciona para a 'index'
+    header('Location: /pagsprincipais/index.php');
+
+endif;
 
  // Define o título DESTA página.
 $page_title = "";
@@ -40,34 +47,39 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
     </div>
 
     <div class="opc_painel">
-        <a href="/user/logged.php">
+    <a href="/user/logged.php">
             <h3>PAINEL</h3>
         </a>
-
         <a href="/pagsprincipais/cart.php">
             <h3>PEDIDOS</h3>
         </a>
-
         <a href="">
             <h3>ENDEREÇO</h3>
         </a>
-
         <a href="/user/profile.php">
             <h3>DETALHES DA CONTA</h3>
         </a>
-
         <a href="/user/logout.php">
             <h3>SAIR</h3>
         </a>
     </div>
 
-    <div class="infos">
+    <div style="text-align: center;">
 
+        <p style="color: green;" > Tem certeza que deseja sair do site?</p>
+
+        <p><a  href="/user/logged.php">Não sair agora</a></p>
+
+        <p ><a href="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>?logout=confirm">Sim, sair</a></p>
+
+    </div>
+
+    <div class="infos">
         <p>
             <?php echo 
             "Olá <strong>{$user['registros_name']}</strong> (não é <strong>{$user['first_name']})</strong>? " 
             ?>
-             <a href="/user/logout.php">Sair</a>
+             <a href="">Sair</a>
         </p>
 
         
@@ -75,17 +87,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
         <p class="informe">
             A partir do painel de controle de sua conta você pode ver suas compras recentes, gerenciar seus endereços de entrega e faturamento, e editar sua senha e detalhes da sua conta.
         </p>
-
     </div>
 
     <div class="buttons">
-
         <a href=""><p>Painel</p></a>
         <a href=""><p>Pedidos</p></a>
         <a href=""><p>Endereço</p></a>
         <a href="/user/profile.php"><p>Detalhes da conta</p></a>
         <a href="/user/logout.php"><p>Sair</p></a>
-
     </div>
 
 

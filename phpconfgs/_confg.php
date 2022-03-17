@@ -7,13 +7,6 @@
     // Os dados da conexão estão em "_config.ini"
     $i = parse_ini_file($_SERVER['DOCUMENT_ROOT'] . '/_confg.ini', true);
 
-    /*
-    // Debug do MySQL
-    echo '<pre>';
-    print_r($i);
-    echo '</pre>';
-    exit;
-    */
 
     foreach ($i as $key => $value) :
         if ($_SERVER['SERVER_NAME'] == $key) :
@@ -41,9 +34,10 @@
     date_default_timezone_set('America/Sao_Paulo');
 
 
-/******************************************************
- * Gera variáveis do tema à partir do banco de dados. *
- ******************************************************/
+
+    /******************************************************
+     * Gera variáveis do tema à partir do banco de dados. *
+     ******************************************************/
 
     // Obtém variáveis e seus valores do banco de dados
 
@@ -80,7 +74,31 @@
     // rodapé do site 
     $site_rodap = 'AndersonM';
 
-    
+    /*****************************************************************************
+     * Verifica se tem usuário logado, obtendo os dados deste, direto do cookie. *
+     *****************************************************************************/
+
+    // Verifica se usuário está logado, testando o cookie dele.
+    if (isset($_COOKIE['user'])) :
+
+        // Obtém dados do usuário pelo cookie
+        $user = json_decode($_COOKIE['user'], true);
+
+        // Converte datas para pt-BR
+        $user['birth_br'] = date_to_br($user['registros_birth']);
+        $user['date_br'] = date_to_br($user['registros_date']);
+        
+        // Somente primeiro nome
+        $user['first_name'] = explode(' ', $user['registros_name'])[0];
+
+
+
+    else :
+
+        // Define nome do usuário para o menu
+        $user['first_name'] = '';
+
+    endif;
 
 
     /********************
@@ -121,8 +139,29 @@
 
     // Valida datas
 
-function validateDate($date, $format ='Y-m-d') 
-{
-    $d = Datetime::createFromFormat($format, $date);
-    return $d && $d->format($format) == $date;
-}
+    function validateDate($date, $format ='Y-m-d') 
+    {
+        $d = Datetime::createFromFormat($format, $date);
+        return $d && $d->format($format) == $date;
+    }
+
+    // Converte 'system date' para 'BR date'.
+    function date_to_br($sysdate)
+    {
+
+        // Se é data e hora...
+        if (str_contains($sysdate, ' ')) return date('d/m/Y \à\s H:i', strtotime($sysdate));
+
+        // Se é somente data...
+        else return date('d/m/Y', strtotime($sysdate));
+    }
+
+
+    // Função para ajudar a 'debugar' o código.
+    function debug($data, $exit = false)
+    {
+        echo '<pre>';
+        print_r($data);
+        echo '</pre>';
+        if ($exit) exit;
+    }

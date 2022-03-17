@@ -7,32 +7,26 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  * Seu código PHP desta página entra aqui! *
  *******************************************/
 
-$form = [
-    'id' => '',
-    'name' => ''
-
-];
 
  // Define o título DESTA página.
-$page_title = "";
+ $page_title = "";
 
-// Opção ativa no menu
-$page_menu = "logged";
-
-
-// Inclui o cbeçalho da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
-
+ // Opção ativa no menu
+ $page_menu = "logged";
+ 
+ 
+ // Inclui o cbeçalho da página
+ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
+ 
 ?>
 
 <link rel="stylesheet" href="/css/styleprofil.css">
-
 
 <div class='secondheader'>
     <h2>MINHA CONTA</h2>
 </div>
 
-<main class = 'main-profil'>
+<main class="main-profil">
 
     <div class="profil">
         <img src="/user/imguser/userpicture.jpeg" alt="">
@@ -62,37 +56,50 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
     </div>
 
     <div class="infos">
+        <p >Os endereços a seguir serão usados na pagina de filalização de compra por padrão.</p>
 
-        <p>
-            <?php echo 
-            "Olá <strong>{$user['registros_name']}</strong> (não é <strong>{$user['first_name']})</strong>? " 
-            ?>
-             <a href="/user/logout.php">Sair</a>
-        </p>
+    <table>
 
-        
+        <tr>
+            <td>Nome:</td>
+            <td><?php echo $user['registros_name'] ?></td>
+        </tr>
 
-        <p class="informe">
-            A partir do painel de controle de sua conta você pode ver suas compras recentes, gerenciar seus endereços de entrega e faturamento, e editar sua senha e detalhes da sua conta.
-        </p>
+        <tr>
+            <td>E-mail:</td>
+            <td><?php echo $user['registros_email'] ?></td>
+        </tr>
+
+        <tr>
+            <td>Nascimento:</td>
+            <td><?php echo $user['birth_br'] ?></td>
+        </tr>
+
+        <tr>
+            <td>Cadastrou-se:</td>
+            <td><?php echo $user['date_br'] ?></td>
+        </tr>
+        <tr>
+            <td>endereço:</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <a href="/user/edit.php">Editar perfil</a> 
+                <br>
+                <a href="/user/password.php">Alterar senha</a>
+            </td>
+        </tr>
+
+    </table>
 
     </div>
-
-    <div class="buttons">
-
-        <a href=""><p>Painel</p></a>
-        <a href=""><p>Pedidos</p></a>
-        <a href=""><p>Endereço</p></a>
-        <a href="/user/profile.php"><p>Detalhes da conta</p></a>
-        <a href="/user/logout.php"><p>Sair</p></a>
-
-    </div>
-
 
 </main>
 
 
-
+ 
 <?php
 
 // Inclui o rodapé da página

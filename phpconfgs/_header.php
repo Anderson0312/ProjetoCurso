@@ -70,9 +70,15 @@ if ($page_title == '') {
     <header class="header">
     <h1 class="title"> <a href="/pagsprincipais/index.php"><?php echo $site_name; ?></a></h1>
         <div class="right">
+        <?php if (!isset($_COOKIE['user'])) : ?>
             <div class="btn-login">
                 <a href="/user/login.php"><span class="material-icons-sharp">person</span></a>
             </div>
+        <?php else : ?>
+            <div class="btn-login">
+                <a href="/user/logged.php"><span class="material-icons-sharp">person</span></a>
+            </div>
+        <?php endif; ?>
             <div class="btn-shopping-cart">
                 <a href="/pagsprincipais/cart.php"><span class="material-icons-sharp">shopping_cart</span></a>
             </div>
