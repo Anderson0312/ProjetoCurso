@@ -1,3 +1,4 @@
+
 <?php
 
 // Inclui arquivo de configuração
@@ -7,26 +8,20 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  * Seu código PHP desta página entra aqui! *
  *******************************************/
 
- // Define o título DESTA página.
-$page_title = "";
-
-// Opção ativa no menu
-$page_menu = "logged";
 
 
-// Inclui o cbeçalho da página
+ // Inclui o cbeçalho da página
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
-
+ 
 ?>
 
 <link rel="stylesheet" href="/css/styleprofil.css">
-
 
 <div class='secondheader'>
     <h2>MINHA CONTA</h2>
 </div>
 
-<main class = 'main-profil'>
+<main class="main-profil">
 
     <div class="profil">
         <img src="/user/imguser/userpicture.jpeg" alt="">
@@ -55,37 +50,20 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
         </a>
     </div>
 
-    <div class="infos">
-
-        <p>
-            <?php echo 
-            "Olá <strong>{$user['registros_name']}</strong> (não é <strong>{$user['first_name']})</strong>? " 
-            ?>
-             <a href="/user/logout.php">Sair</a>
-        </p>
-
+    <div class="requests">
         
-
-        <p class="informe">
-            A partir do painel de controle de sua conta você pode ver suas compras recentes, gerenciar seus endereços de entrega e faturamento, e editar sua senha e detalhes da sua conta.
-        </p>
-
-    </div>
-
-    <div class="buttons">
-
-        <a href="/user/logged.php"><p>Painel</p></a>
-        <a href="/user/request.php"><p>Pedidos</p></a>
-        <a href="/user/address.php"><p>Endereço</p></a>
-        <a href="/user/profile.php"><p>Detalhes da conta</p></a>
-        <a href="/user/logout.php"><p>Sair</p></a>
+        <div class="request-header">
+            <h4>PEDIDO</h4>
+            <h4>DATA</h4>
+            <h4>STATUS</h4>      
+            <h4>TOTAL</h4>  
+            <h4>AÇÕES</h4>  
+        </div>
 
     </div>
 
 
 </main>
-
-
 
 <?php
 

@@ -50,10 +50,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
     <a href="/user/logged.php">
             <h3>PAINEL</h3>
         </a>
-        <a href="/pagsprincipais/cart.php">
+        <a href="/user/request.php">
             <h3>PEDIDOS</h3>
         </a>
-        <a href="">
+        <a href="/user/address.php">
             <h3>ENDEREÇO</h3>
         </a>
         <a href="/user/profile.php">
@@ -90,9 +90,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
     </div>
 
     <div class="buttons">
-        <a href=""><p>Painel</p></a>
+        <a href="/user/logged.php"><p>Painel</p></a>
         <a href=""><p>Pedidos</p></a>
-        <a href=""><p>Endereço</p></a>
+        <a href="/user/address.php"><p>Endereço</p></a>
         <a href="/user/profile.php"><p>Detalhes da conta</p></a>
         <a href="/user/logout.php"><p>Sair</p></a>
     </div>

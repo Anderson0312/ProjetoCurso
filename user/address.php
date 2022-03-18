@@ -6,7 +6,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 /*******************************************
  * Seu código PHP desta página entra aqui! *
  *******************************************/
-
 // Variáveis do script
 $form['feedback'] = '';
 $show_form = true;
@@ -14,25 +13,22 @@ $show_form = true;
 // Se não estiver logado, vai para a 'index'.
 if (!isset($_COOKIE['user'])) header('Location: /');
 
-if (isset($_POST['send-profile'])) :
+if (isset($_POST['send-address'])) :
 
     // debug($_POST);
 
     // Obtém os valores dos campos, sanitiza e armazena nas variáveis.
-    $form['registros_name'] = sanitize('name', 'string');
-    $form['registros_birth'] = sanitize('birth', 'string');
-    $form['registros_email'] = $user['registros_email'];
+    $form['registros_cep'] = sanitize('cep', 'string');
+    $form['registros_address'] = sanitize('address', 'string');
+    $form['registros_number'] = sanitize('number', 'string');
+    $form['registros_district'] = sanitize('district', 'string');
+    $form['registros_city'] = sanitize('city', 'string');
     $form['registros_password'] = sanitize('password', 'string');
-    $form['registros_telefone'] = sanitize('telefone', 'string');
-
+    
     // Verifica se todos os campos form preenchidos
-    if ($form['registros_name'] === '' or $form['registros_birth'] === '' or $form['registros_password'] === '' or $form['registros_telefone'] === '') :
+    if ($form['registros_cep'] === '' or $form['registros_password'] === '' or $form['registros_address'] === '' or $form['registros_number'] === '' or $form['registros_district'] === '' or $form['registros_city'] === '') :
         $form['feedback'] = '<h3 style="color:red">Erro: por favor, preencha todos os campos!</h3>';
 
-    // Verifica se a data é válida
-    elseif (!validate_date($form['registros_birth'])) :
-        $form['feedback'] = '<h3 style="color:red">Erro: a data de nascimento está incorreta!</h3>';
-        $form['registros_birth'] = $user['user_birth'];
     else :
 
         // String de atualização
@@ -40,9 +36,11 @@ if (isset($_POST['send-profile'])) :
 
 UPDATE registros 
 SET 
-    registros_name = '{$form['registros_name']}',
-    registros_birth = '{$form['registros_birth']}',
-    registros_telefone = '{$form['registros_telefone']}'
+    registros_cep = '{$form['registros_cep']}',
+    registros_address = '{$form['registros_address']}',
+    registros_number = '{$form['registros_number']}',
+    registros_district = '{$form['registros_district']}',
+    registros_city = '{$form['registros_city']}'
         
 
 WHERE registros_id = '{$user['registros_id']}' 
@@ -68,13 +66,13 @@ SQL;
         else :
 
             // Obtém somente primeiro nome do rementente.
-            $first_name = explode(" ", $form['registros_name'])[0];
+            $first_name = explode(" ", $user['registros_name'])[0];
 
             // Cria mensagem de confirmação.
             $form['feedback'] = <<<OUT
                     
                 <h3>Olá {$first_name}!</h3>
-                <p>Seu cadastro foi atualizado com sucesso.</p>
+                <p>Seu Endereço foi atualizado com sucesso.</p>
                 <p><em>Obrigado...</em></p>
                 
 OUT;
@@ -117,6 +115,13 @@ endif;
  // Opção ativa no menu
  $page_menu = "logged";
  
+
+ // Define o título DESTA página.
+ $page_title = "";
+
+ // Opção ativa no menu
+ $page_menu = "logged";
+ 
  
  // Inclui o cbeçalho da página
  require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
@@ -129,7 +134,7 @@ endif;
     <h2>MINHA CONTA</h2>
 </div>
 
-<main class = 'main-profil'>
+<main class="main-profil">
 
     <div class="profil">
         <img src="/user/imguser/userpicture.jpeg" alt="">
@@ -161,39 +166,45 @@ endif;
 
 
 
-<div class="alteration">
-
-<h2>Editar perfil</h2>
+<div class="infos">
 
 <?php echo $form['feedback']; ?>
 
 <?php if ($show_form) : ?>
 
+<h2>Editar Endereço</h2>
+        <p >Os endereços a seguir serão usados na pagina de filalização de compra por padrão.</p>
+
+
     <p>Altere os dados no formulário abaixo:</p>
 
-    <form class="alter" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" name="edit-profile">
+    <form class="alter" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" name="edit-address">
 
-        <input type="hidden" name="send-profile" value="true">
+        <input type="hidden" name="send-address" value="true">
 
         <p>
-            <label for="name">Nome *</label>
-            <input type="text" name="name" id="name" placeholder="Seu nome completo." value="<?php echo $form['registros_name'] ?>" >
+            <label for="cep">Cep *</label>
+            <input type="text" name="cep" id="cep" placeholder="Seu cep." value="<?php echo $form['registros_cep'] ?>" >
         </p>
 
         <p>
-            <label for="email">E-mail *</label>
-            <input type="email" name="email" id="email" placeholder="Seu e-mail principal." value="<?php echo $form['registros_email'] ?>" disabled>
-        </p>
-
-
-        <p>
-            <label for="telefone">Telefone *</label>
-            <input type="text" name="telefone" id="telefone" placeholder="Seu telefone" value="<?php echo $form['registros_telefone'] ?>">
+            <label for="address">Endereço *</label>
+            <input type="text" name="address" id="address" placeholder="Seu e-mail principal." value="<?php echo $form['registros_address'] ?>" >
         </p>
 
         <p>
-            <label for="birth">Nascimento *</label>
-            <input type="date" name="birth" id="birth" placeholder="Sua data de nascimento" value="<?php echo $form['registros_birth'] ?>">
+            <label for="number">Número *</label>
+            <input type="text" name="number" id="number" placeholder="Seu cep" value="<?php echo $form['registros_number'] ?>">
+        </p>
+
+        <p>
+            <label for="district">Bairro *</label>
+            <input type="text" name="district" id="district" placeholder="Seu telefone" value="<?php echo $form['registros_district'] ?>">
+        </p>
+
+        <p>
+            <label for="city">Cidade *</label>
+            <input type="text" name="city" id="city" placeholder="Sua data de nascimento" value="<?php echo $form['registros_city'] ?>">
         </p>
 
         <p>
@@ -211,9 +222,10 @@ endif;
 
 <?php endif; ?>
 
-</div>
 
 </main>
+
+
  
 <?php
 

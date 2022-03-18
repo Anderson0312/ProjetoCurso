@@ -86,7 +86,7 @@ label {
 .button {
     width: 100%;
     text-align: center;
-
+    border-radius: 5px;
 }
 
 .txtbutton {

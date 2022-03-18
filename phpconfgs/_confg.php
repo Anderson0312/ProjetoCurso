@@ -139,7 +139,7 @@
 
     // Valida datas
 
-    function validateDate($date, $format ='Y-m-d') 
+    function validate_date($date, $format ='Y-m-d') 
     {
         $d = Datetime::createFromFormat($format, $date);
         return $d && $d->format($format) == $date;

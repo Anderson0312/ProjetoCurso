@@ -28,6 +28,10 @@ CREATE TABLE registros (
     registros_telefone bigint NOT NULL,
     registros_nomeentrega VARCHAR(255),
     registros_cep INT NOT NULL,
+    registros_address VARCHAR(255) NOT NULL,
+    registros_number VARCHAR(255) NOT NULL,
+    registros_district VARCHAR(255) NOT NULL,
+    registros_city VARCHAR(255) NOT NULL,
 
     registros_status ENUM('analysis', 'confirmed', 'deleted') NOT NULL DEFAULT 'confirmed'
 );
@@ -42,7 +46,11 @@ CREATE TABLE registros (
         registros_password,
         registros_telefone,
         registros_nomeentrega,
-        registros_cep
+        registros_cep,
+        registros_address,
+        registros_number,
+        registros_district,
+        registros_city
            
 ) VALUES (
     'joca@silva.com',
@@ -53,7 +61,11 @@ CREATE TABLE registros (
     SHA2('050200', 512),
     '21989419431',
     'anderson moura',
-    '2198461'
+    '2198461',
+    'rua dos manjollos',
+    'casa 693 fundos',
+    'ilha do governador',
+    'Rio de janeiro'
 );
 
 

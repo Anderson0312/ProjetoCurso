@@ -20,6 +20,11 @@ $form = [
     'telefone' => '',
     'nomedest' => '',
     'cep' => '',
+    'address' => '',
+    'number' => '',
+    'district' => '',
+    'city' => '',
+
     'feedback' => ''
 ];
 
@@ -42,9 +47,13 @@ if (isset($_POST['send'])) :
     $form['telefone'] = sanitize('phone', 'string');
     $form['nomedest'] = sanitize('receber', 'string');
     $form['cep'] = sanitize('cep', 'string');
+    $form['address'] = sanitize('address', 'string');
+    $form['number'] = sanitize('number', 'string');
+    $form['district'] = sanitize('district', 'string');
+    $form['city'] = sanitize('city', 'string');
 
     // Verifica se todos os campos form preenchidos
-    if ($form['email'] === '' or $form['cpf'] === '' or $form['name'] === '' or $form['birth'] === '' or $form['genero'] === '' or $form['password'] === '' or $form['password2'] === '' or $form['telefone'] === '' or $form['nomedest'] === '' or $form['cep'] === '') :
+    if ($form['email'] === '' or $form['cpf'] === '' or $form['name'] === '' or $form['birth'] === '' or $form['genero'] === '' or $form['password'] === '' or $form['password2'] === '' or $form['telefone'] === '' or $form['nomedest'] === '' or $form['cep'] === '' or $form['address'] === '' or $form['number'] === '' or $form['district'] === '' or $form['city'] === '') :
         $form['feedback'] = '<h3 style="color:red">Erro: por favor, preencha todos os campos!</h3>';
 
     // Verifica se as senhas digitadas coincidem
@@ -52,7 +61,7 @@ if (isset($_POST['send'])) :
         $form['feedback'] = '<h3 style="color:red">Erro: as senhas não coincidem!</h3>';
         $form['password'] = $form['password2'] = '';
 
-    elseif (!validateDate($form['birth'])) :
+    elseif (!validate_date($form['birth'])) :
         $form['feedback'] = '<h3 style="color:red">Erro: a data de nascimento está incorreta!</h3>';
         $form['birth'] = '';
 
@@ -83,7 +92,11 @@ if (isset($_POST['send'])) :
         registros_password,
         registros_telefone,
         registros_nomeentrega,
-        registros_cep
+        registros_cep,
+        registros_address,
+        registros_number,
+        registros_district,
+        registros_city
         
     ) VALUES (
         '{$form['email']}',
@@ -94,7 +107,11 @@ if (isset($_POST['send'])) :
         SHA2('{$form['password']}', 512),
         '{$form['telefone']}',
         '{$form['nomedest']}',
-        '{$form['cep']}'
+        '{$form['cep']}',
+        '{$form['address']}',
+        '{$form['number']}',
+        '{$form['district']}',
+        '{$form['city']}'
     );
 
 SQL;
@@ -237,6 +254,26 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
             <div>
                 <label for="cep">CEP *</label>
                 <input type="number" name="cep" id="cep" class="dados">
+            </div>
+
+            <div>
+                <label for="address">Endereço *</label>
+                <input type="text" name="address" id="address" class="dados">
+            </div>
+
+            <div>
+                <label for="number">Número *</label>
+                <input type="text" name="number" id="number" class="dados">
+            </div>
+
+            <div>
+                <label for="district">Bairro *</label>
+                <input type="text" name="district" id="district" class="dados">
+            </div>
+
+            <div>
+                <label for="city">Cidade *</label>
+                <input type="text" name="city" id="city" class="dados">
             </div>
 
 
