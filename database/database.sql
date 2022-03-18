@@ -71,18 +71,7 @@ CREATE TABLE registros (
 
 
 
-
-
-
-
-
-
-
-
-
 -----------------------------products of website---------------------------
-
-
 
 
 -- Cria tabela para armazenar os {shirts} para test do aplicativo.
@@ -93,7 +82,7 @@ CREATE TABLE shirts (
     shirts_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
     shirts_descript VARCHAR(255) NOT NULL,
     shirts_team VARCHAR(50) NOT NULL,
-    shirts_zise VARCHAR(50) NOT NULL,
+    shirts_size VARCHAR(50) NOT NULL,
     shirts_colors VARCHAR(50) NOT NULL,
     shirts_price INT NOT NULL,
     shirts_amount INT NOT NULL,
@@ -107,7 +96,7 @@ INSERT INTO `shirts` (
     `shirts_image`, 
     `shirts_descript`, 
     `shirts_team`,
-    `shirts_zise`, 
+    `shirts_size`, 
     `shirts_colors`,
     `shirts_amount`,
     `shirts_price`
@@ -128,7 +117,7 @@ INSERT INTO `shirts` (
     `shirts_image`, 
     `shirts_descript`, 
     `shirts_team`,
-    `shirts_zise`, 
+    `shirts_size`, 
     `shirts_colors`,
     `shirts_amount`,
     `shirts_price`
@@ -150,7 +139,7 @@ INSERT INTO `shirts` (
     `shirts_image`, 
     `shirts_descript`, 
     `shirts_team`,
-    `shirts_zise`, 
+    `shirts_size`, 
     `shirts_colors`,
     `shirts_amount`,
     `shirts_price`
@@ -179,7 +168,7 @@ CREATE TABLE coats (
     coats_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
     coats_descript VARCHAR(255) NOT NULL,
     coats_team VARCHAR(50) NOT NULL,
-    coats_zise VARCHAR(50) NOT NULL,
+    coats_size VARCHAR(50) NOT NULL,
     coats_colors VARCHAR(50) NOT NULL,
     coats_price INT NOT NULL,
     coats_amount INT NOT NULL,
@@ -196,7 +185,7 @@ CREATE TABLE newcolecion (
     newcolecion_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
     newcolecion_descript VARCHAR(255) NOT NULL,
     newcolecion_team VARCHAR(50) NOT NULL,
-    newcolecion_zise VARCHAR(50) NOT NULL,
+    newcolecion_size VARCHAR(50) NOT NULL,
     newcolecion_colors VARCHAR(50) NOT NULL,
     newcolecion_price INT NOT NULL,
     newcolecion_amount INT NOT NULL,
@@ -212,7 +201,7 @@ CREATE TABLE accessories (
     accessories_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
     accessories_descript VARCHAR(255) NOT NULL,
     accessories_team VARCHAR(50) NOT NULL,
-    accessories_zise VARCHAR(50) NOT NULL,
+    accessories_size VARCHAR(50) NOT NULL,
     accessories_colors VARCHAR(50) NOT NULL,
     accessories_price INT NOT NULL,
     accessories_amount INT NOT NULL,
