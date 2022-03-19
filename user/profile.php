@@ -153,6 +153,10 @@ endif;
             <h3>DETALHES DA CONTA</h3>
         </a>
 
+        <a href="/user/password.php">
+            <h3>ALTERAR SENHA</h3>
+        </a>
+
         <a href="/user/logout.php">
             <h3>SAIR</h3>
         </a>

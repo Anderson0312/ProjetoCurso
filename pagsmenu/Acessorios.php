@@ -19,7 +19,7 @@ $accessories_list = '';
  */
 $sql = <<<SQL
 
-SELECT accessories_id, accessories_title, accessories_image, accessories_descript, accessories_zise, accessories_team, accessories_colors, accessories_price
+SELECT accessories_id, accessories_title, accessories_image, accessories_descript, accessories_size, accessories_team, accessories_colors, accessories_price
 FROM accessories 
 WHERE accessories_status = 'on' AND accessories_date <= NOW() 
 ORDER BY accessories_date DESC;

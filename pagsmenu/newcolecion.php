@@ -19,7 +19,7 @@ $newcolecion_list = '';
  */
 $sql = <<<SQL
 
-SELECT newcolecion_id, newcolecion_title, newcolecion_image, newcolecion_descript, newcolecion_zise, newcolecion_team, newcolecion_colors, newcolecion_price
+SELECT newcolecion_id, newcolecion_title, newcolecion_image, newcolecion_descript, newcolecion_size, newcolecion_team, newcolecion_colors, newcolecion_price
 FROM newcolecion 
 WHERE newcolecion_status = 'on' AND newcolecion_date <= NOW() 
 ORDER BY newcolecion_date DESC;

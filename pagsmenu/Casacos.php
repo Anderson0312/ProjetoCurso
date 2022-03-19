@@ -19,7 +19,7 @@ $coats_list = '';
  */
 $sql = <<<SQL
 
-SELECT coats_id, coats_title, coats_image, coats_descript, coats_zise, coats_team, coats_colors, coats_price
+SELECT coats_id, coats_title, coats_image, coats_descript, coats_size, coats_team, coats_colors, coats_price
 FROM coats 
 WHERE coats_status = 'on' AND coats_date <= NOW() 
 ORDER BY coats_date DESC;

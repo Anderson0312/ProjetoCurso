@@ -50,6 +50,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
             <h3>DETALHES DA CONTA</h3>
         </a>
 
+        <a href="/user/password.php">
+            <h3>ALTERAR SENHA</h3>
+        </a>
+
         <a href="/user/logout.php">
             <h3>SAIR</h3>
         </a>
@@ -73,14 +77,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
     </div>
 
     <div class="buttons">
-
         <a href="/user/logged.php"><p>Painel</p></a>
-        <a href="/user/request.php"><p>Pedidos</p></a>
+        <a href=""><p>Pedidos</p></a>
         <a href="/user/address.php"><p>Endereço</p></a>
         <a href="/user/profile.php"><p>Detalhes da conta</p></a>
+        <a href="/user/password.php"><p>Alterar senha</p></a>
         <a href="/user/logout.php"><p>Sair</p></a>
-
     </div>
+
 
 
 </main>

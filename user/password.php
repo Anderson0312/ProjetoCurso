@@ -6,28 +6,32 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 /*******************************************
  * Seu código PHP desta página entra aqui! *
  *******************************************/
-// Variáveis do script
+
+ 
+ // Variáveis do script
 $form['feedback'] = '';
 $show_form = true;
 
 // Se não estiver logado, vai para a 'index'.
 if (!isset($_COOKIE['user'])) header('Location: /');
 
-if (isset($_POST['send-address'])) :
+if (isset($_POST['send-password'])) :
 
     // debug($_POST);
 
     // Obtém os valores dos campos, sanitiza e armazena nas variáveis.
-    $form['registros_cep'] = sanitize('cep', 'string');
-    $form['registros_address'] = sanitize('address', 'string');
-    $form['registros_number'] = sanitize('number', 'string');
-    $form['registros_district'] = sanitize('district', 'string');
-    $form['registros_city'] = sanitize('city', 'string');
-    $form['registros_password'] = sanitize('password', 'string');
-    
+    $form['registros_passwordold'] = sanitize('passwordold', 'string');
+    $form['registros_passwordnew'] = sanitize('passwordnew', 'string');
+    $form['registros_passwordnew2'] = sanitize('passwordnew2', 'string');
+
     // Verifica se todos os campos form preenchidos
-    if ($form['registros_cep'] === '' or $form['registros_password'] === '' or $form['registros_address'] === '' or $form['registros_number'] === '' or $form['registros_district'] === '' or $form['registros_city'] === '') :
+    if ($form['registros_passwordold'] === '' or $form['registros_passwordnew'] === '' or $form['registros_passwordnew2'] === '') :
         $form['feedback'] = '<h3 style="color:red">Erro: por favor, preencha todos os campos!</h3>';
+
+    // Verifica se as senhas digitadas coincidem
+    elseif ($form['registros_passwordnew'] !== $form['registros_passwordnew2']) :
+        $form['feedback'] = '<h3 style="color:red">Erro: as senhas não coincidem!</h3>';
+        $form['registros_passwordnew'] = $form['registros_passwordnew2'] = '';
 
     else :
 
@@ -36,15 +40,10 @@ if (isset($_POST['send-address'])) :
 
 UPDATE registros 
 SET 
-    registros_cep = '{$form['registros_cep']}',
-    registros_address = '{$form['registros_address']}',
-    registros_number = '{$form['registros_number']}',
-    registros_district = '{$form['registros_district']}',
-    registros_city = '{$form['registros_city']}'
-        
-
+    registros_password = SHA2('{$form['registros_passwordnew']}',512)
 WHERE registros_id = '{$user['registros_id']}' 
-AND registros_password = SHA2('{$form['registros_password']}', 512);
+AND registros_password = SHA2('{$form['registros_passwordold']}', 512);
+
 
 SQL;
 
@@ -65,14 +64,11 @@ SQL;
         // Se deu tudo certo...
         else :
 
-            // Obtém somente primeiro nome do rementente.
-            $first_name = explode(" ", $user['registros_name'])[0];
-
             // Cria mensagem de confirmação.
             $form['feedback'] = <<<OUT
                     
-                <h3>Olá {$first_name}!</h3>
-                <p>Seu Endereço foi atualizado com sucesso.</p>
+                <h3>Olá </h3>
+                <p>Sua atualizado foi enviado.</p>
                 <p><em>Obrigado...</em></p>
                 
 OUT;
@@ -109,32 +105,20 @@ SQL;
 
 endif;
 
- // Define o título DESTA página.
- $page_title = "";
-
- // Opção ativa no menu
- $page_menu = "logged";
- 
-
- // Define o título DESTA página.
- $page_title = "";
-
- // Opção ativa no menu
- $page_menu = "logged";
- 
- 
  // Inclui o cbeçalho da página
- require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
- 
+require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
+
 ?>
 
 <link rel="stylesheet" href="/css/styleprofil.css">
+
+
 
 <div class='secondheader'>
     <h2>MINHA CONTA</h2>
 </div>
 
-<main class="main-profil">
+<main class = 'main-profil'>
 
     <div class="profil">
         <img src="/user/imguser/userpicture.jpeg" alt="">
@@ -168,52 +152,32 @@ endif;
     </div>
 
 
-
-
-<div class="infos">
-
-<?php echo $form['feedback']; ?>
+    <div class="alteration">
+        <h2>Editar Senha</h2>
+    
+        <?php echo $form['feedback']; ?>
 
 <?php if ($show_form) : ?>
 
-<h2>Editar Endereço</h2>
-        <p >Os endereços a seguir serão usados na pagina de filalização de compra por padrão.</p>
-
-
     <p>Altere os dados no formulário abaixo:</p>
 
-    <form class="alter" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" name="edit-address">
+    <form class="alter" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" name="edit-profile">
 
-        <input type="hidden" name="send-address" value="true">
+        <input type="hidden" name="send-password" value="true">
 
         <p>
-            <label for="cep">Cep *</label>
-            <input type="text" name="cep" id="cep" placeholder="Seu cep." value="<?php echo $form['registros_cep'] ?>" >
+            <label for="passwordold">Senha Atual *</label>
+            <input type="password" name="passwordold" id="passwordold" placeholder="Sua senha atual." value="">
         </p>
 
         <p>
-            <label for="address">Endereço *</label>
-            <input type="text" name="address" id="address" placeholder="Seu e-mail principal." value="<?php echo $form['registros_address'] ?>" >
+            <label for="passwordnew">Senha Nova *</label>
+            <input type="password" name="passwordnew" id="passwordnew" placeholder="Sua nova senha." value="">
         </p>
 
         <p>
-            <label for="number">Número *</label>
-            <input type="text" name="number" id="number" placeholder="Seu cep" value="<?php echo $form['registros_number'] ?>">
-        </p>
-
-        <p>
-            <label for="district">Bairro *</label>
-            <input type="text" name="district" id="district" placeholder="Seu telefone" value="<?php echo $form['registros_district'] ?>">
-        </p>
-
-        <p>
-            <label for="city">Cidade *</label>
-            <input type="text" name="city" id="city" placeholder="Sua data de nascimento" value="<?php echo $form['registros_city'] ?>">
-        </p>
-
-        <p>
-            <label for="password">Senha atual *</label>
-            <input type="password" name="password" id="password" placeholder="Sua senha." value="">
+            <label for="passwordnew2">Confirmação da Senha *</label>
+            <input type="password" name="passwordnew2" id="passwordnew2" placeholder="Confirme a senha." value="">
         </p>
 
         <div class="btn-edit">
@@ -226,11 +190,16 @@ endif;
 
 <?php endif; ?>
 
+</div>
+
+
+
 
 </main>
 
 
- 
+
+
 <?php
 
 // Inclui o rodapé da página

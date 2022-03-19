@@ -19,7 +19,7 @@ $shirts_list = '';
  */
 $sql = <<<SQL
 
-SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_zise, shirts_team, shirts_colors, shirts_price
+SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_colors, shirts_price
 FROM shirts 
 WHERE shirts_status = 'on' AND shirts_date <= NOW() 
 ORDER BY shirts_date DESC;
