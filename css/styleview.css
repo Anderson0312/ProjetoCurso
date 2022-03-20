@@ -1,11 +1,16 @@
 
 
-.view-product {
-    padding: 1.2rem;
-}
+
+@media (max-width: 768px) {
+
+    .view-product {
+        padding: 1.2rem;
+    }
 
 .imgs-view-product div {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .imgs-view-product .img-princ {
@@ -38,6 +43,141 @@
 
 .payment p {
     font-size: 0.9rem;
+    font-weight: 600;
+    color: black;
+}
+
+.zise-shirt div {
+    display: flex;
+}
+
+.zise-shirt #p-size {
+    font-weight: 700;
+    color: black;
+    padding-top: 1rem;
+}
+
+.zise-shirt div p {
+    color: black;
+    width: 2.6rem;
+    height: 2.6rem;
+    border: 1px solid gray;
+    margin-left: 0.2rem;
+    justify-content: center;
+    text-align: center;
+    padding-top:0.5rem;
+    border-radius: 3px;
+}
+
+.zise-shirt div p:hover {
+    background-color: rgba(128, 128, 128, 0.384);
+    border: 2px solid black;
+}
+
+
+.btn-buy{
+    background-color: black;
+    color: white;
+    width: 320px;
+    padding: 1rem;   
+    border-radius: 0.4rem;
+}
+
+.btn-buy:hover {
+    background-color: rgb(23, 66, 23);
+}
+
+.frete p {
+    color: black;
+    font-weight: 600;
+    padding-top: .8rem;
+}
+
+.frete input {
+    border: 1px solid rgba(0, 0, 0, 0.377);
+    padding: .5rem;
+    font-size: .9rem;
+    border-radius: .3rem;
+    margin-bottom: 1rem;
+    width: 7rem
+}
+
+.frete button {
+    background-color: black;
+    color: white;
+    padding: .6rem;
+    border-radius: .3rem;
+    margin-left: .5rem;
+}
+
+.table-installment {
+    border: 1px solid rgba(128, 128, 128, 0.404);
+    width: 100%;
+}
+
+.table-installment thead{
+    text-align: left;
+}
+
+td{
+    border-top: 1px solid rgba(0, 0, 0, 0.274);
+}
+
+}
+
+
+
+
+@media (min-width: 769px) {
+
+    .view-product {
+        padding: 1.2rem;
+        display: flex;
+        max-width: 70%;
+        margin: auto;
+    }
+
+.imgs-view-product div {
+        position: relative;
+        transform: translate3d(0px, 0px, 0px);
+        display: flex;
+        margin-right: 5rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+.imgs-view-product .img-princ {
+    max-width: 400px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.imgs-view-product div img {
+    opacity: 0.6;
+}
+
+.imgs-view-product div img:hover {
+    opacity: 1;
+    border: 1px solid rgba(128, 128, 128, 0.541);
+}
+
+.imgs-view-product  div img {
+    width: 100px;
+    height: 100px;
+}
+
+.navegation {
+    padding-top: 10px;
+}
+
+.title-product-view {
+    padding: 1rem 0 1rem 0;
+    font-size: 2rem;
+}
+
+.payment p {
+    font-size: 1.1rem;
     font-weight: 600;
     color: black;
 }
@@ -112,8 +252,18 @@
 
 .table-installment thead{
     text-align: left;
+    font-size: 1.1rem;
 }
 
-td{
+.table-installment td{
     border-top: 1px solid rgba(0, 0, 0, 0.274);
+    font-size: 1.1rem;
 }
+
+.product-info {
+    margin-left: 3rem;
+}
+}
+
+
+

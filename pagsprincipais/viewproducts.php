@@ -49,87 +49,122 @@ $shirt_view = <<<HTML
         </div>
     </div>
 
-    <p class="navegation">
-        <a href="/pagsprincipais/index.php">Home  >></a>
-        <a href="/pagsprincipais/index.php">Loja</a>
-    </p>
+
+    <div class="product-info">
+        <p class="navegation">
+            <a href="/pagsprincipais/index.php">Home  >></a>
+            <a href="/pagsprincipais/index.php">Loja</a>
+        </p>
 
 
-    <h2 class = "title-product-view">
-        {$shirt['shirts_title']}
-    </h2>
+        <h2 class = "title-product-view">
+            {$shirt['shirts_title']}
+        </h2>
 
 
-    <div class="payment">
+        <div class="payment">
 
-        <p>R$ {$shirt['shirts_price']}</p>
-        <p> 3x de  <strong>({$shirt['shirts_price']} / 2) </strong> </p>
+            <p>R$ {$shirt['shirts_price']}</p>
+            <p> 3x de  <strong>({$shirt['shirts_price']} / 2) </strong> </p>
 
-    </div>
-
-
-    <div class="zise-shirt">
-        <p id="p-size">Tamanho: </p>
-
-        <div> 
-            <p>P</p>
-
-            <p>M</p>
-
-            <p>G</p>  
-
-            <p>GG</p>  
         </div>
-    </div>
 
 
+        <div class="zise-shirt">
+            <p id="p-size">Tamanho: </p>
 
+            <div> 
+                <p>P</p>
 
-        
-    <div class="inputs-buy">
+                <p>M</p>
 
+                <p>G</p>  
 
-            <div class="input-mount">
-                <p>#</p>
+                <p>GG</p>  
             </div>
-
-            <a href="/pagsprincipais/cart.php"><button class="btn-buy">COMPRAR</button></a>
-
-        <div class="frete">
-            <p>Calcular o prazo e valor do frete</p>
-
-            <input type="text"><a href=""><button>CALCULAR</button></a>
-
         </div>
+            
+
+        <div class="inputs-buy">
+
+
+                <div class="input-mount">
+                    <p>#</p>
+                </div>
+
+                <a href="/pagsprincipais/cart.php"><button class="btn-buy">COMPRAR</button></a>
+
+            <div class="frete">
+                <p>Calcular o prazo e valor do frete</p>
+
+                <input type="text"><a href=""><button>CALCULAR</button></a>
+
+            </div>
+        </div>
+
+
+        <table class="table-installment">
+
+            <thead>
+                <tr>
+                    <th>PARCELAMENTO</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1x DE <strong>R$ {$shirt['shirts_price']} </strong></td>
+                    <td><strong>R$ {$shirt['shirts_price']}</strong></td>
+                </tr>
+
+                <tr>
+                    <td>2x DE <strong>R$ {$shirt['shirts_price']}/ 2)</strong></td>
+                    <td><strong>R$ {$shirt['shirts_price']}</strong></td>
+                </tr>
+
+                <tr>
+                    <td>3x DE <strong>R$ ({$shirt['shirts_price']}/ 3)</strong></td>
+                    <td><strong>R$ {$shirt['shirts_price']}</strong></td>
+                </tr>
+            </tbody>
+
+
+        </table>
     </div>
 
-    <table class="table-installment">
 
-        <thead>
-            <tr>
-                <th>PARCELAMENTO</th>
-            </tr>
-        </thead>
+    <div>
+        <table>
 
-        <tbody>
-            <tr>
-                <td>1x DE <strong>R$ {$shirt['shirts_price']} </strong></td>
-                <td><strong>R$ {$shirt['shirts_price']}</strong></td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>DISCIÇÃO</th>
+                </tr>
+                <tr>
+                    <th>INFORMAÇÃO ADICIONAL</th>
+                </tr>
+                <tr>
+                    <th>AVALIAÇÃO</th>
+                </tr>
+            </thead>
 
-            <tr>
-                <td>2x DE <strong>R$ {$shirt['shirts_price']}/ 2)</strong></td>
-                <td><strong>R$ {$shirt['shirts_price']}</strong></td>
-            </tr>
-
-            <tr>
-                <td>3x DE <strong>R$ ({$shirt['shirts_price']}/ 3)</strong></td>
-                <td><strong>R$ {$shirt['shirts_price']}</strong></td>
-            </tr>
-        </tbody>
-
-
-    </table>
+            <tbody>
+                <tr>
+                    <td>{$shirt['shirts_title']}</td>
+                </tr>
+                <tr>
+                    <td><strong>-Tecido:</strong> </td>
+                </tr>
+                <tr>
+                    <td><strong>-Detalhes:</strong> </td>
+                </tr>
+                <tr>
+                    <td>Sobre nós: </td>
+                </tr>
+            </tbody>
+            
+        </table>
+    </div>
 
 HTML;
 
