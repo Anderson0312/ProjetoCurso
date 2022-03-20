@@ -71,7 +71,7 @@ CREATE TABLE registros (
 
 
 
------------------------------products of website---------------------------
+
 
 
 -- Cria tabela para armazenar os {shirts} para test do aplicativo.
@@ -153,6 +153,8 @@ INSERT INTO `shirts` (
     '100',
     '129.90'
 );
+
+
 
 
 

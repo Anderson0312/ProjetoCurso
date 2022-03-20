@@ -31,19 +31,21 @@ while ($art = $res->fetch_assoc()) {
 
     $shirts_list .= <<<HTML
 
-<div class="product-item">
 
-    <div class="product-item-img">
-        <a href="/pagsmenu/brasileiro.php?id={$art['shirts_id']}"><img src="{$art['shirts_image']}" class="img_itens" alt="{$art['shirts_title']}"></a>
+    <div class="product-item">
+    
+        <div class="product-item-img">
+            <a href="/pagsprincipais/viewproducts.php?id={$art['shirts_id']}"><img src="{$art['shirts_image']}" class="img_itens" alt="{$art['shirts_title']}"></a>
+        </div>
+    
+        <div class="product-item-desc">
+            <h3><a href="/pagsprincipais/viewproducts.php?id={$art['shirts_id']}">{$art['shirts_title']}</a></h3>
+            <p class="description">{$art['shirts_descript']}</p>
+            <span class="product-price">R$ {$art['shirts_price']}</span>
+        </div>
+    
     </div>
 
-    <div class="product-item-desc">
-        <h3><a href="/pagsmenu/brasileiro.php?id={$art['shirts_id']}">{$art['shirts_title']}</a></h3>
-        <p class="description">{$art['shirts_descript']}</p>
-        <span class="product-price">R$ {$art['shirts_price']}</span>
-    </div>
-
-</div>
 
 HTML;
 }
