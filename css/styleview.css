@@ -67,6 +67,7 @@
     text-align: center;
     padding-top:0.5rem;
     border-radius: 3px;
+    margin-bottom: 0.4rem;
 }
 
 .zise-shirt div p:hover {
@@ -78,9 +79,10 @@
 .btn-buy{
     background-color: black;
     color: white;
-    width: 320px;
+    width: 250px;
     padding: 1rem;   
     border-radius: 0.4rem;
+    margin-top: 0.4rem;
 }
 
 .btn-buy:hover {
@@ -123,19 +125,25 @@ td{
     border-top: 1px solid rgba(0, 0, 0, 0.274);
 }
 
+.table-description {
+    width: 100%;
+    margin-top: 2rem;
+    border: 1px solid rgba(0, 0, 0);
+    text-align: left;
 }
 
+}
 
 
 
 @media (min-width: 769px) {
 
-    .view-product {
-        padding: 1.2rem;
-        display: flex;
-        max-width: 70%;
-        margin: auto;
-    }
+.container-view-product {
+    display: flex;
+    width: 70%;
+    margin: auto;
+}
+
 
 .imgs-view-product div {
         position: relative;
@@ -263,7 +271,21 @@ td{
 .product-info {
     margin-left: 3rem;
 }
+
+.div-table-description {
+    padding: 1rem;
 }
+
+.table-description {
+    margin-top: 2rem;
+    border: 1px solid rgba(0, 0, 0);
+    width: 80%;
+    margin: auto;
+    text-align: left;
+}
+
+}
+
 
 
 

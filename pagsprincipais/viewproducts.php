@@ -40,6 +40,8 @@ $shirt = $res->fetch_assoc();
 
 $shirt_view = <<<HTML
 
+
+<div class="container-view-product">
     <div class="imgs-view-product">
         <img class="img-princ" src="{$shirt['shirts_image']}" alt="">
         <div>
@@ -127,18 +129,18 @@ $shirt_view = <<<HTML
                     <td><strong>R$ {$shirt['shirts_price']}</strong></td>
                 </tr>
             </tbody>
-
-
         </table>
+
     </div>
+</div>
 
 
-    <div>
-        <table>
+    <div class="div-table-description">
+        <table class="table-description">
 
             <thead>
                 <tr>
-                    <th>DISCIÇÃO</th>
+                    <th>DESCRIÇÃO</th>
                 </tr>
                 <tr>
                     <th>INFORMAÇÃO ADICIONAL</th>
@@ -150,7 +152,7 @@ $shirt_view = <<<HTML
 
             <tbody>
                 <tr>
-                    <td>{$shirt['shirts_title']}</td>
+                    <td><strong>{$shirt['shirts_title']}</strong></td>
                 </tr>
                 <tr>
                     <td><strong>-Tecido:</strong> </td>
@@ -159,12 +161,14 @@ $shirt_view = <<<HTML
                     <td><strong>-Detalhes:</strong> </td>
                 </tr>
                 <tr>
-                    <td>Sobre nós: </td>
+                    <td><strong>Sobre nós:</strong> </td>
                 </tr>
             </tbody>
             
         </table>
     </div>
+
+
 
 HTML;
 
@@ -184,7 +188,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
     <div class="view-product">
     
         <?php echo $shirt_view ?>
-        
+
     </div>
 
 
