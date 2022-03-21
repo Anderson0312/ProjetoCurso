@@ -94,7 +94,7 @@ $shirt_view = <<<HTML
                     <p>#</p>
                 </div>
 
-                <a href="/pagsprincipais/cart.php"><button class="btn-buy">COMPRAR</button></a>
+                <a href="/pagsprincipais/cart.php?id={$shirt['shirts_id']}"><button class="btn-buy">COMPRAR</button></a>
 
             <div class="frete">
                 <p>Calcular o prazo e valor do frete</p>

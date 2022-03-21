@@ -18,7 +18,7 @@ $page_menu = "index";
 
 
 // Variável que contém a lista de Camisa (string).
-$shirts_list = '';
+$shirts_bestsellers = $shirts_popular = $shirts_releases = '';
 
 /*
  * Query que obtém só Camisa:
@@ -28,33 +28,195 @@ $shirts_list = '';
  */
 $sql = <<<SQL
 
-SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_colors, shirts_price
+SELECT *
 FROM shirts 
 WHERE shirts_status = 'on' AND shirts_date <= NOW() 
-ORDER BY rand();
+ORDER BY rand(6);
 
 SQL;
 
 $res = $conn->query($sql);
-while ($art = $res->fetch_assoc()) {
+while ($shirts = $res->fetch_assoc()) {
 
-    $shirts_list .= <<<HTML
+    $shirts_bestsellers = <<<HTML
 
 
-    <div class="product-item">
-    
-        <div class="product-item-img">
-            <a href="/pagsprincipais/viewproducts.php?id={$art['shirts_id']}"><img src="{$art['shirts_image']}" class="img_itens" alt="{$art['shirts_title']}"></a>
-        </div>
-    
-        <div class="product-item-desc">
-            <h3><a href="/pagsprincipais/viewproducts.php?id={$art['shirts_id']}">{$art['shirts_title']}</a></h3>
-            <p class="description">{$art['shirts_descript']}</p>
-            <span class="product-price">R$ {$art['shirts_price']}</span>
-        </div>
-    
+<div class="title-colecion">
+        <h1>MAIS VENDIDAS</h1>
     </div>
 
+
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+                    <div class="card-content">
+                        <div class="card">
+                            <img src="{$shirts['shirts_image']}" alt="">
+                            <p class = "product-title">{$shirts['shirts_title']}</p>
+                            <span class="product-price"> {$shirts['shirts_price']}</span>
+                            <p class="product-desc">{$shirts['shirts_descript']}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="item">
+            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+                    <div class="card-content">
+                        <div class="card">
+                            <img src="{$shirts['shirts_image']}" alt="">
+                            <p class = "product-title">{$shirts['shirts_title']}</p>
+                            <span class="product-price"> {$shirts['shirts_price']}</span>
+                            <p class="product-desc">{$shirts['shirts_descript']}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="item">
+            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+                    <div class="card-content">
+                        <div class="card">
+                            <img src="{$shirts['shirts_image']}" alt="">
+                            <p class = "product-title">{$shirts['shirts_title']}</p>
+                            <span class="product-price"> {$shirts['shirts_price']}</span>
+                            <p class="product-desc"> {$shirts['shirts_descript']}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="item">
+            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+                    <div class="card-content">
+                        <div class="card">
+                            <img src="{$shirts['shirts_image']}" alt="">
+                            <p class = "product-title">{$shirts['shirts_title']}</p>
+                            <span class="product-price"> {$shirts['shirts_price']}</span>
+                            <p class="product-desc"> {$shirts['shirts_descript']}</p>
+                        </div>
+                    </div>
+                </a>
+            </div> 
+    </div>
+
+HTML;
+
+    $shirts_popular = <<<HTML
+
+<div class="title-colecion">
+        <h1>RECOMENDADAS</h1>
+    </div>
+
+
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+                    <div class="card-content">
+                        <div class="card">
+                            <img src="{$shirts['shirts_image']}" alt="">
+                            <p class = "product-title">{$shirts['shirts_title']}</p>
+                            <span class="product-price"> {$shirts['shirts_price']}</span>
+                            <p class="product-desc">{$shirts['shirts_descript']}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="item">
+            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+                    <div class="card-content">
+                        <div class="card">
+                            <img src="{$shirts['shirts_image']}" alt="">
+                            <p class = "product-title">{$shirts['shirts_title']}</p>
+                            <span class="product-price"> {$shirts['shirts_price']}</span>
+                            <p class="product-desc">{$shirts['shirts_descript']}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="item">
+            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+                    <div class="card-content">
+                        <div class="card">
+                            <img src="{$shirts['shirts_image']}" alt="">
+                            <p class = "product-title">{$shirts['shirts_title']}</p>
+                            <span class="product-price"> {$shirts['shirts_price']}</span>
+                            <p class="product-desc"> {$shirts['shirts_descript']}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="item">
+            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+                    <div class="card-content">
+                        <div class="card">
+                            <img src="{$shirts['shirts_image']}" alt="">
+                            <p class = "product-title">{$shirts['shirts_title']}</p>
+                            <span class="product-price"> {$shirts['shirts_price']}</span>
+                            <p class="product-desc"> {$shirts['shirts_descript']}</p>
+                        </div>
+                    </div>
+                </a>
+            </div> 
+    </div>
+
+HTML;
+
+
+    $shirts_releases = <<<HTML
+
+<div class="title-colecion">
+        <h1>LANÇAMENTOS</h1>
+    </div>
+
+
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+                    <div class="card-content">
+                        <div class="card">
+                            <img src="{$shirts['shirts_image']}" alt="">
+                            <p class = "product-title">{$shirts['shirts_title']}</p>
+                            <span class="product-price"> {$shirts['shirts_price']}</span>
+                            <p class="product-desc">{$shirts['shirts_descript']}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="item">
+            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+                    <div class="card-content">
+                        <div class="card">
+                            <img src="{$shirts['shirts_image']}" alt="">
+                            <p class = "product-title">{$shirts['shirts_title']}</p>
+                            <span class="product-price"> {$shirts['shirts_price']}</span>
+                            <p class="product-desc">{$shirts['shirts_descript']}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="item">
+            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+                    <div class="card-content">
+                        <div class="card">
+                            <img src="{$shirts['shirts_image']}" alt="">
+                            <p class = "product-title">{$shirts['shirts_title']}</p>
+                            <span class="product-price"> {$shirts['shirts_price']}</span>
+                            <p class="product-desc"> {$shirts['shirts_descript']}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <div class="item">
+            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+                    <div class="card-content">
+                        <div class="card">
+                            <img src="{$shirts['shirts_image']}" alt="">
+                            <p class = "product-title">{$shirts['shirts_title']}</p>
+                            <span class="product-price"> {$shirts['shirts_price']}</span>
+                            <p class="product-desc"> {$shirts['shirts_descript']}</p>
+                        </div>
+                    </div>
+                </a>
+            </div> 
+    </div>
 
 HTML;
 }
@@ -69,7 +231,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 
 ?>
 
-<?php // Conteúdo ?>
+<?php // Conteúdo 
+?>
 
 
 
@@ -77,136 +240,23 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 <!----------------- END OF ASIDE -------------------->
 
 
-    <div class="banner">
-        <picture>
-            <source media="(max-width: 426px)" srcset="../imgbanner/bannerpq2.jpeg">
-            <img src="../imgbanner/bannerG.jpeg" alt="">
-        </picture>
-    </div>
+<div class="banner">
+    <picture>
+        <source media="(max-width: 426px)" srcset="../imgbanner/bannerpq2.jpeg">
+        <img src="../imgbanner/bannerG.jpeg" alt="">
+    </picture>
+</div>
 
 
-    <!----------------- END OF BANNER -------------------->
+<!----------------- END OF BANNER -------------------->
 
-    <!----------------- CARD PRODUCT BEST SELLER  -------------------->
-
-    <div class="title-colecion">
-        <h1>MAIS VENDIDAS</h1>
-    </div>
-    <div class="item">
-        <ul id="content-slider" class="content-slider">
-            <li>
-                <a href="/pagsprincipais/viewproducts.php?id={$art['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="/imgproduct/RealMadridPrinc.png" alt="">
-                            <p class = "product-title">Real Madrid Principal</p>
-                            <span class="product-price"> R$129,90</span>
-                            <p class="product-desc"> Camisa Original do Real Madrid</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/pagsprincipais/viewproducts.php">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="/imgproduct/IMG_1609-768x768.png" alt="">
-                            <p class = "product-title">Barcelona</p>
-                            <span class="product-price"> R$129,90</span>
-                            <p class="product-desc"> Camisa Original do Real Madrid</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/pagsprincipais/viewproducts.php">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="/imgproduct/BarcelonaPrinc.png" alt="">
-                            <p class = "product-title">Barcelona Principal</p>
-                            <span class="product-price"> R$129,90</span>
-                            <p class="product-desc"> Camisa Original do Real Madrid</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/pagsprincipais/viewproducts.php">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="/imgproduct/IMG_0604-768x768.png" alt="">
-                            <p class = "product-title">Real Madrid</p>
-                            <span class="product-price"> R$129,90</span>
-                            <p class="product-desc"> Camisa Original do Real Madrid</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/pagsprincipais/viewproducts.php">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="/imgproduct/IMG_1179-768x768.png" alt="">
-                            <p class = "product-title">Real Madrid</p>
-                            <span class="product-price"> R$129,90</span>
-                            <p class="product-desc"> Camisa Original do Real Madrid</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/pagsprincipais/viewproducts.php">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="/imgproduct/RealMadrid.png" alt="">
-                            <p class = "product-title">Real Madrid</p>
-                            <span class="product-price"> R$129,90</span>
-                            <p class="product-desc"> Camisa Original do Real Madrid</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="/pagsprincipais/viewproducts.php">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="/imgproduct/RealMadrid.png" alt="">
-                            <p class = "product-title">Real Madrid</p>
-                            <span class="product-price"> R$129,90</span>
-                            <p class="product-desc"> Camisa Original do Real Madrid</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-
-
-
-    <!----------------- END OF CARD PRODUCT BEST SELLER ---------------->
-
-<!-- 
-    <div class="title-colecion">
-        <h1>NOVA COLEÇÃO</h1>
-    </div>
-    <div class="container-product">
-        <div class="products">
-            <img class = 'img' src="../imgproduct/Barcelona.png" alt="Camisa Barcelona">
-
-            <div class="product-data">
-                <p class="product-title">Barcelona</p>
-                <span class="product-price"> R$129,90</span>
-                <p class="product-description"> Camisa Original do Barcelona</p>
-                <a href="cart.php" class="product-btn">Comprar</a>
-            </div>
-        </div>
-    </div> -->
-
-
-    <!----------------- END OF CARD PRODUCT -------------------->
-
-
+<!----------------- CARD PRODUCT BEST SELLER  -------------------->
+<?php echo $shirts_bestsellers ?>
+<!----------------- END OF CARD PRODUCT BEST SELLER ---------------->
+<?php echo  $shirts_popular ?>
+<!----------------- END OF CARD PRODUCT -------------------->
+<?php echo $shirts_releases ?>
+<!----------------- END OF CARD PRODUCT -------------------->
 
 <?php
 

@@ -4,6 +4,54 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 
 
+/*******************************************
+ * Seu código PHP desta página entra aqui! *
+ *******************************************/
+
+// Variável que contém a lista de camisas (string).
+$product_cart = '';
+
+// obtém o ID da camisa a ser salva no carrinho.
+if (isset($_GET['id'])) {
+    $product_id = intval($_GET['id']);
+} else {
+    $product_id = 0;
+}
+
+// Consulta a camisa pelo ID para
+$sql = <<<SQL
+
+SELECT *, DATE_FORMAT(shirts_date, '%d/%m/%Y às %H:%i') AS shirts_brdate
+FROM shirts 
+WHERE shirts_id = '{$product_id}'
+AND shirts_status = 'on'
+AND shirts_date <= NOW()
+
+SQL;
+
+$res = $conn->query($sql);
+
+$product = $res->fetch_assoc();
+
+$product_cart = <<<HTML
+
+    <div class="product-item">
+        
+        <div class="product-item-img">
+            <a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
+        </div>
+
+        <div class="product-item-desc">
+            <h3><a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}">{$product['shirts_title']}</a></h3>
+            <p class="description">{$product['shirts_descript']}</p>
+            <span class="product-price">R$ {$product['shirts_price']}</span>
+        </div>
+
+    </div>
+
+
+HTML;
+
 // Define o titilo dessa pagina
 $page_title = '';
 
@@ -16,18 +64,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <?php // Conteúdo ?>
 
 
-
-
-
-                <div class="card-content">
-                    <div class="card">
-                        <img src="/imgproduct/RealMadridPrinc.png" alt="">
-                        <p class = "product-title">Real Madrid Principal</p>
-                        <span class="product-price"> R$129,90</span>
-                        <p class="product-desc"> Camisa Original do Real Madrid</p>
-                    </div>
-                </div>
-
+<?php echo $product_cart ?>
 
 
 
