@@ -14,10 +14,14 @@ $product_cart = '';
 // obtém o ID da camisa a ser salva no carrinho.
 if (isset($_GET['id'])) {
     $product_id = intval($_GET['id']);
+    
 } else {
     $product_id = 0;
 }
 
+
+// verifica se tem algo no carrinho
+if ($product_id >= 1)  {
 // Consulta a camisa pelo ID para
 $sql = <<<SQL
 
@@ -51,7 +55,7 @@ $product_cart = <<<HTML
 
 
 HTML;
-
+}
 // Define o titilo dessa pagina
 $page_title = '';
 
@@ -64,7 +68,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <?php // Conteúdo ?>
 
 
-<?php echo $product_cart ?>
+<?php  echo $product_cart ?>
 
 
 

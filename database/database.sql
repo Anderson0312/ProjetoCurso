@@ -108,7 +108,7 @@ INSERT INTO `shirts` (
     'P',
     'Whith',
     '100',
-    '129.90'
+    '129,90'
 );
 
 -- Insere alguns {} para testes.
@@ -129,7 +129,7 @@ INSERT INTO `shirts` (
     'P',
     'red',
     '100',
-    '129.90'
+    '129,90'
 );
 
 
@@ -151,7 +151,7 @@ INSERT INTO `shirts` (
     'P',
     'Black',
     '100',
-    '129.90'
+    '129,90'
 );
 
 

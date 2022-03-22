@@ -78,7 +78,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
     <div class="buttons">
         <a href="/user/logged.php"><p>Painel</p></a>
-        <a href=""><p>Pedidos</p></a>
+        <a href="/user/request.php"><p>Pedidos</p></a>
         <a href="/user/address.php"><p>Endereço</p></a>
         <a href="/user/profile.php"><p>Detalhes da conta</p></a>
         <a href="/user/password.php"><p>Alterar senha</p></a>

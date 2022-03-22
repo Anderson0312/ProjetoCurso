@@ -38,7 +38,7 @@ SQL;
 $res = $conn->query($sql);
 while ($shirts = $res->fetch_assoc()) {
 
-    $shirts_bestsellers = <<<HTML
+$shirts_bestsellers = <<<HTML
 
 
 <div class="title-colecion">
