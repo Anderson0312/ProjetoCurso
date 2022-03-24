@@ -8,7 +8,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  *******************************************/
 
 // Variável que contém a lista de camisas (string).
-$shirt_view = '';
+$shirt_view =  $shirts_likeyou = '' ;
+
 
 // obtém o ID da camisa a ser exibida.
 if (isset($_GET['id'])) {
@@ -174,6 +175,48 @@ HTML;
 
 
 
+
+
+
+
+$sql = <<<SQL
+
+SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_colors, shirts_price
+FROM shirts 
+WHERE shirts_status = 'on' AND shirts_date <= NOW() AND shirts_id <= 8 ; 
+
+SQL;
+
+$res = $conn->query($sql);
+
+while ($carrocel = $res->fetch_assoc()) {
+    
+    
+    $shirts_likeyou .= <<<HTML
+
+       
+    <div class="item">
+        <a href="/pagsprincipais/viewproducts.php?id={$carrocel['shirts_id']}">
+            <div class="card-content">
+                <div class="card">
+                    <img src="{$carrocel['shirts_image']}" alt="">
+                        <p class = "product-title">{$carrocel['shirts_title']}</p>
+                        <span class="product-price"> {$carrocel['shirts_price']}</span>
+                        <p class="product-desc">{$carrocel['shirts_descript']}</p>
+                </div>
+            </div>
+        </a>
+    </div>  
+
+
+
+    HTML;
+}
+
+
+
+
+
 // Inclui o cbeçalho da página
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
@@ -189,6 +232,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
     
         <?php echo $shirt_view ?>
 
+    </div>
+
+    <div class="title-colecion">
+        <h3>VOCÊ VAI GOSTAR</h3>
+    </div>
+
+    <div class="owl-carousel owl-theme">
+        
+            <?php echo $shirts_likeyou ?>
+       
     </div>
 
 

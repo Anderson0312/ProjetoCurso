@@ -152,7 +152,37 @@ INSERT INTO `shirts` (
     'Black',
     '100',
     '129,90'
-);
+),
+(
+    'Flamengo Reserva',
+    '/imgproduct/Barcelona.png',
+    'Camisa Original do Flamengo',
+    'Flamengo',
+    'P',
+    'Black',
+    '100',
+    '129,90'
+),
+(
+    'Flamengo Reserva',
+    '/imgproduct/BarcelonaPrinc.png',
+    'Camisa Original do Flamengo',
+    'Flamengo',
+    'P',
+    'Black',
+    '100',
+    '129,90'
+),
+(
+    'Flamengo Reserva',
+    '/imgproduct/RealMadrid.png',
+    'Camisa Original do Flamengo',
+    'Flamengo',
+    'P',
+    'Black',
+    '100',
+    '129,90'
+)
 
 
 

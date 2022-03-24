@@ -10,15 +10,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 
 // Variável que contém a lista de camisas (string).
 $product_cart = '';
-
+$cart = [];
 // obtém o ID da camisa a ser salva no carrinho.
-if (isset($_GET['id'])) {
-    $product_id = intval($_GET['id']);
-    
-} else {
-    $product_id = 0;
-}
+    if (isset($_GET['id'])) {
+        $product_id = intval($_GET['id']);
+        $cart[] = $product_id; 
+    } else {
+        $product_id = 0;
+    }
 
+debug($cart);
 
 // verifica se tem algo no carrinho
 if ($product_id >= 1)  {

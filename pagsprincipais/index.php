@@ -28,197 +28,81 @@ $shirts_bestsellers = $shirts_popular = $shirts_releases = '';
  */
 $sql = <<<SQL
 
-SELECT *
+SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_colors, shirts_price
 FROM shirts 
-WHERE shirts_status = 'on' AND shirts_date <= NOW() 
-ORDER BY rand(6);
+WHERE shirts_status = 'on' AND shirts_date <= NOW() AND shirts_id <= 8; 
+
 
 SQL;
 
+// Executar a query e retorna dados na variável
 $res = $conn->query($sql);
+
+
+
 while ($shirts = $res->fetch_assoc()) {
 
-$shirts_bestsellers = <<<HTML
+    $shirts_bestsellers .= <<<HTML
 
-
-<div class="title-colecion">
-        <h1>MAIS VENDIDAS</h1>
-    </div>
-
-
-    <div class="owl-carousel owl-theme">
-        <div class="item">
-            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="{$shirts['shirts_image']}" alt="">
-                            <p class = "product-title">{$shirts['shirts_title']}</p>
-                            <span class="product-price"> {$shirts['shirts_price']}</span>
-                            <p class="product-desc">{$shirts['shirts_descript']}</p>
-                        </div>
-                    </div>
-                </a>
+       
+    <div class="item">
+        <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+            <div class="card-content">
+                <div class="card">
+                    <img src="{$shirts['shirts_image']}" alt="">
+                        <p class = "product-title">{$shirts['shirts_title']}</p>
+                        <span class="product-price"> {$shirts['shirts_price']}</span>
+                        <p class="product-desc">{$shirts['shirts_descript']}</p>
+                </div>
             </div>
-        <div class="item">
-            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="{$shirts['shirts_image']}" alt="">
-                            <p class = "product-title">{$shirts['shirts_title']}</p>
-                            <span class="product-price"> {$shirts['shirts_price']}</span>
-                            <p class="product-desc">{$shirts['shirts_descript']}</p>
-                        </div>
-                    </div>
-                </a>
+        </a>
+    </div>  
+
+
+
+    HTML;
+
+}
+
+
+$sql = <<<SQL
+
+SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_colors, shirts_price
+FROM shirts 
+WHERE shirts_status = 'on' AND shirts_date <= NOW() AND shirts_id <= 10
+ORDER BY shirts_date DESC; 
+
+
+SQL;
+
+
+// Executar a query e retorna dados na variável
+$res = $conn->query($sql);
+
+
+
+while ($shirts = $res->fetch_assoc()) {
+
+    $shirts_releases .= <<<HTML
+
+       
+    <div class="item">
+        <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+            <div class="card-content">
+                <div class="card">
+                    <img src="{$shirts['shirts_image']}" alt="">
+                        <p class = "product-title">{$shirts['shirts_title']}</p>
+                        <span class="product-price"> {$shirts['shirts_price']}</span>
+                        <p class="product-desc">{$shirts['shirts_descript']}</p>
+                </div>
             </div>
-        <div class="item">
-            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="{$shirts['shirts_image']}" alt="">
-                            <p class = "product-title">{$shirts['shirts_title']}</p>
-                            <span class="product-price"> {$shirts['shirts_price']}</span>
-                            <p class="product-desc"> {$shirts['shirts_descript']}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        <div class="item">
-            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="{$shirts['shirts_image']}" alt="">
-                            <p class = "product-title">{$shirts['shirts_title']}</p>
-                            <span class="product-price"> {$shirts['shirts_price']}</span>
-                            <p class="product-desc"> {$shirts['shirts_descript']}</p>
-                        </div>
-                    </div>
-                </a>
-            </div> 
-    </div>
-
-HTML;
-
-    $shirts_popular = <<<HTML
-
-<div class="title-colecion">
-        <h1>RECOMENDADAS</h1>
-    </div>
+        </a>
+    </div>  
 
 
-    <div class="owl-carousel owl-theme">
-        <div class="item">
-            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="{$shirts['shirts_image']}" alt="">
-                            <p class = "product-title">{$shirts['shirts_title']}</p>
-                            <span class="product-price"> {$shirts['shirts_price']}</span>
-                            <p class="product-desc">{$shirts['shirts_descript']}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        <div class="item">
-            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="{$shirts['shirts_image']}" alt="">
-                            <p class = "product-title">{$shirts['shirts_title']}</p>
-                            <span class="product-price"> {$shirts['shirts_price']}</span>
-                            <p class="product-desc">{$shirts['shirts_descript']}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        <div class="item">
-            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="{$shirts['shirts_image']}" alt="">
-                            <p class = "product-title">{$shirts['shirts_title']}</p>
-                            <span class="product-price"> {$shirts['shirts_price']}</span>
-                            <p class="product-desc"> {$shirts['shirts_descript']}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        <div class="item">
-            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="{$shirts['shirts_image']}" alt="">
-                            <p class = "product-title">{$shirts['shirts_title']}</p>
-                            <span class="product-price"> {$shirts['shirts_price']}</span>
-                            <p class="product-desc"> {$shirts['shirts_descript']}</p>
-                        </div>
-                    </div>
-                </a>
-            </div> 
-    </div>
 
-HTML;
+    HTML;
 
-
-    $shirts_releases = <<<HTML
-
-<div class="title-colecion">
-        <h1>LANÇAMENTOS</h1>
-    </div>
-
-
-    <div class="owl-carousel owl-theme">
-        <div class="item">
-            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="{$shirts['shirts_image']}" alt="">
-                            <p class = "product-title">{$shirts['shirts_title']}</p>
-                            <span class="product-price"> {$shirts['shirts_price']}</span>
-                            <p class="product-desc">{$shirts['shirts_descript']}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        <div class="item">
-            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="{$shirts['shirts_image']}" alt="">
-                            <p class = "product-title">{$shirts['shirts_title']}</p>
-                            <span class="product-price"> {$shirts['shirts_price']}</span>
-                            <p class="product-desc">{$shirts['shirts_descript']}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        <div class="item">
-            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="{$shirts['shirts_image']}" alt="">
-                            <p class = "product-title">{$shirts['shirts_title']}</p>
-                            <span class="product-price"> {$shirts['shirts_price']}</span>
-                            <p class="product-desc"> {$shirts['shirts_descript']}</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        <div class="item">
-            <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
-                    <div class="card-content">
-                        <div class="card">
-                            <img src="{$shirts['shirts_image']}" alt="">
-                            <p class = "product-title">{$shirts['shirts_title']}</p>
-                            <span class="product-price"> {$shirts['shirts_price']}</span>
-                            <p class="product-desc"> {$shirts['shirts_descript']}</p>
-                        </div>
-                    </div>
-                </a>
-            </div> 
-    </div>
-
-HTML;
 }
 
 /*********************************************
@@ -251,11 +135,30 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 <!----------------- END OF BANNER -------------------->
 
 <!----------------- CARD PRODUCT BEST SELLER  -------------------->
-<?php echo $shirts_bestsellers ?>
+<div class="title-colecion">
+        <h1>MAIS VENDIDAS</h1>
+    </div>
+
+    <div class="owl-carousel owl-theme">
+        
+            <?php echo $shirts_bestsellers ?>
+       
+    </div>
+
+
 <!----------------- END OF CARD PRODUCT BEST SELLER ---------------->
-<?php echo  $shirts_popular ?>
+
+<div class="title-colecion">
+        <h1>LANÇAMENTOS</h1>
+    </div>
+
+    <div class="owl-carousel owl-theme">
+        
+            <?php echo $shirts_releases ?>
+       
+    </div>
 <!----------------- END OF CARD PRODUCT -------------------->
-<?php echo $shirts_releases ?>
+       
 <!----------------- END OF CARD PRODUCT -------------------->
 
 <?php
