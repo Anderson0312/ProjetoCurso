@@ -84,7 +84,7 @@ CREATE TABLE shirts (
     shirts_team VARCHAR(50) NOT NULL,
     shirts_size VARCHAR(50) NOT NULL,
     shirts_colors VARCHAR(50) NOT NULL,
-    shirts_price INT NOT NULL,
+    shirts_price float NOT NULL,
     shirts_amount INT NOT NULL,
     shirts_status ENUM('on', 'off', 'deleted') NOT NULL DEFAULT 'on'
 );
@@ -172,7 +172,7 @@ CREATE TABLE coats (
     coats_team VARCHAR(50) NOT NULL,
     coats_size VARCHAR(50) NOT NULL,
     coats_colors VARCHAR(50) NOT NULL,
-    coats_price INT NOT NULL,
+    coats_price float NOT NULL,
     coats_amount INT NOT NULL,
     coats_status ENUM('on', 'off', 'deleted') NOT NULL DEFAULT 'on'
 );
@@ -189,7 +189,7 @@ CREATE TABLE newcolecion (
     newcolecion_team VARCHAR(50) NOT NULL,
     newcolecion_size VARCHAR(50) NOT NULL,
     newcolecion_colors VARCHAR(50) NOT NULL,
-    newcolecion_price INT NOT NULL,
+    newcolecion_price float NOT NULL,
     newcolecion_amount INT NOT NULL,
     newcolecion_status ENUM('on', 'off', 'deleted') NOT NULL DEFAULT 'on'
 );
@@ -205,7 +205,7 @@ CREATE TABLE accessories (
     accessories_team VARCHAR(50) NOT NULL,
     accessories_size VARCHAR(50) NOT NULL,
     accessories_colors VARCHAR(50) NOT NULL,
-    accessories_price INT NOT NULL,
+    accessories_price float NOT NULL,
     accessories_amount INT NOT NULL,
     accessories_status ENUM('on', 'off', 'deleted') NOT NULL DEFAULT 'on'
 );
