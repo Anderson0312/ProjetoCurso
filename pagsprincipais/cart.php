@@ -25,29 +25,33 @@ $product_cart = '';
     };
 
 
-    debug($_SESSION['carrinho']);
+    
  
 
 // verifica se tem algo no carrinho
 if ($product_id >= 1)  {
 
+    foreach($_SESSION['carrinho'] as $value) {
+        
+       
 // Consulta a camisa pelo ID para
 $sql = <<<SQL
 
 SELECT *, DATE_FORMAT(shirts_date, '%d/%m/%Y às %H:%i') AS shirts_brdate
 FROM shirts 
-WHERE shirts_id = '{$product_id}'
+WHERE shirts_id = '{$value ['id']}'
 AND shirts_status = 'on'
 AND shirts_date <= NOW()
 
 SQL;
 
+
 $res = $conn->query($sql);
 
 $product = $res->fetch_assoc();
+debug($product);
 
-
-
+foreach ($product as $value)
 $product_cart = <<<HTML
 
     <div class="product-item">
@@ -66,6 +70,7 @@ $product_cart = <<<HTML
 
 
 HTML;
+}
 }
 // Define o titilo dessa pagina
 $page_title = '';
