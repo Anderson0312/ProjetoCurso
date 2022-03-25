@@ -20,7 +20,7 @@ if ($page_title == '') {
 
     <title>MGL</title>
 
-
+    
 
     <link rel="shortcut icon" href="" type="image/x-icon">
 
