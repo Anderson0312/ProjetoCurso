@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Inclui arquivo de configuração
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 
@@ -8,21 +8,29 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  * Seu código PHP desta página entra aqui! *
  *******************************************/
 
+
 // Variável que contém a lista de camisas (string).
 $product_cart = '';
-$cart = [];
+
 // obtém o ID da camisa a ser salva no carrinho.
     if (isset($_GET['id'])) {
         $product_id = intval($_GET['id']);
-        $cart[] = $product_id; 
+        if(isset($_SESSION['carrinho'][$product_id])) {
+            $_SESSION['carrinho'][$product_id]['quantidade']++;
+        } else {
+            $_SESSION['carrinho'][$product_id] = array('id' => $product_id, 'quantidade' => 1);
+        }
     } else {
         $product_id = 0;
-    }
+    };
 
-debug($cart);
+
+    debug($_SESSION);
+ 
 
 // verifica se tem algo no carrinho
 if ($product_id >= 1)  {
+
 // Consulta a camisa pelo ID para
 $sql = <<<SQL
 
@@ -37,6 +45,8 @@ SQL;
 $res = $conn->query($sql);
 
 $product = $res->fetch_assoc();
+
+
 
 $product_cart = <<<HTML
 

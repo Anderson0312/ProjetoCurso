@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 // Inclui arquivo de configuração
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 
@@ -37,7 +38,9 @@ $res = $conn->query($sql);
 // verifica se retornou uma Camisa
 if ($res->num_rows != 1) header('Location: /pagsprincipais/index.php');
 
+
 $shirt = $res->fetch_assoc();
+ 
 
 $shirt_view = <<<HTML
 
@@ -95,7 +98,7 @@ $shirt_view = <<<HTML
                     <p>#</p>
                 </div>
 
-                <a href="/pagsprincipais/cart.php?id={$shirt['shirts_id']}"><button class="btn-buy" onclick="() = > ">COMPRAR</button></a>
+                <a href="/pagsprincipais/cart.php? id={$shirt['shirts_id']}  "><button class="btn-buy">COMPRAR</button></a>
 
             <div class="frete">
                 <p>Calcular o prazo e valor do frete</p>
@@ -178,7 +181,6 @@ HTML;
 
 
 
-
 $sql = <<<SQL
 
 SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_colors, shirts_price
@@ -219,7 +221,6 @@ while ($carrocel = $res->fetch_assoc()) {
 
 // Inclui o cbeçalho da página
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
-
 
 ?>
 
