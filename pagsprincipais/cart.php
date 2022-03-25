@@ -24,54 +24,55 @@ $product_cart = '';
         $product_id = 0;
     };
 
-
     
- 
+    debug($_SESSION['carrinho']); 
 
 // verifica se tem algo no carrinho
 if ($product_id >= 1)  {
 
     foreach($_SESSION['carrinho'] as $value) {
         
-       
-// Consulta a camisa pelo ID para
-$sql = <<<SQL
+        // Consulta a camisa pelo ID para
+        $sql = <<<SQL
 
-SELECT *, DATE_FORMAT(shirts_date, '%d/%m/%Y às %H:%i') AS shirts_brdate
-FROM shirts 
-WHERE shirts_id = '{$value ['id']}'
-AND shirts_status = 'on'
-AND shirts_date <= NOW()
+        SELECT *, DATE_FORMAT(shirts_date, '%d/%m/%Y às %H:%i') AS shirts_brdate
+        FROM shirts 
+        WHERE shirts_id = '{$value ['id']}'
+        AND shirts_status = 'on'
+        AND shirts_date <= NOW()
 
-SQL;
+        SQL;
 
-
-$res = $conn->query($sql);
-
-$product = $res->fetch_assoc();
-debug($product);
-
-foreach ($product as $value)
-$product_cart = <<<HTML
-
-    <div class="product-item">
         
-        <div class="product-item-img">
-            <a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
-        </div>
+        $res = $conn->query($sql);
 
-        <div class="product-item-desc">
-            <h3><a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}">{$product['shirts_title']}</a></h3>
-            <p class="description">{$product['shirts_descript']}</p>
-            <span class="product-price">R$ {$product['shirts_price']}</span>
-        </div>
+        while ($product = $res->fetch_assoc()) :
+            $product_cart .= <<<HTML
 
-    </div>
+            <div class="product-item">
+                
+                <div class="product-item-img">
+                    <a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
+                </div>
+    
+                <div class="product-item-desc">
+                    <h3><a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}">{$product['shirts_title']}</a></h3>
+                    <p class="description">{$product['shirts_descript']}</p>
+                    <span class="product-price">R$ {$product['shirts_price']}</span>
+                </div>
+    
+            </div>
+            
+    
+    HTML;
+        
+endwhile;
 
 
-HTML;
-}
-}
+
+
+};
+};
 // Define o titilo dessa pagina
 $page_title = '';
 
@@ -83,10 +84,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 <?php // Conteúdo ?>
 
+<link rel="stylesheet" href="/css/cartstyle.css">
 
-<?php  echo $product_cart ?>
+<div class="container-cart">
 
 
+    <?php  echo $product_cart ?>
+
+</div>
 
 <?php
 
