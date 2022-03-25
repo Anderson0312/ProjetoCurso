@@ -25,7 +25,7 @@ $product_cart = '';
     };
 
 
-    debug($_SESSION);
+    debug($_SESSION['carrinho']);
  
 
 // verifica se tem algo no carrinho
