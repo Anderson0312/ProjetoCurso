@@ -91,8 +91,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 <link rel="stylesheet" href="/css/cartstyle.css">
 
-<div class="container-cart">
+<div>
+    
+    <h2 class="title-colecion">
+        CARRINHO DE COMPRAS
+    </h2>
+</div>
 
+<div class="container-cart">
 
     <?php  echo $product_cart ?>
 
