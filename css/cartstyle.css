@@ -24,12 +24,17 @@ body {
     background: var(--color-primary);
     user-select: none;
     overflow-x: hidden;
+
 }
 
 .container-cart {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
+
+
 
 

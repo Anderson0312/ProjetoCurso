@@ -26,7 +26,10 @@ ORDER BY shirts_date DESC;
 
 SQL;
 
+// Executar a query e retorna dados na variável do banco de dados
 $res = $conn->query($sql);
+
+// roda o loop enquanto tiver retorno do banco de dados, retornando uma camisa
 while ($art = $res->fetch_assoc()) {
 
     $shirts_list .= <<<HTML

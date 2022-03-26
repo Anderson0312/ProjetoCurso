@@ -26,7 +26,10 @@ ORDER BY accessories_date DESC;
 
 SQL;
 
+// Obtém dados na forma de array
 $res = $conn->query($sql);
+
+// roda o loop enquanto tiver retorno do banco de dados, retornando uma camisa
 while ($art = $res->fetch_assoc()) {
 
     $accessories_list .= <<<HTML

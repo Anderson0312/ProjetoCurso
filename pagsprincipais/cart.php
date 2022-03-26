@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 // Inclui arquivo de configuração
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
@@ -27,10 +28,11 @@ $product_cart = '';
     }
 
     
-    debug($_SESSION['carrinho']); 
+    
 
 // verifica se tem algo no carrinho
-if ($product_id >= 1)  {
+//perguntar para o professor pq o id não esta carregando aqui
+if ($product_id >= 0)  {
 
 
     foreach($_SESSION['carrinho'] as $value) {
@@ -47,9 +49,10 @@ if ($product_id >= 1)  {
 
         SQL;
 
-        
+        // Executar a query e retorna dados na variável do banco de dados
         $res = $conn->query($sql);
 
+        // roda o loop enquanto tiver retorno do banco de dados, retornando uma camisa
         while ($product = $res->fetch_assoc()) :
             $product_cart .= <<<HTML
 
@@ -89,6 +92,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <link rel="stylesheet" href="/css/cartstyle.css">
 
 <div class="container-cart">
+
 
 
     <?php  echo $product_cart ?>

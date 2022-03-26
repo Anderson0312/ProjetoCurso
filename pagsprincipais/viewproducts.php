@@ -33,12 +33,14 @@ AND shirts_date <= NOW()
 
 SQL;
 
+// Executar a query e retorna dados na variável do banco de dados
 $res = $conn->query($sql);
 
-// verifica se retornou uma Camisa
+// verifica se retornou uma Camisa, se não retornou joga para pagina inicial
 if ($res->num_rows != 1) header('Location: /pagsprincipais/index.php');
 
 
+// Obtém dados na forma de array
 $shirt = $res->fetch_assoc();
  
 
@@ -179,7 +181,12 @@ HTML;
 
 
 
-
+/*
+ * Query que obtém só Camisa:
+ *    Ordenados pelo mais recente.
+ *    Somente com o status 'on'.
+ *    Somente da data atual e anteriores.
+ */
 
 $sql = <<<SQL
 
@@ -189,8 +196,10 @@ WHERE shirts_status = 'on' AND shirts_date <= NOW() AND shirts_id <= 8 ;
 
 SQL;
 
+// Obtém dados na forma de array
 $res = $conn->query($sql);
 
+// roda o loop enquanto tiver retorno do banco de dados, retornando uma camisa
 while ($carrocel = $res->fetch_assoc()) {
     
     
@@ -214,9 +223,6 @@ while ($carrocel = $res->fetch_assoc()) {
 
     HTML;
 }
-
-
-
 
 
 // Inclui o cbeçalho da página
