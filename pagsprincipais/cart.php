@@ -12,6 +12,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 // Variável que contém a lista de camisas (string).
 $product_cart = '';
 
+
+
 // obtém o ID da camisa a ser salva no carrinho.
     if (isset($_GET['id'])) {
         $product_id = intval($_GET['id']);
@@ -22,7 +24,7 @@ $product_cart = '';
         }
     } else {
         $product_id = 0;
-    };
+    }
 
 
     debug($_SESSION['carrinho']);
@@ -34,7 +36,7 @@ if ($product_id >= 1)  {
 // Consulta a camisa pelo ID para
 $sql = <<<SQL
 
-SELECT *, DATE_FORMAT(shirts_date, '%d/%m/%Y às %H:%i') AS shirts_brdate
+SELECT *
 FROM shirts 
 WHERE shirts_id = '{$product_id}'
 AND shirts_status = 'on'
