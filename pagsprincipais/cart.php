@@ -94,7 +94,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <div class="container-cart">
 
 
-
     <?php  echo $product_cart ?>
 
 </div>
