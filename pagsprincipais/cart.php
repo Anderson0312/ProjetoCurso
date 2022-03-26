@@ -32,28 +32,12 @@ $product_cart = '';
 // verifica se tem algo no carrinho
 if ($product_id >= 1)  {
 
-<<<<<<< HEAD
-// Consulta a camisa pelo ID para
-$sql = <<<SQL
 
-SELECT *
-FROM shirts 
-WHERE shirts_id = '{$product_id}'
-AND shirts_status = 'on'
-AND shirts_date <= NOW()
-
-SQL;
-
-$res = $conn->query($sql);
-
-$product = $res->fetch_assoc();
-
-=======
     foreach($_SESSION['carrinho'] as $value) {
         
         // Consulta a camisa pelo ID para
         $sql = <<<SQL
->>>>>>> dfed8f3a102c35a7800fc3da61b4de11395f0f8c
+
 
         SELECT *, DATE_FORMAT(shirts_date, '%d/%m/%Y às %H:%i') AS shirts_brdate
         FROM shirts 
@@ -87,8 +71,6 @@ $product = $res->fetch_assoc();
     HTML;
         
 endwhile;
-
-
 
 
 };
