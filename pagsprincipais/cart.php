@@ -56,9 +56,9 @@ if ($product_id >= 0)  {
         while ($product = $res->fetch_assoc()) :
             $product_cart .= <<<HTML
 
-            <div class="product-item">
+            <div class="product-item-cart">
                 
-                <div class="product-item-img">
+                <div class="product-item-cart-img">
                     <a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
                 </div>
     
@@ -91,16 +91,71 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 <link rel="stylesheet" href="/css/cartstyle.css">
 
-<div>
-    
-    <h2 class="title-colecion">
+<div>  
+    <h2 class="title-cart">
         CARRINHO DE COMPRAS
     </h2>
 </div>
 
-<div class="container-cart">
+<div class="container-cart-all">
 
-    <?php  echo $product_cart ?>
+    <div class="container-product-cart">
+        <div class="product-mount">
+            <p>Produto</p>
+            <p>Quantidade</p>
+        </div>
+
+        <div class="container-cart">
+            
+            <?php  echo $product_cart ?>
+
+        </div>
+
+    </div>
+
+
+    <div class="table-finish"> 
+        <table class="headertab">
+            <thead>
+                <th>TOTAL NO CARRINHO</th>
+            </thead>
+        </table>
+
+        <div class="subtot">
+            <h4>subtotal</h4>
+            <h3>$200</h3>
+        </div>
+
+        <div class="cep">
+            <h4>entrega</h4>
+            <div>
+                <label for="cep">Digite seu endereço para ver as opções de entrega</label>
+                <input type="text" class="input-cep">
+                <br>
+                <button>ATUALIZAR</button>
+            </div>
+        </div>
+
+        <div class="total-cart">
+            <h4>total</h4>
+            <h3>$190</h3>
+        </div>
+
+        <div class="btn-finish-cart">
+            <button><a href="">FINALIZAR COMPRA</a> </button>
+        </div>
+
+        <div class="table-cupom">
+            
+            <h4 id="cupom">Cupom</h4>
+            
+            <div>
+                <input type="text" class="input-cupom" placeholder="Digite o cupom">
+                
+                <button>Aplicar cupom</button>
+            </div>
+        </div>
+    </div>
 
 </div>
 

@@ -83,7 +83,7 @@ if ($page_title == '') {
                 <div class="logo">
                     <img src="" alt="">
                     <a href="/pagsprincipais/index.php">
-                        <h2>LojaLoja</h2>
+                        <h2>MGL</h2>
                     </a>
                 </div>
             </div>

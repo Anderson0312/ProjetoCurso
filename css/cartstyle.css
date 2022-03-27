@@ -28,13 +28,175 @@ body {
 }
 
 .container-cart {
-    display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     width: 100%;
 }
 
+.title-cart {
+    font-weight: 200;
+    text-align: center;
+    padding: 1.5rem 0 2.5rem;
+}
+
+.product-mount{
+    display: flex;
+    border-bottom: 2px solid #4445;
+    width: 92%;
+    margin: auto;
+    justify-content: space-between
+}
+
+.product-item-cart {
+    display:flex;
+    border-bottom: 1px solid #4444;
+    padding: 1rem;
+    width: 95%;
+    margin: auto;
+}
+
+
+.product-item-cart-img img{
+    width: 10rem;
+    height: 8rem;
+}
+
+.table-finish {
+    width: 92%;
+    margin: auto;
+}
+
+.headertab{
+    border-bottom: 2px solid rgba(105, 103, 103, 0.26);
+    width: 100%;
+    text-align: left;
+    margin-top: 2rem;
+}
+
+
+.subtot {
+    display: flex;
+    padding: .7rem 0 .7rem 0;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(105, 103, 103, 0.26);
+}
+
+.subtot h3 {
+    align-items: right;
+    text-align: right;
+    
+}
+
+.cep {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(105, 103, 103, 0.26);
+}
+
+.cep div {
+    display: block;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    text-align: end;
+}
+
+.cep div .input-cep {
+    width: 160px;
+    border: 1px solid rgba(105, 103, 103, 0.46);
+    padding: 0.3rem;
+    border-radius: .2rem;
+}
+.cep div button {
+    width: 160px;
+    background-color: rgb(5, 5, 5);
+    color: #fff;
+    padding: .4rem;
+    margin-top: .2rem;
+}
+
+.cep div label {
+    font-size: .8rem;
+}
+
+.total-cart {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0 .5rem 0;
+    border-bottom: 1px solid rgba(105, 103, 103, 0.26);
+}
+
+.btn-finish-cart button {
+    width: 100%;
+    padding: 0.4rem 0 .4rem 0;
+    margin: 0.5rem 0 .5rem 0;
+    background-color: rgb(15 83 72);
+    font-weight: 600;
+    border-radius: 0.2rem;
+    transition: all 0.3s;
+}
+
+.btn-finish-cart button a {
+    color: #fff;
+}
+
+.btn-finish-cart button:hover{
+    background-color: rgb(15, 71, 62);
+}
+
+
+.table-cupom {
+    border-bottom: 1px solid rgba(105, 103, 103, 0.26);
+    text-align: left;
+}
+
+.table-cupom #cupom{
+    padding-bottom: 0.5rem;
+}
+
+.table-cupom div .input-cupom{
+    width: 100%;
+    padding: .3rem;
+    margin-bottom: .5rem;
+    border: 1px solid rgba(105, 103, 103, 0.46);
+}
+
+.table-cupom div button {
+    width: 100%;
+    padding: .3rem;
+    color: gray;
+    background-color: #4454;
+    border-radius: 0.2rem;
+    transition: all 0.3s;
+}
+
+.table-cupom div button:hover {
+    background-color: rgb(5, 5, 5);
+    color: #fff;
+}
 
 
 
+@media(min-width: 769px) {
+    .container-cart-all {
+        display: flex;
+        width: 90%;
+        margin: auto;
+    }
+
+    .table-finish {
+        width: 50%;
+    }
+
+    .container-cart {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .container-product-cart {
+        min-width: 400px;
+        
+    }
+
+}
