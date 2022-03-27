@@ -67,7 +67,7 @@ body {
 }
 
 .headertab{
-    border-bottom: 2px solid rgba(105, 103, 103, 0.26);
+    border-bottom: 2px solid rgba(105, 103, 103, 0.46);
     width: 100%;
     text-align: left;
     margin-top: 2rem;
@@ -78,7 +78,7 @@ body {
     display: flex;
     padding: .7rem 0 .7rem 0;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(105, 103, 103, 0.26);
+    border-bottom: 1px solid rgba(105, 103, 103, 0.46);
 }
 
 .subtot h3 {
@@ -91,7 +91,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(105, 103, 103, 0.26);
+    border-bottom: 1px solid rgba(105, 103, 103, 0.46);
 }
 
 .cep div {
@@ -124,7 +124,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0 .5rem 0;
-    border-bottom: 1px solid rgba(105, 103, 103, 0.26);
+    border-bottom: 1px solid rgba(105, 103, 103, 0.46);
 }
 
 .btn-finish-cart button {
@@ -147,7 +147,7 @@ body {
 
 
 .table-cupom {
-    border-bottom: 1px solid rgba(105, 103, 103, 0.26);
+    border-bottom: 1px solid rgba(105, 103, 103, 0.46);
     text-align: left;
 }
 
