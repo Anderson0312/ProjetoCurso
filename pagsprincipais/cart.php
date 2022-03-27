@@ -101,8 +101,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
     <div class="container-product-cart">
         <div class="product-mount">
-            <p>Produto</p>
-            <p>Quantidade</p>
+            <h4>Produto</h4>
+            <h4>Quantidade</h4>
         </div>
 
         <div class="container-cart">
