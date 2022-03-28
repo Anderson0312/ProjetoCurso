@@ -95,11 +95,6 @@ $shirt_view = <<<HTML
 
         <div class="inputs-buy">
 
-
-                <div class="input-mount">
-                    <p>#</p>
-                </div>
-
                 <a href="/pagsprincipais/cart.php? id={$shirt['shirts_id']}  "><button class="btn-buy">Adicionar no carrinho</button></a>
 
             <div class="frete">

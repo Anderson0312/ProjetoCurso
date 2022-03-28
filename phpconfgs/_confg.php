@@ -7,7 +7,6 @@
     // Os dados da conexão estão em "_config.ini"
     $i = parse_ini_file($_SERVER['DOCUMENT_ROOT'] . '/_confg.ini', true);
 
-
     foreach ($i as $key => $value) :
         if ($_SERVER['SERVER_NAME'] == $key) :
 
