@@ -27,6 +27,7 @@ body {
 
 }
 
+
 .container-cart {
     align-items: center;
     justify-content: center;
@@ -53,6 +54,8 @@ body {
     padding: 1rem;
     width: 95%;
     margin: auto;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
@@ -176,7 +179,48 @@ body {
     color: #fff;
 }
 
+.buttonpadrao {
+    background-color: rgb(5, 5, 5);
+    padding: .4rem;
+    margin-top: .2rem;
+    margin-left: 1rem;  
+    border-radius: 0.2rem;
+    transition: all 0.3s;
+}
 
+.buttonpadrao a {
+    color: #fff;
+    font-size: .8rem;
+}
+
+.buttonpadrao:hover {
+    background-color: rgb(15 83 72);
+}
+
+.quant-buttons {
+    display: flex;
+    height: 32px;
+    border: 1px solid rgba(121, 118, 118, 0.466);
+
+}
+
+.quant-buttons #quantity{
+    max-width: 2em;
+}
+
+.quant-buttons .button-less{
+    padding: .1rem .3rem .1rem .3rem;
+    transition: all 0.3s;
+}
+
+.quant-buttons .button-more {
+    padding: .1rem .2rem .1rem .2rem;
+    transition: all 0.3s;
+}
+
+.quant-buttons .button-more:hover, .button-less:hover{
+    background-color: rgba(218, 184, 218, 0.61);
+}
 
 @media(min-width: 769px) {
     .container-cart-all {

@@ -18,7 +18,7 @@ if ($page_title == '') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MGL</title>
+    <title>MGLsport</title>
 
     <link rel="shortcut icon" href="/imgbanner/ICONM.png" type="image/x-icon">
 

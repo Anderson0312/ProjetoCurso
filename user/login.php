@@ -98,7 +98,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 
     <main class="loginbox ">
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+        <form class="form-login" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
             <input type="hidden" name="send" value="true">
             <?php echo $form['feedback']; ?>
 

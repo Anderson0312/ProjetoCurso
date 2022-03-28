@@ -11,8 +11,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 
 
 // Variável que contém a lista de camisas (string).
-$product_cart = '';
-
+$product_cart =  '' ;
+$total = 0;
 
 
 // obtém o ID da camisa a ser salva no carrinho.
@@ -27,8 +27,7 @@ $product_cart = '';
         $product_id = 0;
     }
 
-    
-    
+       
 
 // verifica se tem algo no carrinho
 //perguntar para o professor pq o id não esta carregando aqui
@@ -54,6 +53,7 @@ if ($product_id >= 0)  {
 
         // roda o loop enquanto tiver retorno do banco de dados, retornando uma camisa
         while ($product = $res->fetch_assoc()) :
+            
             $product_cart .= <<<HTML
 
             <div class="product-item-cart">
@@ -67,24 +67,31 @@ if ($product_id >= 0)  {
                     <p class="description">{$product['shirts_descript']}</p>
                     <span class="product-price">R$ {$product['shirts_price']}</span>
                 </div>
-    
+                <div class="quant-buttons">
+                    <input type="button" value="-" class="button-less" onclick="less()">
+                    <input type="number" value="1" id="quantity" step="1" min="0" max="10" inputmod="numeric" > 
+                    <input type="button" value="+" class="button-more" onclick="more()">
+                </div>
             </div>
             
-    
+            
+            
+            
     HTML;
-        
+    $total = $product['shirts_price']+$total;
 endwhile;
 
 
 };
 };
+
+
 // Define o titilo dessa pagina
 $page_title = '';
 
 
 // Inclui o cbeçalho da página
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
-
 ?>
 
 <?php // Conteúdo ?>
@@ -97,7 +104,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
     </h2>
 </div>
 
-<div class="container-cart-all">
+<form class="container-cart-all">
 
     <div class="container-product-cart">
         <div class="product-mount">
@@ -108,10 +115,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
         <div class="container-cart">
             
             <?php  echo $product_cart ?>
+            
+        </div >
 
-        </div>
-
+        <button class="buttonpadrao"><a href="./">CONTINUAR COMPRANDO</a></button>
     </div>
+
 
 
     <div class="table-finish"> 
@@ -123,7 +132,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
         <div class="subtot">
             <h4>subtotal</h4>
-            <h3>$200</h3>
+            <h3>R$ <?php echo $total ?></h3>
         </div>
 
         <div class="cep">
@@ -138,7 +147,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
         <div class="total-cart">
             <h4>total</h4>
-            <h3>$190</h3>
+            <h3>R$ <?php echo $total ?></h3>
         </div>
 
         <div class="btn-finish-cart">
@@ -157,7 +166,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
         </div>
     </div>
 
-</div>
+</form>
 
 <?php
 
