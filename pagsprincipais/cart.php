@@ -31,7 +31,7 @@ $total = 0;
 
 // verifica se tem algo no carrinho
 //perguntar para o professor pq o id não esta carregando aqui
-if ($product_id >= 0)  {
+if ($product_id >= 0  )  {
 
 
     foreach($_SESSION['carrinho'] as $value) {
@@ -69,7 +69,7 @@ if ($product_id >= 0)  {
                 </div>
                 <div class="quant-buttons">
                     <input type="button" value="-" class="button-less" onclick="less()">
-                    <input type="number" value="1" id="quantity" step="1" min="0" max="10" inputmod="numeric" > 
+                    <input type="number" value="1" id="quantity" step="1" min="0" max="10"> 
                     <input type="button" value="+" class="button-more" onclick="more()">
                 </div>
             </div>
@@ -164,6 +164,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
                 <button>Aplicar cupom</button>
             </div>
         </div>
+        
     </div>
 
 </form>

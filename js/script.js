@@ -16,32 +16,24 @@ const menubtn = document.querySelector ('.btn-menu');
 })
 
 
-function el(elId) {
-    return document.getElementById(elId);
-}
+
 //mais ou menos produtos
-
-
-var result = parseInt(el('quantity').value);
-let less1 = document.querySelector('.button-less');
-let more1 = document.querySelector('.button-more');
-
+numero = 0;
 
 function less() {
-
-    less1.addEventListener('click', () => {
-        let lessResult = parseInt( result - 1);
-        el('quantity').value = lessResult
-        console.log(lessResult);
-    })
-    }
+  numero--;
+  setValue(numero);
+}
 
 function more() {
-    
-        more1.addEventListener('click', () => {
-            let moreResult = parseInt( result + 1);
-            el('quantity').value = moreResult
-            console.log(moreResult);
-        }
-    })
+  numero++;
+  setValue(numero);
+}
+
+function setValue(value) {
+    if(value >=1 && value <= 10) {
+        document.getElementById('quantity').value = value;
     }
+}
+
+setValue(numero);
