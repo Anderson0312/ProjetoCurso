@@ -98,8 +98,9 @@ INSERT INTO `shirts` (
     `shirts_team`,
     `shirts_size`, 
     `shirts_colors`,
-    `shirts_amount`,
-    `shirts_price`
+    `shirts_price`.
+    `shirts_amount`
+
 ) VALUES (
     'Flamengo Principal',
     '/imgproduct/Camisaflabranca.png',
@@ -107,8 +108,9 @@ INSERT INTO `shirts` (
     'Flamengo',
     'P',
     'Whith',
-    '100',
-    '129,90'
+    '129,90',
+    '100'
+    
 );
 
 -- Insere alguns {} para testes.
@@ -119,8 +121,10 @@ INSERT INTO `shirts` (
     `shirts_team`,
     `shirts_size`, 
     `shirts_colors`,
-    `shirts_amount`,
-    `shirts_price`
+    `shirts_price`,
+    `shirts_amount`
+    
+    
 ) VALUES (
     'Flamengo Principal',
     '/imgproduct/Camisaflavermelha.png',
@@ -128,8 +132,8 @@ INSERT INTO `shirts` (
     'Flamengo',
     'P',
     'red',
-    '100',
-    '129,90'
+    '129,90',
+    '100'
 );
 
 
@@ -150,8 +154,9 @@ INSERT INTO `shirts` (
     'Flamengo',
     'P',
     'Black',
-    '100',
-    '129,90'
+    '129,90',
+    '100'
+    
 ),
 (
     'Flamengo Reserva',
@@ -160,8 +165,9 @@ INSERT INTO `shirts` (
     'Flamengo',
     'P',
     'Black',
-    '100',
-    '129,90'
+    '129,90',
+    '100'
+    
 ),
 (
     'Flamengo Reserva',
@@ -170,8 +176,9 @@ INSERT INTO `shirts` (
     'Flamengo',
     'P',
     'Black',
-    '100',
-    '129,90'
+    '129,90',
+    '100'
+    
 ),
 (
     'Flamengo Reserva',
@@ -180,8 +187,9 @@ INSERT INTO `shirts` (
     'Flamengo',
     'P',
     'Black',
-    '100',
-    '129,90'
+    '129,90',
+    '100'
+    
 )
 
 
