@@ -18,6 +18,7 @@ $total = 0;
 // obtém o ID da camisa a ser salva no carrinho.
     if (isset($_GET['id'])) {
         $product_id = intval($_GET['id']);
+
         if(isset($_SESSION['carrinho'][$product_id])) {
             $_SESSION['carrinho'][$product_id]['quantidade']++;
         } else {
@@ -31,8 +32,8 @@ $total = 0;
 
 // verifica se tem algo no carrinho
 //perguntar para o professor pq o id não esta carregando aqui
-if ($product_id >= 0  )  {
 
+if ($product_id >= 0  )  {
 
     foreach($_SESSION['carrinho'] as $value) {
         
@@ -42,7 +43,7 @@ if ($product_id >= 0  )  {
 
         SELECT *, DATE_FORMAT(shirts_date, '%d/%m/%Y às %H:%i') AS shirts_brdate
         FROM shirts 
-        WHERE shirts_id = '{$value ['id']}'
+        WHERE shirts_id = '{$value['id']}'
         AND shirts_status = 'on'
         AND shirts_date <= NOW()
 
@@ -83,6 +84,7 @@ endwhile;
 
 
 };
+
 };
 
 
