@@ -18,7 +18,7 @@ const menubtn = document.querySelector ('.btn-menu');
 
 
 //mais ou menos produtos
-numero = 0;
+var numero = 0;
 
 function less() {
   numero--;
