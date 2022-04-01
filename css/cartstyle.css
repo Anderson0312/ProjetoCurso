@@ -27,6 +27,9 @@ body {
 
 }
 
+.product-item-cart i {
+    font-size: 1rem;
+}
 
 .container-cart {
     align-items: center;
@@ -220,6 +223,24 @@ body {
 
 .quant-buttons .button-more:hover, .button-less:hover{
     background-color: rgba(218, 184, 218, 0.61);
+}
+
+.form-details {
+    border: 1px solid gray;
+    margin: 1rem;
+    border-radius: .5rem;
+}
+
+.form-details form { 
+    padding: .5rem;
+}
+
+.form-details form input{
+    border: 1px solid rgba(128, 128, 128, 0.616);
+    width: 100%;
+    height: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: .2rem;
 }
 
 @media(min-width: 769px) {

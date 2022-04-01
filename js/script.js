@@ -17,7 +17,7 @@ const menubtn = document.querySelector ('.btn-menu');
 
 
 
-//mais ou menos produtos
+//more or less product
 var numero = 0;
 
 function less() {
@@ -37,3 +37,7 @@ function setValue(value) {
 }
 
 setValue(numero);
+
+
+//remove element
+  

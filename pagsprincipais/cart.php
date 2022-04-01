@@ -56,10 +56,10 @@ if ($product_id >= 0  )  {
         while ($product = $res->fetch_assoc()) :
             
             $product_cart .= <<<HTML
-
-            <div class="product-item-cart">
-                
+            
+            <div class="product-item-cart">    
                 <div class="product-item-cart-img">
+                <i class='bx bx-x' ></i>
                     <a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
                 </div>
     
@@ -153,12 +153,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
         </div>
 
         <div class="btn-finish-cart">
-            <button><a href="">FINALIZAR COMPRA</a> </button>
+            <button><a href="/pagsprincipais/finishbuy.php">FINALIZAR COMPRA</a> </button>
         </div>
 
         <div class="table-cupom">
             
-            <h4 id="cupom">Cupom</h4>
+            <h4 id="cupom"><i class='bx bx-purchase-tag-alt'></i>Cupom</h4>
             
             <div>
                 <input type="text" class="input-cupom" placeholder="Digite o cupom">
