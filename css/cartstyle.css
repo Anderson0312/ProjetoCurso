@@ -243,10 +243,26 @@ body {
     border-radius: .2rem;
 }
 
+.form-title-finishpbuy{
+    text-align:center;
+    border: 1px solid gray;
+    border-radius: .2rem;
+    margin-bottom: 0.5rem;
+    background-color: rgb(15 83 72);
+    color: #fff;
+    font-weight: 200;
+    padding: .2rem;
+}
+
+
 @media(min-width: 769px) {
     .container-cart-all {
         display: flex;
         width: 90%;
+        margin: auto;
+    }
+    .form-finish-buy {
+        width: 600px;
         margin: auto;
     }
 
@@ -264,4 +280,11 @@ body {
         
     }
 
+}
+
+@media(max-width: 768px) {
+    .form-finish-buy {
+        width: 80%;
+        margin: auto;
+    }
 }
