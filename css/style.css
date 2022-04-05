@@ -101,6 +101,7 @@ header  {
     display: flex;
     height: 8%;
     background: var(--color-primary);
+    
 }
 
 header h1 {
