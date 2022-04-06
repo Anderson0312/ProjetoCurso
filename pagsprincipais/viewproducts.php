@@ -121,17 +121,17 @@ $shirt_view = <<<HTML
             <tbody>
                 <tr>
                     <td>1x DE <strong>R$ {$shirt['shirts_price']} </strong></td>
-                    <td><strong>R$ {$shirt['shirts_price']}</strong></td>
+                    <td class="parcell"><strong>R$ {$shirt['shirts_price']}</strong></td>
                 </tr>
 
                 <tr>
                     <td>2x DE <strong>R$ {$parcela2}</strong></td>
-                    <td><strong>R$ {$shirt['shirts_price']}</strong></td>
+                    <td class="parcell"><strong>R$ {$shirt['shirts_price']}</strong></td>
                 </tr>
 
                 <tr>
                     <td>3x DE <strong>R$ {$parcela3}</strong></td>
-                    <td><strong>R$ {$shirt['shirts_price']}</strong></td>
+                    <td class="parcell"><strong>R$ {$shirt['shirts_price']}</strong></td>
                 </tr>
             </tbody>
         </table>
