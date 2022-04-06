@@ -10,6 +10,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 
 // Variável que contém a lista de camisas (string).
 $shirt_view =  $shirts_likeyou = '' ;
+$pacella = 0;
 
 
 // obtém o ID da camisa a ser exibida.
@@ -43,6 +44,9 @@ if ($res->num_rows != 1) header('Location: /pagsprincipais/index.php');
 // Obtém dados na forma de array
 $shirt = $res->fetch_assoc();
  
+$parcela3 = $shirt['shirts_price'] / 3;
+$parcela2 = $shirt['shirts_price'] / 2;
+
 
 $shirt_view = <<<HTML
 
@@ -73,7 +77,7 @@ $shirt_view = <<<HTML
         <div class="payment">
 
             <p>R$ {$shirt['shirts_price']}</p>
-            <p> 3x de  <strong>({$shirt['shirts_price']} / 2) </strong> </p>
+            <p> 3 x de  <strong> {$parcela3} </strong> </p>
 
         </div>
 
@@ -121,12 +125,12 @@ $shirt_view = <<<HTML
                 </tr>
 
                 <tr>
-                    <td>2x DE <strong>R$ {$shirt['shirts_price']}/ 2)</strong></td>
+                    <td>2x DE <strong>R$ {$parcela2}</strong></td>
                     <td><strong>R$ {$shirt['shirts_price']}</strong></td>
                 </tr>
 
                 <tr>
-                    <td>3x DE <strong>R$ ({$shirt['shirts_price']}/ 3)</strong></td>
+                    <td>3x DE <strong>R$ {$parcela3}</strong></td>
                     <td><strong>R$ {$shirt['shirts_price']}</strong></td>
                 </tr>
             </tbody>
@@ -172,6 +176,7 @@ $shirt_view = <<<HTML
 
 
 HTML;
+
 
 
 

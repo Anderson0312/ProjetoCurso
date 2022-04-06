@@ -59,7 +59,7 @@ if ($page_title == '') {
             <div class="btn-login">
                 <a href="/user/login.php"><span class="material-icons-sharp">person</span></a>
             </div>
-        <?php else : ?>
+        <?php else : ?>     
             <div class="btn-login">
                 <a href="/user/logged.php"><span class="material-icons-sharp">person</span></a>
             </div>
