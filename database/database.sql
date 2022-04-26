@@ -79,7 +79,7 @@ CREATE TABLE shirts (
     shirts_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     shirts_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     shirts_title VARCHAR(127) NOT NULL,
-    shirts_image_1 VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
+    shirts_image VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
     shirts_image_2 VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
     shirts_image_3 VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
     shirts_image_4 VARCHAR(255) NOT NULL COMMENT 'Caminho absoluto da imagem.',
@@ -97,29 +97,38 @@ CREATE TABLE shirts (
 INSERT INTO `shirts` (
     `shirts_title`, 
     `shirts_image`, 
+    `shirts_image_2`,
+    `shirts_image_3`,
+    `shirts_image_4`,
     `shirts_descript`, 
     `shirts_team`,
     `shirts_size`, 
     `shirts_colors`,
-    `shirts_price`.
+    `shirts_price`,
     `shirts_amount`
+ 
 
 ) VALUES (
-    'Flamengo Principal',
+    'test test',
+    '/imgproduct/Camisaflabranca.png',
+    '/imgproduct/Barcelonaprinc.png',
+    '/imgproduct/Camisaflapreta.png',
     '/imgproduct/Camisaflabranca.png',
     'Camisa Original do Flamengo',
     'Flamengo',
     'P',
     'Whith',
     '129,90',
-    '100'
-    
+    '100'   
 );
 
 -- Insere alguns {} para testes.
 INSERT INTO `shirts` (
     `shirts_title`, 
     `shirts_image`, 
+    `shirts_image_2`,
+    `shirts_image_3`,
+    `shirts_image_4`,
     `shirts_descript`, 
     `shirts_team`,
     `shirts_size`, 
@@ -131,6 +140,9 @@ INSERT INTO `shirts` (
 ) VALUES (
     'Flamengo Principal',
     '/imgproduct/Camisaflavermelha.png',
+    '/imgproduct/Camisaflabranca.png',
+    '/imgproduct/Barcelonaprinc.png',
+    '/imgproduct/Camisaflapreta.png',
     'Camisa Original do Flamengo',
     'Flamengo',
     'P',
@@ -144,6 +156,9 @@ INSERT INTO `shirts` (
 INSERT INTO `shirts` (
     `shirts_title`, 
     `shirts_image`, 
+    `shirts_image_2`,
+    `shirts_image_3`,
+    `shirts_image_4`,
     `shirts_descript`, 
     `shirts_team`,
     `shirts_size`, 
@@ -152,6 +167,9 @@ INSERT INTO `shirts` (
     `shirts_price`
 ) VALUES (
     'Flamengo Reserva',
+    '/imgproduct/Camisaflapreta.png',
+    '/imgproduct/Camisaflabranca.png',
+    '/imgproduct/Barcelonaprinc.png',
     '/imgproduct/Camisaflapreta.png',
     'Camisa Original do Flamengo',
     'Flamengo',
@@ -164,6 +182,9 @@ INSERT INTO `shirts` (
 (
     'Flamengo Reserva',
     '/imgproduct/Barcelona.png',
+    '/imgproduct/Camisaflabranca.png',
+    '/imgproduct/Barcelonaprinc.png',
+    '/imgproduct/Camisaflapreta.png',
     'Camisa Original do Flamengo',
     'Flamengo',
     'P',
@@ -175,6 +196,9 @@ INSERT INTO `shirts` (
 (
     'Flamengo Reserva',
     '/imgproduct/BarcelonaPrinc.png',
+    '/imgproduct/Camisaflabranca.png',
+    '/imgproduct/Barcelonaprinc.png',
+    '/imgproduct/Camisaflapreta.png',
     'Camisa Original do Flamengo',
     'Flamengo',
     'P',
@@ -186,6 +210,9 @@ INSERT INTO `shirts` (
 (
     'Flamengo Reserva',
     '/imgproduct/RealMadrid.png',
+    '/imgproduct/Camisaflabranca.png',
+    '/imgproduct/Barcelonaprinc.png',
+    '/imgproduct/Camisaflapreta.png',
     'Camisa Original do Flamengo',
     'Flamengo',
     'P',
@@ -193,7 +220,7 @@ INSERT INTO `shirts` (
     '129,90',
     '100'
     
-)
+);
 
 
 
