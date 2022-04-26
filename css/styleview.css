@@ -43,7 +43,7 @@
 .payment p {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #06af06;
+    color: #008000;
 }
 
 .payment p:last-child {
@@ -132,7 +132,7 @@ td{
 }
 
 .table-installment .parcell{
-    color: #06af06;
+    color: #008000;
 }
 
 .table-description {
