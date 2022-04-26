@@ -52,12 +52,13 @@ $shirt_view = <<<HTML
 
 
 <div class="container-view-product">
-    <div class="imgs-view-product">
-        <img class="img-princ" src="{$shirt['shirts_image']}" alt="">
-        <div>
-            <img src="{$shirt['shirts_image']}" alt="">
-            <img src="{$shirt['shirts_image']}" alt="">
-            <img src="{$shirt['shirts_image']}" alt="">
+    <div class="imgs-view-product" id="m_image">
+        <img class="img-princ" src="{$shirt['shirts_image_1']}" alt="">
+        <div id="s_image">
+            <img src="{$shirt['shirts_image_2']}" alt="">
+            <img src="{$shirt['shirts_image_3']}" alt="">
+            <img src="{$shirt['shirts_image_4']}" alt="">
+
         </div>
     </div>
 
@@ -254,6 +255,22 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 </main>
 
+<script>
+    var m_image = document.getElementById('m_image');
+    var s_image = document.getElementById('s_image').getElementsByTagName('img');
+
+    for(var i = 0; i < s_image.length; i++){
+        s_image[i].addEventListener('click', full_image);
+    }
+
+    function full_image(){
+        var ImageSRC = this.getAttribute('src');
+        m_image.innerHTML = "<img src=" + ImageSRC + "  height='300' width='300' > ";
+    }
+
+</script>
+
+
 
 <?php
 
@@ -261,3 +278,4 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
 
 ?>
+
