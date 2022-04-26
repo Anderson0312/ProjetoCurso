@@ -46,17 +46,22 @@ if (isset($_POST['send'])):
     $form['pric'] = sanitize('pric', 'string');
     $form['amount'] = sanitize('amount', 'string');
 
-    $extensao = $_FILES['arquivo']['name']; // pega a extensão do arquivo
+    $countfiles = count($_FILES['file']['name']);
 
-    $novo_nome = md5(time()). $extensao; // define o nome do arqulvo
-    
-    $caminhoAtual = $_FILES['arquivo']['tmp_name'];
-    
-    $diretorioSave = "/imgproduct/".$novo_nome; //define o diretorio para onde enviar o arquivo
-    
-    move_uploaded_file($caminhoAtual, $diretorioSave ); // efetua o upload
-    
 
+    for($i=0;$i<$countfiles;$i++){
+
+        $extensao = $_FILES['arquivo']['name']; // pega a extensão do arquivo
+
+        $new_name = md5(time()). $extensao; // define o nome do arqulvo
+        
+        $caminhoAtual = $_FILES['arquivo']['tmp_name'];
+        
+        $diretorioSave = "/imgproduct/".$new_name; //define o diretorio para onde enviar o arquivo
+        
+        move_uploaded_file($caminhoAtual, $diretorioSave ); // efetua o upload
+        
+    } 
         
     // Verifica se todos os campos form preenchidos
     if ($form['nome'] === '' or $form['descript'] === '' or $form['team'] === '' or $form['size'] === '' or $form['colors'] === '' or $form['pric'] === '' or $form['amount'] === '' ):
