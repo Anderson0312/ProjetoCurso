@@ -26,17 +26,19 @@ $form = [
 ];
 
 
+
 // Detecta se o registro foi enviado...
-if (isset($_POST['send'], ($_FILE['arquivo']))):
+if (isset($_POST['send'])):
 
     // Obtém os valores dos campos, sanitiza e armazena nas variáveis.
     // Atenção! A função "sanitize()" está em "/phpconfgs/_config.php".
 
+
     $form['nome'] = sanitize('nome', 'string');
-    $form['img1'] = sanitize('img1', 'string');
-    $form['img2'] = sanitize('img2', 'string');
-    $form['img3'] = sanitize('img3', 'string');
-    $form['img4'] = sanitize('img4', 'string');
+    $form['img1'] = sanitize('arquivo', 'string');
+    $form['img2'] = sanitize('arquivo', 'string');
+    $form['img3'] = sanitize('arquivo', 'string');
+    $form['img4'] = sanitize('arquivo', 'string');
     $form['descript'] = sanitize('descript', 'string');
     $form['team'] = sanitize('team', 'string');
     $form['size'] = sanitize('size', 'string');
@@ -44,12 +46,16 @@ if (isset($_POST['send'], ($_FILE['arquivo']))):
     $form['pric'] = sanitize('pric', 'string');
     $form['amount'] = sanitize('amount', 'string');
 
-        
-        $extensao = strtolower(substr($_FILE['arquivo']['name'],-4)); // pega a extensão do arquivo
-        $novo_nome = md5(time()). $extensao; // define o nome do arqulvo
-        $diretorio = "upload/"; //define o diretorio para onde enviar o arquivo
+    $extensao = $_FILES['arquivo']['name']; // pega a extensão do arquivo
 
-        move_uploaded_file($_FILE['arquivo']['temp_name'],$diretori.$novo_nome); // efetua o upload
+    $novo_nome = md5(time()). $extensao; // define o nome do arqulvo
+    
+    $caminhoAtual = $_FILES['arquivo']['tmp_name'];
+    
+    $diretorioSave = "/imgproduct/".$novo_nome; //define o diretorio para onde enviar o arquivo
+    
+    move_uploaded_file($caminhoAtual, $diretorioSave ); // efetua o upload
+    
 
         
     // Verifica se todos os campos form preenchidos
@@ -122,7 +128,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 <main class="registerbox ">
 
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" enctype="multpart/form-data">
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multpart/form-data">
         <input type="hidden" name="send" value="true">
         <?php echo $form['feedback']; ?>
 
@@ -169,19 +175,19 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
         <div style='display:flex'>
             <div>
                 <label for="cpf">Imagem 1 *</label>
-                <input type="file" name="img1" id="img1" class="dados">
+                <input type="file" name="arquivo" id="img1" class="dados">
             </div>
             <div>
                 <label for="cpf">Imagem 2 *</label>
-                <input type="file" name="img2" id="img2" class="dados">
+                <input type="file" name="arquivo" id="img2" class="dados">
             </div>
             <div>
                 <label for="cpf">Imagem 3 *</label>
-                <input type="file" name="img3" id="img3" class="dados">
+                <input type="file" name="arquivo" id="img3" class="dados">
             </div>
             <div>
                 <label for="cpf">Imagem 4 *</label>
-                <input type="file" name="img4" id="img4" class="dados">
+                <input type="file" name="arquivo" id="img4" class="dados">
             </div>
         </div>
 

@@ -33,7 +33,7 @@ CREATE TABLE registros (
     registros_district VARCHAR(255) NOT NULL,
     registros_city VARCHAR(255) NOT NULL,
 
-    registros_status ENUM('analysis', 'confirmed', 'deleted') NOT NULL DEFAULT 'confirmed'
+    registros_status ENUM('analysis', 'confirmed', 'deleted') NOT NULL DEFAULT 'confirmed' 
 );
 
 -- Teste de inserção na tabela 'registros'.
@@ -53,9 +53,9 @@ CREATE TABLE registros (
         registros_city
            
 ) VALUES (
-    'joca@silva.com',
+    'andersonmoura812@gmail.com',
     '17749771760',
-    'Joca da Silva',
+    'Anderson moura do nascimento',
     '2022/03/07',
     'masculino',
     SHA2('050200', 512),
@@ -109,7 +109,7 @@ INSERT INTO `shirts` (
  
 
 ) VALUES (
-    'test test',
+    'Camisa Flamengo',
     '/imgproduct/Camisaflabranca.png',
     '/imgproduct/Barcelonaprinc.png',
     '/imgproduct/Camisaflapreta.png',

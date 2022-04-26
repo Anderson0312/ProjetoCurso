@@ -76,12 +76,37 @@ body {
     color: var(--color-dark-variant);
 }
 
+.container-table  {
+    display: flex;
+    justify-content: center;
+}
 
+.table-striped-painel {
+    margin: auto;
+    width: 90%;
+}
 
+.table-striped-painel thead th {
+    padding-left: 1rem;
+    border-bottom: 1px solid black;
+}
 
+.painel-img-product {
+    width: 100px;
+    margin: auto;
+}
 
+.txtbutton-painel {
+    text-align: center;
+    margin: 2rem;
+}
 
-
+.button-add-product {
+    padding: .7rem;
+    background-color: black;
+    color: white;
+    border-radius: .5rem;
+}
 
 
 @media (max-width: 460px) {
@@ -102,5 +127,21 @@ body {
     .product-item-desc {
         font-size: .3rem;
         padding: 0 2px;
+    }
+
+    .table-striped-painel {
+        width: 100%
+    }
+
+    .table-striped-painel thead th {
+        padding-left: 0.1rem;
+        font-size: .8rem;
+    }
+
+    .table-striped-painel tbody td {
+        font-size: .7rem;
+    }
+    .table-striped-painel tbody td img{
+        width: 50px;
     }
     }

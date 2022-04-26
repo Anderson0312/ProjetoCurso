@@ -38,6 +38,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
             <h3>PAINEL</h3>
         </a>
 
+        <?php if  ($user['registros_email'] == 'andersonmoura812@gmail.com'): ?>
+            <a href="/admin/painelproduto.php">
+                <h3>PAINEL DE PRODUTOS</h3>
+            </a>
+        <?php endif; ?>
+
         <a href="/user/request.php">
             <h3>PEDIDOS</h3>
         </a>
@@ -78,6 +84,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
     <div class="buttons">
         <a href="/user/logged.php"><p>Painel</p></a>
+        <?php if  ($user['registros_email'] == 'andersonmoura812@gmail.com'): ?>
+            <a href="/admin/painelproduto.php">
+                <p>Painel de Produtos</p>
+            </a>
+        <?php endif; ?>
         <a href="/user/request.php"><p>Pedidos</p></a>
         <a href="/user/address.php"><p>Endereço</p></a>
         <a href="/user/profile.php"><p>Detalhes da conta</p></a>

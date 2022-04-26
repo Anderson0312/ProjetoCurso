@@ -48,14 +48,14 @@ if (isset($_POST['send'])) :
         FROM `registros`
         WHERE registros_email = '{$form['email']}'
         AND registros_password = SHA2('{$form['password']}', 512)
-        AND registros_status = 'confirmed';
+        AND registros_status = 'confirmed'
 
 SQL;
 
 
         // Executa a consulta.
         $res = $conn->query($sql);
-
+       
         // Se não retornou apenas um registro
         if ($res->num_rows !== 1) :
 
@@ -69,6 +69,7 @@ SQL;
 
             // Obtém valor do cookie do banco de dados
             $user = $res->fetch_assoc();
+
 
             // Tempo de vida do cookie 
             if ($form['keep']) $cookie_live = time() + 86400 * 365;
