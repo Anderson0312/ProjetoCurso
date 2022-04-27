@@ -8,7 +8,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  *******************************************/
 
 // Variáveis desta página
-
+$file = '';  
 $form = [
     "nome" => '',
     "img1" => '',
@@ -35,10 +35,10 @@ if (isset($_POST['send'])):
 
 
     $form['nome'] = sanitize('nome', 'string');
-    $form['img1'] = sanitize('arquivo', 'string');
-    $form['img2'] = sanitize('arquivo', 'string');
-    $form['img3'] = sanitize('arquivo', 'string');
-    $form['img4'] = sanitize('arquivo', 'string');
+    $form['img1'] = sanitize('file', 'string');
+    $form['img2'] = sanitize('file', 'string');
+    $form['img3'] = sanitize('file', 'string');
+    $form['img4'] = sanitize('file', 'string');
     $form['descript'] = sanitize('descript', 'string');
     $form['team'] = sanitize('team', 'string');
     $form['size'] = sanitize('size', 'string');
@@ -46,22 +46,16 @@ if (isset($_POST['send'])):
     $form['pric'] = sanitize('pric', 'string');
     $form['amount'] = sanitize('amount', 'string');
 
-    $countfiles = count($_FILES['file']['name']);
 
 
-    for($i=0;$i<$countfiles;$i++){
+    // $countfiles = count($_FILES['file']['name']);
+    // for($i=0;$i<$countfiles;$i++){
+    //     $filename = $_FILES['file']['name'][$i];
+    //     $caminhoatual = $_FILES['file']['tmp_name'];
+    //     $caminhoSalvar = 'upload/'.$filename;
+    //     move_uploaded_file($caminhoatual[$i], $caminhoSalvar);
+    // }
 
-        $extensao = $_FILES['arquivo']['name']; // pega a extensão do arquivo
-
-        $new_name = md5(time()). $extensao; // define o nome do arqulvo
-        
-        $caminhoAtual = $_FILES['arquivo']['tmp_name'];
-        
-        $diretorioSave = "/imgproduct/".$new_name; //define o diretorio para onde enviar o arquivo
-        
-        move_uploaded_file($caminhoAtual, $diretorioSave ); // efetua o upload
-        
-    } 
         
     // Verifica se todos os campos form preenchidos
     if ($form['nome'] === '' or $form['descript'] === '' or $form['team'] === '' or $form['size'] === '' or $form['colors'] === '' or $form['pric'] === '' or $form['amount'] === '' ):
@@ -133,7 +127,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 <main class="registerbox ">
 
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multpart/form-data">
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype='multipart/form-data'>
         <input type="hidden" name="send" value="true">
         <?php echo $form['feedback']; ?>
 
@@ -180,21 +174,21 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
         <div style='display:flex'>
             <div>
                 <label for="cpf">Imagem 1 *</label>
-                <input type="file" name="arquivo" id="img1" class="dados">
+                <input type="file" name="file" id="file" class="dados">
             </div>
             <div>
                 <label for="cpf">Imagem 2 *</label>
-                <input type="file" name="arquivo" id="img2" class="dados">
+                <input type="file" name="file" id="file" class="dados">
             </div>
             <div>
                 <label for="cpf">Imagem 3 *</label>
-                <input type="file" name="arquivo" id="img3" class="dados">
+                <input type="file" name="file" id="file" class="dados">
             </div>
             <div>
                 <label for="cpf">Imagem 4 *</label>
-                <input type="file" name="arquivo" id="img4" class="dados">
+                <input type="file" name="file" id="file" class="dados">
             </div>
-        </div>
+        </div> 
 
         <div class='button'>
                 <label></label>
