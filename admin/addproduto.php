@@ -35,10 +35,10 @@ if (isset($_POST['send'])):
 
 
     $form['nome'] = sanitize('nome', 'string');
-    $form['img1'] = sanitize('userfile[]', 'email');
-    $form['img2'] = sanitize('userfile[]', 'email');
-    $form['img3'] = sanitize('userfile[]', 'email');
-    $form['img4'] = sanitize('userfile[]', 'email');
+    $form['img1'] = sanitize('file1', 'string');
+    $form['img2'] = sanitize('file2', 'string');
+    $form['img3'] = sanitize('file3', 'string');
+    $form['img4'] = sanitize('file4', 'string');
     $form['descript'] = sanitize('descript', 'string');
     $form['team'] = sanitize('team', 'string');
     $form['size'] = sanitize('size', 'string');
@@ -78,10 +78,10 @@ if (isset($_POST['send'])):
         shirts_amount
         ) VALUES (
             '{$form['nome']}',
-            '{$filename['name']}',
-            '{$filename['name']}',
-            '{$filename['name']}',
-            '{$filename['name']}',
+            '{$form['img1']}',
+            '{$form['img2']}',
+            '{$form['img3']}',
+            '{$form['img4']}',
             '{$form['descript']}',
             '{$form['team']}',
             '{$form['size']}',
@@ -175,20 +175,20 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
         <div >
             <div>
-                <label for="file">Imagem 1 *</label>
-                <input type="file" name="userfile[]" id="file" class="dados" multiple>
+                <label for="file1">Imagem 1 *</label>
+                <input type="text" name="file1" id="file" class="dados" placeholder='Caminho absoluto da imagem.'>
             </div>
             <div>
-                <label for="file">Imagem 2 *</label>
-                <input type="file" name="userfile[]" id="file" class="dados" multiple>
+                <label for="file2">Imagem 2 *</label>
+                <input type="text" name="file2" id="file" class="dados" placeholder='Caminho absoluto da imagem.'>
             </div>
             <div>
-                <label for="file">Imagem 3 *</label>
-                <input type="file" name="userfile[]" id="file" class="dados" multiple>
+                <label for="file3">Imagem 3 *</label>
+                <input type="text" name="file3" id="file" class="dados" placeholder='Caminho absoluto da imagem.'>
             </div>
             <div>
-                <label for="file">Imagem 4 *</label>
-                <input type="file" name="userfile[]" id="file" class="dados" multiple>
+                <label for="file4">Imagem 4 *</label>
+                <input type="text" name="file4" id="file" class="dados" placeholder='Caminho absoluto da imagem.'>
             </div>
         </div> 
 
@@ -200,7 +200,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 </main>
 
+
 <?php
 
+// Inclui o rodapé da página
+require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
 
 ?>

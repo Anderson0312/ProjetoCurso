@@ -288,4 +288,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
     </main>
 
+<?php
+
+// Inclui o rodapé da página
+require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
+
+?>
 

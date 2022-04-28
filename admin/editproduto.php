@@ -9,7 +9,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 
 // Variáveis desta página
 $idprod = filter_input(INPUT_GET, 'id');
-debug($idprod);
+
 $form = [
     "nome" => '',
     "img1" => '',
@@ -36,10 +36,10 @@ if (isset($_POST['send-editprod'])):
 
 
     $form['nome'] = sanitize('nome', 'string');
-    // $form['img1'] = sanitize('userfile[]', 'email');
-    // $form['img2'] = sanitize('userfile[]', 'email');
-    // $form['img3'] = sanitize('userfile[]', 'email');
-    // $form['img4'] = sanitize('userfile[]', 'email');
+    // $form['img1'] = sanitize('file1', 'email');
+    // $form['img2'] = sanitize('file2', 'email');
+    // $form['img3'] = sanitize('file3', 'email');
+    // $form['img4'] = sanitize('file4', 'email');
     $form['descript'] = sanitize('descript', 'string');
     $form['team'] = sanitize('team', 'string');
     $form['size'] = sanitize('size', 'string');
