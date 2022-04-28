@@ -108,6 +108,18 @@ body {
     border-radius: .5rem;
 }
 
+.button-edit-product {
+    padding: .2rem;
+    background-color: #ff0;
+    border-radius: .5rem;  
+}
+
+.button-delet-product {
+    padding: .3rem;
+    background-color: red;
+    border-radius: .5rem;  
+}
+
 
 @media (max-width: 460px) {
     .title-colecion {

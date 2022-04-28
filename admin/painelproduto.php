@@ -17,7 +17,7 @@ $sql = <<<SQL
 
 SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_colors, shirts_price
 FROM shirts 
-WHERE shirts_status = 'on' AND shirts_date <= NOW() AND shirts_id <= 8; 
+WHERE shirts_status = 'on' AND shirts_date <= NOW(); 
 
 
 SQL;
@@ -36,12 +36,11 @@ while ($shirts = $res->fetch_assoc()) {
                 <td> {$shirts['shirts_price']} </td>
                 <td> {$shirts['shirts_team']} </td>
                 <td><img class='painel-img-product' src="{$shirts['shirts_image']}" ></td>
-                <td><a href="" class="btn-buy">Editar</a></td>
+                <td><a href="/admin/editproduto.php?id={$shirts['shirts_id']}" class="button-edit-product">Editar</a></td>
                 <td>
             
-                <!-- Button trigger modal -->
     
-            <button type="button" class="txtbutton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="button-delet-product" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Deletar
             </button>
                 </td>
@@ -49,6 +48,7 @@ while ($shirts = $res->fetch_assoc()) {
  HTML;
 }
 ?>
+
 
 <div class='txtbutton-painel'>
         <a href="/admin/addproduto.php" class="button-add-product">ADICIONAR PRODUTO</a>

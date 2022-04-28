@@ -8,7 +8,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  *******************************************/
 
 // Variáveis desta página
-
+$idprod = filter_input(INPUT_GET, 'id');
+debug($idprod);
 $form = [
     "nome" => '',
     "img1" => '',
@@ -28,17 +29,17 @@ $form = [
 
 
 // Detecta se o registro foi enviado...
-if (isset($_POST['send'])):
+if (isset($_POST['send-editprod'])):
 
     // Obtém os valores dos campos, sanitiza e armazena nas variáveis.
     // Atenção! A função "sanitize()" está em "/phpconfgs/_config.php".
 
 
     $form['nome'] = sanitize('nome', 'string');
-    $form['img1'] = sanitize('userfile[]', 'email');
-    $form['img2'] = sanitize('userfile[]', 'email');
-    $form['img3'] = sanitize('userfile[]', 'email');
-    $form['img4'] = sanitize('userfile[]', 'email');
+    // $form['img1'] = sanitize('userfile[]', 'email');
+    // $form['img2'] = sanitize('userfile[]', 'email');
+    // $form['img3'] = sanitize('userfile[]', 'email');
+    // $form['img4'] = sanitize('userfile[]', 'email');
     $form['descript'] = sanitize('descript', 'string');
     $form['team'] = sanitize('team', 'string');
     $form['size'] = sanitize('size', 'string');
@@ -55,60 +56,56 @@ if (isset($_POST['send'])):
 
     else :
 
-        // for($i=0;$i<5;$i++){
-        //     $filename = $_FILES['userfile']['name'];
-        //     $target_file = 'upload/'.$filename;
-        //     move_uploaded_file($_FILES['file']['tmp_name'],$target_file);
     
-            
-
         $sql = <<<SQL
 
-        INSERT INTO shirts (
-        shirts_title, 
-        shirts_image, 
-        shirts_image_2,
-        shirts_image_3,
-        shirts_image_4,
-        shirts_descript, 
-        shirts_team,
-        shirts_size, 
-        shirts_colors,
-        shirts_price,
-        shirts_amount
-        ) VALUES (
-            '{$form['nome']}',
-            '{$filename['name']}',
-            '{$filename['name']}',
-            '{$filename['name']}',
-            '{$filename['name']}',
-            '{$form['descript']}',
-            '{$form['team']}',
-            '{$form['size']}',
-            '{$form['colors']}',
-            '{$form['pric']}',
-            '{$form['amount']}'
-        );
+    UPDATE shirts 
+        SET 
+        shirts_title = '{$form['nome']}',
+        shirts_descript = '{$form['descript']}',
+        shirts_team = '{$form['team']}',
+        shirts_size = '{$form['size']}',
+        shirts_colors = '{$form['colors']}',
+        shirts_price = '{$form['pric']}',
+        shirts_amount = '{$form['amount']}'
 
+        WHERE shirts_id = '{$idprod}';
+             
     SQL;
 
     
 // }
 
-        // Salva registros no banco de dados.
-        $conn->query($sql);
+        // Executa a query
+        $res = $conn->query($sql);
 
-        //Joga para pagina de painel
-        header('Location:http://projetocurso.localhost/admin/painelproduto.php');
-        // Cria mensagem de confirmação.
-        $form['feedback'] = <<<OUT
-            
-        <h3>Olá!</h3>
-        <p>O Produto foi adicionado com sucesso</p>
+        // Testa o resultado da atualização
+        $result = $conn->affected_rows;
 
-    OUT;
+        // Se não atualizou...
+        if ($result == 0) :
+            $form['feedback'] = '<h3 style="color:red">Erro: Algo deu errado!</h3>';
+
+        // Se deu erro no SQL...
+        elseif ($result == -1) :
+            $form['feedback'] = '<h3 style="color:red">Erro: falha no acesso ao banco de dados!</h3>';
+
+        // Se deu tudo certo...
+        else :
+
+            // Cria mensagem de confirmação.
+            $form['feedback'] = <<<OUT
+                    
+                <h3>Olá </h3>
+                <p>Sua atualizado foi enviado.</p>
+                <p><em>Obrigado...</em></p>
+                           
+OUT;
     endif;
+endif;
 
+// Joga para pagina de painel
+// header('Location:http://projetocurso.localhost/admin/painelproduto.php');
 
 endif; // if (isset($_POST['send']))
 
@@ -130,11 +127,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <main class="registerbox ">
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype='multipart/form-data'>
-        <input type="hidden" name="send" value="true">
+        <input type="hidden" name="send-editprod" value="true">
         <?php echo $form['feedback']; ?>
 
         <div class = 'text-information'>
-                <h2>Cadastro De Produto</h2>
+                <h2>Editar Produto</h2>
                 <p>Por favor, preencha os campos abaixo para adicionar o Produto</p>
         </div>
 
@@ -173,25 +170,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
                 <input type="number" name="amount" id="amount" class="dados">
         </div>
 
-        <div >
-            <div>
-                <label for="file">Imagem 1 *</label>
-                <input type="file" name="userfile[]" id="file" class="dados" multiple>
-            </div>
-            <div>
-                <label for="file">Imagem 2 *</label>
-                <input type="file" name="userfile[]" id="file" class="dados" multiple>
-            </div>
-            <div>
-                <label for="file">Imagem 3 *</label>
-                <input type="file" name="userfile[]" id="file" class="dados" multiple>
-            </div>
-            <div>
-                <label for="file">Imagem 4 *</label>
-                <input type="file" name="userfile[]" id="file" class="dados" multiple>
-            </div>
-        </div> 
-
         <div class='button'>
                 <label></label>
                 <button type="submit" class="txtbutton" >CADASTRAR PRODUTO</button>
@@ -201,6 +179,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 </main>
 
 <?php
+
+
+// Inclui o rodapé da página
+require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
 
 
 ?>
