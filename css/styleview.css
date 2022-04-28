@@ -13,8 +13,8 @@
 }
 
 .imgs-view-product .img-princ {
-    max-width: 400px;
-    max-width: 400px;
+    max-width: 450px;
+    min-width: 400px;
     margin: auto;
 }
 

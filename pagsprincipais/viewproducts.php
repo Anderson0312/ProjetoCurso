@@ -44,8 +44,9 @@ if ($res->num_rows != 1) header('Location: /pagsprincipais/index.php');
 // Obtém dados na forma de array
 $shirt = $res->fetch_assoc();
  
-$parcela3 = $shirt['shirts_price'] / 3;
-$parcela2 = $shirt['shirts_price'] / 2;
+$parcela  = number_format($shirt['shirts_price'] / 1, 2, ',', '.');
+$parcela3 = number_format($shirt['shirts_price'] / 3, 2, ',', '.');
+$parcela2 = number_format($shirt['shirts_price'] / 2, 2, ',', '.');
 
 
 $shirt_view = <<<HTML
@@ -60,7 +61,7 @@ $shirt_view = <<<HTML
             <img src="{$shirt['shirts_image_2']}" alt="">
             <img src="{$shirt['shirts_image_3']}" alt="">
             <img src="{$shirt['shirts_image_4']}" alt="">
-
+            <img src="{$shirt['shirts_image']}" alt="">
         </div>
     </div>
 
@@ -123,18 +124,18 @@ $shirt_view = <<<HTML
 
             <tbody>
                 <tr>
-                    <td>1x DE <strong>R$ {$shirt['shirts_price']} </strong></td>
-                    <td class="parcell"><strong>R$ {$shirt['shirts_price']}</strong></td>
+                    <td>1x DE <strong>R$ {$parcela} </strong></td>
+                    <td class="parcell"><strong>R$ {$parcela}</strong></td>
                 </tr>
 
                 <tr>
                     <td>2x DE <strong>R$ {$parcela2}</strong></td>
-                    <td class="parcell"><strong>R$ {$shirt['shirts_price']}</strong></td>
+                    <td class="parcell"><strong>R$ {$parcela}</strong></td>
                 </tr>
 
                 <tr>
                     <td>3x DE <strong>R$ {$parcela3}</strong></td>
-                    <td class="parcell"><strong>R$ {$shirt['shirts_price']}</strong></td>
+                    <td class="parcell"><strong>R$ {$parcela}</strong></td>
                 </tr>
             </tbody>
         </table>
@@ -257,23 +258,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 </main>
 
-<script>
-    var m_image = document.getElementById('m_image');
-    var s_image = document.getElementById('s_image').getElementsByTagName('img');
-
-    for(var i = 0; i < s_image.length; i++){
-        s_image[i].addEventListener('click', full_image);
-    }
-
-    function full_image(){
-        var ImageSRC = this.getAttribute('src');
-        m_image.innerHTML = "<img src=" + ImageSRC + "  height='300' width='300' > ";
-    }
-
-</script>
-
-
-
+ 
 <?php
 
 // Inclui o rodapé da página

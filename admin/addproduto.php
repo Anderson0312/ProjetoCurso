@@ -8,7 +8,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  *******************************************/
 
 // Variáveis desta página
-$file = '';  
+
 $form = [
     "nome" => '',
     "img1" => '',
@@ -35,10 +35,10 @@ if (isset($_POST['send'])):
 
 
     $form['nome'] = sanitize('nome', 'string');
-    $form['img1'] = sanitize('file', 'string');
-    $form['img2'] = sanitize('file', 'string');
-    $form['img3'] = sanitize('file', 'string');
-    $form['img4'] = sanitize('file', 'string');
+    $form['img1'] = sanitize('userfile[]', 'email');
+    $form['img2'] = sanitize('userfile[]', 'email');
+    $form['img3'] = sanitize('userfile[]', 'email');
+    $form['img4'] = sanitize('userfile[]', 'email');
     $form['descript'] = sanitize('descript', 'string');
     $form['team'] = sanitize('team', 'string');
     $form['size'] = sanitize('size', 'string');
@@ -48,20 +48,19 @@ if (isset($_POST['send'])):
 
 
 
-    // $countfiles = count($_FILES['file']['name']);
-    // for($i=0;$i<$countfiles;$i++){
-    //     $filename = $_FILES['file']['name'][$i];
-    //     $caminhoatual = $_FILES['file']['tmp_name'];
-    //     $caminhoSalvar = 'upload/'.$filename;
-    //     move_uploaded_file($caminhoatual[$i], $caminhoSalvar);
-    // }
-
         
     // Verifica se todos os campos form preenchidos
-    if ($form['nome'] === '' or $form['descript'] === '' or $form['team'] === '' or $form['size'] === '' or $form['colors'] === '' or $form['pric'] === '' or $form['amount'] === '' ):
+    if ($form['nome'] === '' or $form['descript'] === '' or $form['team'] === '' or $form['size'] === '' or $form['colors'] === '' or $form['pric'] === '' or $form['amount'] === ''):
         $form['feedback'] = '<h3 style="color:red">Erro: por favor, preencha todos os campos!</h3>';
 
     else :
+
+        for($i=0;$i<5;$i++){
+            $filename = $_FILES['userfile']['name'];
+            $target_file = 'upload/'.$filename;
+            move_uploaded_file($_FILES['file']['tmp_name'],$target_file);
+    
+            
 
         $sql = <<<SQL
 
@@ -79,10 +78,10 @@ if (isset($_POST['send'])):
         shirts_amount
         ) VALUES (
             '{$form['nome']}',
-            '{$form['img1']}',
-            '{$form['img2']}',
-            '{$form['img3']}',
-            '{$form['img4']}',
+            '{$filename['name']}',
+            '{$filename['name']}',
+            '{$filename['name']}',
+            '{$filename['name']}',
             '{$form['descript']}',
             '{$form['team']}',
             '{$form['size']}',
@@ -92,7 +91,7 @@ if (isset($_POST['send'])):
         );
 
     SQL;
-
+}
 
         // Salva registros no banco de dados.
         $conn->query($sql);
@@ -171,22 +170,22 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
                 <input type="number" name="amount" id="amount" class="dados">
         </div>
 
-        <div style='display:flex'>
+        <div >
             <div>
-                <label for="cpf">Imagem 1 *</label>
-                <input type="file" name="file" id="file" class="dados">
+                <label for="file">Imagem 1 *</label>
+                <input type="file" name="userfile[]" id="file" class="dados" multiple>
             </div>
             <div>
-                <label for="cpf">Imagem 2 *</label>
-                <input type="file" name="file" id="file" class="dados">
+                <label for="file">Imagem 2 *</label>
+                <input type="file" name="userfile[]" id="file" class="dados" multiple>
             </div>
             <div>
-                <label for="cpf">Imagem 3 *</label>
-                <input type="file" name="file" id="file" class="dados">
+                <label for="file">Imagem 3 *</label>
+                <input type="file" name="userfile[]" id="file" class="dados" multiple>
             </div>
             <div>
-                <label for="cpf">Imagem 4 *</label>
-                <input type="file" name="file" id="file" class="dados">
+                <label for="file">Imagem 4 *</label>
+                <input type="file" name="userfile[]" id="file" class="dados" multiple>
             </div>
         </div> 
 
@@ -198,3 +197,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 </main>
 
+<?php
+
+
+?>

@@ -35,7 +35,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
         <?php if  ($user['registros_email'] == 'andersonmoura812@gmail.com'): ?>
             <a href="/admin/painelproduto.php">
-                <h3>PAINEL DE PRODUTOS</h3>
+                <h3>PAINEL DE ADMIN</h3>
             </a>
         <?php endif; ?>
 

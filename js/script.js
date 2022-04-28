@@ -39,5 +39,20 @@ function setValue(value) {
 setValue(numero);
 
 
-//remove element
 
+
+
+// view image changer
+
+
+var m_image = document.getElementById('m_image');
+var s_image = document.getElementById('s_image').getElementsByTagName('img');
+
+for(var i = 0; i < s_image.length; i++){
+    s_image[i].addEventListener('click', full_image);
+}
+
+function full_image(){
+    var ImageSRC = this.getAttribute('src');
+    m_image.innerHTML = "<img src=" + ImageSRC + "  height='300' width='300' > ";
+}
