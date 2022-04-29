@@ -8,7 +8,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  * Seu código PHP desta página entra aqui! *
  *******************************************/
 
-
+ // Se não estiver logado, vai para a 'index'.
+if  ($_COOKIE['user'] == '') header('Location:http://projetocurso.localhost/pagsprincipais/index.php');
 
  // Inclui o cbeçalho da página
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";

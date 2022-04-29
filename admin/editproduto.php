@@ -26,7 +26,8 @@ $form = [
     'feedback' => ''
 ];
 
-
+// Verifica se é o admin tentando entrar na pagina
+if  ($user['registros_email'] == 'andersonmoura812@gmail.com'):
 
 // Detecta se o registro foi enviado...
 if (isset($_POST['send-editprod'])):
@@ -109,6 +110,11 @@ endif;
 
 endif; // if (isset($_POST['send']))
 
+else:
+    header('Location:http://projetocurso.localhost/pagsprincipais/index.php');
+endif;
+
+
 // Define o titilo dessa pagina
 $page_title = '';
 
@@ -124,7 +130,13 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 <link rel="stylesheet" href="/css/styleregister.css">
 
+<div class='secondheader'>
+    <h2>PAINEL DE PRODUTOS</h2>
+</div>
+
 <main class="registerbox ">
+
+
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype='multipart/form-data'>
         <input type="hidden" name="send-editprod" value="true">

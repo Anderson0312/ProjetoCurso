@@ -10,43 +10,60 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  // Define o título DESTA página.
 $page_title =  $shirt_painel_product = "";
 
+
+// Verifica se é o admin tentando entrar na pagina
+if  ($user['registros_email'] == 'andersonmoura812@gmail.com'):
+
+
+    $sql = <<<SQL
+
+    SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_colors, shirts_price
+    FROM shirts 
+    WHERE shirts_status = 'on' AND shirts_date <= NOW(); 
+
+
+    SQL;
+
+    // Executar a query e retorna dados na variável
+    $res = $conn->query($sql);
+
+    while ($shirts = $res->fetch_assoc()) {
+
+        $shirt_painel_product .= <<<HTML
+
+
+                <tr class='painel_product'>
+                    <td> {$shirts['shirts_id']}  </td>
+                    <td> {$shirts['shirts_title']} </td>
+                    <td> {$shirts['shirts_price']} </td>
+                    <td> {$shirts['shirts_team']} </td>
+                    <td><img class='painel-img-product' src="{$shirts['shirts_image']}" ></td>
+                    <td><a href="/admin/editproduto.php?id={$shirts['shirts_id']}" class="button-edit-product">Editar</a></td>
+
+                    <td><a class="button-delet-product" href="/admin/deletproduto.php?id={$shirts['shirts_id']}">
+                    Deletar
+                    </a></td>
+                </tr>
+    HTML;
+
+    }
+    else:
+        header('Location:http://projetocurso.localhost/pagsprincipais/index.php');
+endif;
+
 // Inclui o cbeçalho da página
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
-$sql = <<<SQL
-
-SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_colors, shirts_price
-FROM shirts 
-WHERE shirts_status = 'on' AND shirts_date <= NOW(); 
-
-
-SQL;
-
-// Executar a query e retorna dados na variável
-$res = $conn->query($sql);
-
-while ($shirts = $res->fetch_assoc()) {
-
-    $shirt_painel_product .= <<<HTML
-
-
-            <tr class='painel_product'>
-                <td> {$shirts['shirts_id']}  </td>
-                <td> {$shirts['shirts_title']} </td>
-                <td> {$shirts['shirts_price']} </td>
-                <td> {$shirts['shirts_team']} </td>
-                <td><img class='painel-img-product' src="{$shirts['shirts_image']}" ></td>
-                <td><a href="/admin/editproduto.php?id={$shirts['shirts_id']}" class="button-edit-product">Editar</a></td>
-
-                <td><a class="button-delet-product" href="/admin/deletproduto.php?id={$shirts['shirts_id']}">
-                Deletar
-                </a></td>
-            </tr>
- HTML;
-
-}
+/*********************************************
+ * Seu código PHP desta página termina aqui! *
+ *********************************************/
 ?>
 
+
+
+<div class='secondheader'>
+    <h2>PAINEL DE PRODUTOS</h2>
+</div>
 
 <div class='txtbutton-painel'>
         <a href="/admin/addproduto.php" class="button-add-product">ADICIONAR PRODUTO</a>

@@ -10,12 +10,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    max-height: 480px;
 }
 
 .imgs-view-product .img-princ {
     max-width: 450px;
     min-width: 400px;
     margin: auto;
+
 }
 
 .imgs-view-product .img-seconds-view img {
@@ -166,10 +168,12 @@ td{
 
 
 .div-princ-view .img-princ {
-    max-width: 400px;
-    max-width: 400px;
+    width: 420px;
+    height: 450px;
     margin: auto;
+    filter: drop-shadow(5px 10px 15px rgb(8,9,13,.4));
 }
+
 
 .imgs-view-product .img-seconds-view img {
     opacity: 0.6;
@@ -234,6 +238,7 @@ td{
     width: 80%;
     padding: 1rem;   
     border-radius: 0.4rem;
+    margin-top:.8rem;
 }
 
 .btn-buy:hover {

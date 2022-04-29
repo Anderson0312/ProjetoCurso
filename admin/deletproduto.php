@@ -14,6 +14,7 @@ $form = [
         'feedback' => ''
 ];
 
+if  ($user['registros_email'] == 'andersonmoura812@gmail.com'):
 
    
          $sql = <<<SQL
@@ -54,6 +55,9 @@ $form = [
 OUT;
 
  endif;
+    else:
+        header('Location:http://projetocurso.localhost/pagsprincipais/index.php');
+endif;
 
 // Joga para pagina de painel
 header('Location:http://projetocurso.localhost/admin/painelproduto.php');

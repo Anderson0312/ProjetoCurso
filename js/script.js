@@ -54,5 +54,5 @@ for(var i = 0; i < s_image.length; i++){
 
 function full_image(){
     var ImageSRC = this.getAttribute('src');
-    m_image.innerHTML = "<img src=" + ImageSRC + "  height='300' width='300' > ";
+    m_image.innerHTML = "<img src=" + ImageSRC + "  height='350' width='400' > ";
 }

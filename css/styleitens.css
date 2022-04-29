@@ -91,6 +91,10 @@ body {
     border-bottom: 1px solid black;
 }
 
+.painel_product td {
+    border-bottom: 1px solid gray;
+}
+
 .painel-img-product {
     width: 100px;
     margin: auto;
@@ -110,14 +114,14 @@ body {
 
 .button-edit-product {
     padding: .2rem;
-    background-color: #ff0;
+    background-color: #04B2D9;
     border-radius: .5rem;
     border: 1px solid rgba(0, 0, 0, 0.39);  
 }
 
 .button-delet-product {
     padding: .2rem;
-    background-color: red;
+    background-color: #F23030;
     border-radius: .5rem;  
     border: 1px solid rgba(0, 0, 0, 0.438);  
 }

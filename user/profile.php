@@ -12,7 +12,7 @@ $form['feedback'] = '';
 $show_form = true;
 
 // Se não estiver logado, vai para a 'index'.
-if (!isset($_COOKIE['user'])) header('Location: /');
+if  ($_COOKIE['user'] != ''):
 
 if (isset($_POST['send-profile'])) :
 
@@ -109,6 +109,10 @@ SQL;
     // Variáveis do script
     $form['feedback'] = '';
 
+endif;
+
+else:
+    header('Location:http://projetocurso.localhost/pagsprincipais/index.php');
 endif;
 
  // Define o título DESTA página.

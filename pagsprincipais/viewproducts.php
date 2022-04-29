@@ -55,7 +55,7 @@ $shirt_view = <<<HTML
 <div class="container-view-product">
     <div class="imgs-view-product" >
         <div id="m_image" class='div-princ-view'>
-            <img class="img-princ" src="{$shirt['shirts_image']}" alt="">
+            <img class="img-princ" src="{$shirt['shirts_image']}" alt="" >
         </div>
         <div id="s_image" class='img-seconds-view'>
             <img src="{$shirt['shirts_image_2']}" alt="">

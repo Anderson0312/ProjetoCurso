@@ -27,6 +27,7 @@ if ($page_title == '') {
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/stylelogin.css">
     <link rel="stylesheet" href="/css/styleitens.css">
+    <link rel="stylesheet" href="/css/styleprofil.css">
 
     
 
