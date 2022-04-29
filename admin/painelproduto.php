@@ -37,15 +37,13 @@ while ($shirts = $res->fetch_assoc()) {
                 <td> {$shirts['shirts_team']} </td>
                 <td><img class='painel-img-product' src="{$shirts['shirts_image']}" ></td>
                 <td><a href="/admin/editproduto.php?id={$shirts['shirts_id']}" class="button-edit-product">Editar</a></td>
-                <td>
-            
-    
-            <button type="button" class="button-delet-product" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Deletar
-            </button>
-                </td>
+
+                <td><a class="button-delet-product" href="/admin/deletproduto.php?id={$shirts['shirts_id']}">
+                Deletar
+                </a></td>
             </tr>
  HTML;
+
 }
 ?>
 

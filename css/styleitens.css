@@ -111,13 +111,15 @@ body {
 .button-edit-product {
     padding: .2rem;
     background-color: #ff0;
-    border-radius: .5rem;  
+    border-radius: .5rem;
+    border: 1px solid rgba(0, 0, 0, 0.39);  
 }
 
 .button-delet-product {
-    padding: .3rem;
+    padding: .2rem;
     background-color: red;
     border-radius: .5rem;  
+    border: 1px solid rgba(0, 0, 0, 0.438);  
 }
 
 
