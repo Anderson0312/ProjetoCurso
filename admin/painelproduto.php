@@ -12,7 +12,7 @@ $page_title =  $shirt_painel_product = "";
 
 
 // Verifica se é o admin tentando entrar na pagina
-if  ($user['registros_email'] == 'andersonmoura812@gmail.com'):
+if  ($user['registros_permission'] == 'admin'):
 
 
     $sql = <<<SQL
@@ -47,6 +47,8 @@ if  ($user['registros_email'] == 'andersonmoura812@gmail.com'):
     HTML;
 
     }
+    
+    // se não for o admin tentando entrar joga para pagina index
     else:
         header('Location:http://projetocurso.localhost/pagsprincipais/index.php');
 endif;

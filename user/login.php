@@ -44,7 +44,7 @@ if (isset($_POST['send'])) :
         $sql = <<<SQL
 
 
-        SELECT registros_id, registros_date, registros_name, registros_email, registros_birth, registros_telefone
+        SELECT registros_id, registros_date, registros_name, registros_email, registros_birth, registros_telefone, registros_permission
         FROM `registros`
         WHERE registros_email = '{$form['email']}'
         AND registros_password = SHA2('{$form['password']}', 512)
@@ -55,7 +55,7 @@ SQL;
 
         // Executa a consulta.
         $res = $conn->query($sql);
-       
+    
         // Se não retornou apenas um registro
         if ($res->num_rows !== 1) :
 
@@ -77,7 +77,7 @@ SQL;
 
             // Cria cookie
             setcookie('user', json_encode($user), $cookie_live, '/');
-
+            
             // Tudo certo? Carregue a página de feedback.
             header ('Location: /user/logged.php');
 

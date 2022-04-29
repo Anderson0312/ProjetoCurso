@@ -1,5 +1,6 @@
 <?php
 
+
 // Inclui arquivo de configuração
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 
@@ -8,7 +9,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  *******************************************/
 
 // Variáveis desta página
-$idprod = filter_input(INPUT_GET, 'id');
+// $idprod = filter_input(INPUT_GET, 'id');
+$id = $_GET['id'];
+debug($id);
 
 $form = [
     "nome" => '',
@@ -26,8 +29,9 @@ $form = [
     'feedback' => ''
 ];
 
+
 // Verifica se é o admin tentando entrar na pagina
-if  ($user['registros_email'] == 'andersonmoura812@gmail.com'):
+if  ($user['registros_permission'] == 'admin'):
 
 // Detecta se o registro foi enviado...
 if (isset($_POST['send-editprod'])):
@@ -70,7 +74,7 @@ if (isset($_POST['send-editprod'])):
         shirts_price = '{$form['pric']}',
         shirts_amount = '{$form['amount']}'
 
-        WHERE shirts_id = '{$idprod}';
+        WHERE shirts_id = '{$id}'
              
     SQL;
 
@@ -79,9 +83,12 @@ if (isset($_POST['send-editprod'])):
 
         // Executa a query
         $res = $conn->query($sql);
+        
 
         // Testa o resultado da atualização
         $result = $conn->affected_rows;
+
+        debug($result);
 
         // Se não atualizou...
         if ($result == 0) :
@@ -110,6 +117,7 @@ endif;
 
 endif; // if (isset($_POST['send']))
 
+// se não for o admin tentando entrar joga para pagina index
 else:
     header('Location:http://projetocurso.localhost/pagsprincipais/index.php');
 endif;

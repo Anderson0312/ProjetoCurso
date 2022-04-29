@@ -33,6 +33,7 @@ CREATE TABLE registros (
     registros_district VARCHAR(255) NOT NULL,
     registros_city VARCHAR(255) NOT NULL,
 
+    registros_permission ENUM('usuario', 'admin') NOT NULL DEFAULT 'usuario',
     registros_status ENUM('analysis', 'confirmed', 'deleted') NOT NULL DEFAULT 'confirmed' 
 );
 
@@ -50,7 +51,8 @@ CREATE TABLE registros (
         registros_address,
         registros_number,
         registros_district,
-        registros_city
+        registros_city,
+        registros_permission
            
 ) VALUES (
     'andersonmoura812@gmail.com',
@@ -65,7 +67,8 @@ CREATE TABLE registros (
     'rua dos manjollos',
     'casa 693 fundos',
     'ilha do governador',
-    'Rio de janeiro'
+    'Rio de janeiro',
+    'admin'
 );
 
 

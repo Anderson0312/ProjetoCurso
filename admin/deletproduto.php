@@ -14,7 +14,7 @@ $form = [
         'feedback' => ''
 ];
 
-if  ($user['registros_email'] == 'andersonmoura812@gmail.com'):
+if  ($user['registros_permission'] == 'admin'):
 
    
          $sql = <<<SQL
@@ -55,6 +55,8 @@ if  ($user['registros_email'] == 'andersonmoura812@gmail.com'):
 OUT;
 
  endif;
+
+    // se não for o admin tentando entrar joga para pagina index
     else:
         header('Location:http://projetocurso.localhost/pagsprincipais/index.php');
 endif;

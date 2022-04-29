@@ -38,27 +38,6 @@
      * Gera variáveis do tema à partir do banco de dados. *
      ******************************************************/
 
-    // Obtém variáveis e seus valores do banco de dados
-
-
-    /*
-    // Consulta de teste. Apague depois de testar.
-    $result = $conn->query("SELECT * FROM articles");
-
-    while ($row = $result->fetch_assoc()) :
-        echo '<pre>';
-        echo $row['article_title'] . ' - ' . $row['article_intro'];
-        echo '</pre>';
-    endwhile;
-
-
-    // Teste de INSERT. Apague depois de testar.
-    $conn->query("INSERT INTO registros (registros_email, registros_cpf, registros_nome, registros_Nascimento, registros_genero,registros_senha1, registros_senha2, registros_telefone, registros_nomeentrega, registros_cep) VALUES ('anderson@email', '177497717602', 'Teste', '2022/03/06', 'feminino', '545755', '545755', '54875451455', 'luisa ferreira', '5478445')");
-
-    echo '<hr><hr>';
-
-    */
-
     
 
     //Variaveis do Tema
@@ -89,7 +68,6 @@
         
         // Somente primeiro nome
         $user['first_name'] = explode(' ', $user['registros_name'])[0];
-
 
 
     else :
