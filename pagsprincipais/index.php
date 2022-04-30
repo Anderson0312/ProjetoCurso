@@ -20,6 +20,8 @@ $page_menu = "index";
 // Variável que contém a lista de Camisa (string).
 $shirts_bestsellers = $shirts_popular = $shirts_releases = '';
 
+
+
 /*
  * Query que obtém só Camisa:
  *    Ordenados pelo mais recente.
@@ -105,6 +107,10 @@ while ($shirts = $res->fetch_assoc()) {
 
 }
 
+
+
+
+
 /*********************************************
  * Seu código PHP desta página termina aqui! *
  *********************************************/
@@ -125,10 +131,20 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 
 
 <div class="banner">
-    <picture>
-        <source media="(max-width: 426px)" srcset="../imgbanner/bannerpq2.jpeg">
-        <img class='bannerimg' src="../imgbanner/bannerG.jpeg" alt="">
-    </picture>
+    <div class="owl-carousel" id="carousel1">
+        <div>
+            <source media="(max-width: 426px)" srcset="../imgbanner/bannerMobile.jpeg">
+            <img class='bannerimg' src="../imgbanner/bannerG.jpeg" alt="">
+        </div>
+        <div>
+            <source media="(max-width: 426px)" srcset="../imgbanner/bannerMobile.jpeg">
+            <img class='bannerimg' src="../imgbanner/comolavar.jpeg" alt="">
+        </div>
+        <div>
+            <source media="(max-width: 426px)" srcset="../imgbanner/bannerMobile.jpeg">
+            <img class='bannerimg' src="../imgbanner/sitenoar.jpeg" alt="">
+        </div>
+    </div>
 </div>
 
 
@@ -159,7 +175,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
     </div>
 <!----------------- END OF CARD PRODUCT -------------------->
        
+
 <!----------------- END OF CARD PRODUCT -------------------->
+
+
 
 <?php
 

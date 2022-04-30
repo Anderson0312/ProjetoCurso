@@ -1,3 +1,4 @@
+
 //menu section
 
 var show = true;
@@ -44,7 +45,6 @@ setValue(numero);
 
 // view image changer
 
-
 var m_image = document.getElementById('m_image');
 var s_image = document.getElementById('s_image').getElementsByTagName('img');
 
@@ -56,3 +56,17 @@ function full_image(){
     var ImageSRC = this.getAttribute('src');
     m_image.innerHTML = "<img src=" + ImageSRC + "  height='350' width='400' > ";
 }
+
+
+
+// remove item do carrinho
+
+// var x = document.getElementById('x');
+
+//     btnx.addEventListener('click', () => {
+//         <?php
+//         session_start();
+//         debug($_SESSION['carrinho']);
+        
+//         ?>
+//     })

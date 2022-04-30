@@ -254,6 +254,18 @@ body {
     padding: .2rem;
 }
 
+a .bx {
+    opacity:0.5;
+    border-radius: 100%;
+    border: 2px solid currentColor;
+    font-weight: bold;
+}
+.bx:hover {
+    opacity:1;
+    border-radius: 100%;
+    border: 2px solid currentColor;
+    font-weight: bold;
+}
 
 @media(min-width: 769px) {
     .container-cart-all {

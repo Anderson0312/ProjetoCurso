@@ -41,6 +41,18 @@
     </footer>
 
     <script>
+
+        $('#carousel1').owlCarousel({
+            items:1,
+            loop:true,
+            margin:10,
+            autoHeight:true,
+            autoplay:true,
+            autoplayTimeout:4000,
+            autoplayHoverPause:true
+
+        });
+
         $('.owl-carousel').owlCarousel({
             loop:true,
             margin:10,

@@ -149,7 +149,7 @@ if ($_SESSION['carrinho'] >= 0  ):
 
                 <div class="product-item-cart">    
                     <div class="product-item-cart-img">
-                    <i class='bx bx-x' ></i>
+                    <a href=''><i class='bx bx-x' ></i></>
                         <a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
                     </div>
         
