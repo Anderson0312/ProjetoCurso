@@ -11,6 +11,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 // Variáveis do script
 $form['feedback'] = '';
 $show_form = true;
+$product_cart =  '' ;
 
 if (!isset($_COOKIE['user'])) header('Location: /user/login.php');
 
@@ -38,6 +39,8 @@ if (isset($_POST['finish-buy'])) :
         // String de atualização
         $sql = <<<SQL
 
+
+-- Atualiza os dados caso a pessoa desejar antes do faturamento
 UPDATE registros 
 SET 
     registros_birth = '{$form['registros_birth']}',
@@ -104,7 +107,7 @@ SQL;
     $sj = 'Confirmação de Pedido na loja MGL';
     $msg = <<<MSG
 
-    Contato enviado pelo site para confirmação de conta:
+    Contato enviado pelo site para confirmação de Compra:
 
     Data: {}
     Remetente: {}
@@ -118,6 +121,52 @@ SQL;
 
 
 endif; // if (isset($_POST['send']))
+
+
+
+// verifica se tem algo no produto para finalizar a compra
+if ($_SESSION['carrinho'] >= 0  ):
+
+    // entrar na session e para cada produto pega os valores do array
+    foreach($_SESSION['carrinho'] as $value) {
+
+        // Consulta ao banco de dados para revisar produtos
+        $sql = <<<SQL
+
+        SELECT * FROM `shirts`
+        WHERE shirts_id = '{$value['id']}}'
+        AND shirts_status= 'on';
+
+        SQL;
+
+        // Executar a query e retorna dados na variável do banco de dados
+        $res = $conn->query($sql);
+
+         // roda o loop enquanto tiver retorno do banco de dados, retornando uma camisa
+        while ($product = $res->fetch_assoc()) :
+
+            $product_cart .= <<<HTML
+
+                <div class="product-item-cart">    
+                    <div class="product-item-cart-img">
+                    <i class='bx bx-x' ></i>
+                        <a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
+                    </div>
+        
+                    <div class="product-item-desc">
+                        <h3><a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}">{$product['shirts_title']}</a></h3>
+                        <p class="description">{$product['shirts_descript']}</p>
+                        <span class="product-price">R$ {$product['shirts_price']}</span>
+                    </div>
+                </div>
+
+                HTML;
+
+        endwhile;
+            
+    };
+
+endif;
 
 
 
@@ -174,6 +223,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
         <div class="form-details">
             <div class="form-title-finishpbuy">
                 <h3>REVISE SEU PEDIDO</h3>
+            </div>
+            <div>
+                <?php echo $product_cart ?>
             </div>
         </div>
     </div>

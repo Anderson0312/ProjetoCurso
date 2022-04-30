@@ -1,5 +1,9 @@
-
-
+@media (max-width: 401px) {
+    .img-princ img{
+        width: 320px;
+    }
+    
+}
 
 @media (max-width: 768px) {
     .view-product {
@@ -30,6 +34,7 @@
 }
 
 .imgs-view-product .img-seconds-view img {
+    min-width: 80px;
     width: 90px;
     height: 90px;
 }

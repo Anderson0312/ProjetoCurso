@@ -11,7 +11,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 // Variáveis desta página
 // $idprod = filter_input(INPUT_GET, 'id');
 $id = $_GET['id'];
-debug($id);
+
 
 $form = [
     "nome" => '',
