@@ -9,7 +9,25 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  * Seu código PHP desta página entra aqui! *
  *******************************************/
 // Variáveis do script
-$form['feedback'] = '';
+$form = [
+    "email" => '',
+    "cpf" => '',
+    'name' => '',
+    'birth' => '',
+    'genero' => '',
+    'password' => '',
+    'password2' => '',
+    'telefone' => '',
+    'nomedest' => '',
+    'cep' => '',
+    'address' => '',
+    'number' => '',
+    'district' => '',
+    'city' => '',
+
+    'feedback' => ''
+];
+
 $show_form = true;
 $product_cart =  '' ;
 

@@ -45,6 +45,7 @@ body {
     width: 80%;
     margin: auto;
     flex-wrap: wrap; /*para delimitar a quantidade de intes na div e quebrar para linha de baixo*/
+    justify-content: center;
 }
 
 .product-item {
