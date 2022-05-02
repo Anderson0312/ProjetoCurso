@@ -38,6 +38,25 @@
             </div>
         </div>
 
+<<<<<<< Updated upstream
+=======
+    <div class='finish-footer'>
+        <div class="midiass">
+            <h3 class="h3foot"><?php echo $site_name ?></h3>
+            <ul class="social-list">
+                <li><a href="https://www.instagram.com/sportsmgl/" target='_blank'><i class='bx bxl-facebook-circle social'></i></a></li>
+                <li><a href="https://www.instagram.com/sportsmgl/" target='_blank'><i class='bx bxl-twitter social' ></i></a></li>
+                <li><a href="https://www.instagram.com/sportsmgl/" target='_blank'><i class='bx bxl-instagram-alt social'></i></a></li>
+            </ul>
+            <div class="copy">
+            <p class="txtfot">
+            copyright &copy; 2022 <?php if (date('Y') > '2022') echo ' - ' . date('Y') ?> <?php echo $site_rodap ?>
+            </p>
+        </div>
+        </div>       
+    </div>
+
+>>>>>>> Stashed changes
     </footer>
 
     <script>

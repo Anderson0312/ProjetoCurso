@@ -348,7 +348,7 @@ aside .logo {
     max-width: 100%;
     height: auto;
     margin: auto;
-    filter: drop-shadow(5px 10px 15px rgb(8,9,13,.4));
+    filter: drop-shadow(5px 5px 8px rgb(8,9,13,.4));
 }
 
 .card {
@@ -571,8 +571,8 @@ footer .copy {
     }
     
     .card {
-        width: 150px;
-        height: 250px;
+        width: 160px;
+        height: 275px;
         background-color: var(--color-primary);
         text-align:center;
         border-radius:  20px;
