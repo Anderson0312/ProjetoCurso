@@ -60,7 +60,7 @@ if ($page_title == '') {
         <span>Aproveite o frete grátis em pedidos acima de 200!</span>
     </div>
     <header class="header">
-    <h1 class="title x"> <a href="/pagsprincipais/index.php"><?php echo $site_name; ?></a></h1>
+    <h1> <a href="/pagsprincipais/index.php" class="title x"><?php echo $site_name; ?></a></h1>
         <div class="right">
         <?php if (!isset($_COOKIE['user'])) : ?>
             <div class="btn-login">

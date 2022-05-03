@@ -3,7 +3,7 @@
 
         <div class='footer-init'>
             <div class="img-logo">
-                <img src="/imgbanner/ICONM.png" alt="">
+                <img src="<?php echo $site_logo ?>" alt="">
                 <p>Alimentamos sua paixão pelo esporte e pelo seu time de coração,<br> com o manto do seu time.</p>
             </div>
             <div class='footer-infos'> 

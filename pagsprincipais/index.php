@@ -53,8 +53,9 @@ while ($shirts = $res->fetch_assoc()) {
                 <div class="card">
                     <img src="{$shirts['shirts_image']}" alt="">
                         <p class = "product-title">{$shirts['shirts_title']}</p>
-                        <span class="product-price"> {$shirts['shirts_price']}</span>
                         <p class="product-desc">{$shirts['shirts_descript']}</p>
+                        <span class="product-price">R$ {$shirts['shirts_price']}</span>
+                        
                 </div>
             </div>
         </a>
@@ -94,8 +95,9 @@ while ($shirts = $res->fetch_assoc()) {
                 <div class="card">
                     <img src="{$shirts['shirts_image']}" alt="">
                         <p class = "product-title">{$shirts['shirts_title']}</p>
-                        <span class="product-price"> {$shirts['shirts_price']}</span>
                         <p class="product-desc">{$shirts['shirts_descript']}</p>
+                        <span class="product-price">R$ {$shirts['shirts_price']}</span>
+                        
                 </div>
             </div>
         </a>

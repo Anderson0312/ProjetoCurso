@@ -3,6 +3,25 @@
     header("Content-type: text/html; charset=utf-8");
 
 
+    
+    /******************************************************
+     * Gera variáveis do tema à partir do banco de dados. *
+     ******************************************************/
+   
+    //Variaveis do Tema
+    $site_name = 'MGL';
+
+    // Define o título <title>...</title> de cada página
+    $page_title = 'MGL';
+
+    // logo do site
+    $site_logo = '/imgbanner/ICONM.png';
+
+    // rodapé do site 
+    $site_rodap = 'AndersonM';
+
+    
+
     // Faz conexão com MySQL/MariaDB
     // Os dados da conexão estão em "_config.ini"
     $i = parse_ini_file($_SERVER['DOCUMENT_ROOT'] . '/_confg.ini', true);
@@ -33,24 +52,6 @@
     date_default_timezone_set('America/Sao_Paulo');
 
 
-
-    /******************************************************
-     * Gera variáveis do tema à partir do banco de dados. *
-     ******************************************************/
-
-    
-
-    //Variaveis do Tema
-    $site_name = 'MGL';
-
-    // Define o título <title>...</title> de cada página
-    $page_title = 'MGL';
-
-    // logo do site
-    $site_logo = '';
-
-    // rodapé do site 
-    $site_rodap = 'AndersonM';
 
     /*****************************************************************************
      * Verifica se tem usuário logado, obtendo os dados deste, direto do cookie. *
