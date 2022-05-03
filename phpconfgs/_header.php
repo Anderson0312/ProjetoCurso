@@ -60,19 +60,19 @@ if ($page_title == '') {
         <span>Aproveite o frete grátis em pedidos acima de 200!</span>
     </div>
     <header class="header">
-    <h1 class="title"> <a href="/pagsprincipais/index.php"><?php echo $site_name; ?></a></h1>
+    <h1 class="title x"> <a href="/pagsprincipais/index.php"><?php echo $site_name; ?></a></h1>
         <div class="right">
         <?php if (!isset($_COOKIE['user'])) : ?>
             <div class="btn-login">
-                <a href="/user/login.php"><span class="material-icons-sharp">person</span></a>
+                <a href="/user/login.php"><span class="material-icons-sharp x">person</span></a>
             </div>
         <?php else : ?>     
             <div class="btn-login">
-                <a href="/user/logged.php"><span class="material-icons-sharp">person</span></a>
+                <a href="/user/logged.php"><span class="material-icons-sharp x">person</span></a>
             </div>
         <?php endif; ?>
             <div class="btn-shopping-cart">
-                <a href="/pagsprincipais/cart.php"><span class="material-icons-sharp">shopping_cart</span></a>
+                <a href="/pagsprincipais/cart.php"><span class="material-icons-sharp x">shopping_cart</span></a>
             </div>
         </div>
     </header>
@@ -83,14 +83,14 @@ if ($page_title == '') {
 
     <div class="container">
         <button class="btn-menu">
-            <a href="#"><span class="material-icons-sharp">menu</span></a>
+            <a href="#"><span class="material-icons-sharp x">menu</span></a>
         </button>
         <aside>
             <div class="top">
                 <div class="logo">
                     <img src="" alt="">
-                    <a href="/pagsprincipais/index.php">
-                        <h2>MGL</h2>
+                    <a href="/pagsprincipais/index.php" >
+                        <h2 class='x'>MGL</h2>
                     </a>
                 </div>
             </div>

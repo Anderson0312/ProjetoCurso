@@ -7,7 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
  * Seu código PHP desta página entra aqui! *
  *******************************************/
 // Se não estiver logado, vai para a 'index'.
-if (!isset($_COOKIE['user'])) header('Location: /pagsprincipais/index.php');
+if (!isset($_COOKIE['user'])) header('Location:http://projetocurso.localhost/user/login.php');
 
 // Realmente quer sair
 if (isset($_GET['logout'])) :

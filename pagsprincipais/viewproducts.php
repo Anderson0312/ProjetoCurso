@@ -164,13 +164,13 @@ $shirt_view = <<<HTML
                     <td><strong>{$shirt['shirts_title']}</strong></td>
                 </tr>
                 <tr>
-                    <td><strong>-Tecido:</strong> </td>
+                    <td><strong>-Tecido:</strong> 100% Poliéster </td>
                 </tr>
                 <tr>
-                    <td><strong>-Detalhes:</strong> </td>
+                    <td><strong>-Detalhes:</strong> Mantém o suor longe da pele, enquanto os recursos de fluxo de ar anatomicamente colocados oferecem uma superior regulagem de temperatura para manter o corpo seco e fresco durante o uso. </td>
                 </tr>
                 <tr>
-                    <td><strong>Sobre nós:</strong> </td>
+                    <td><strong>Sobre nós:</strong> Especializada em camisas de futebol e artigos esportivos, a loja virtual surgiu em 2012 na cidade de Presidente Prudente (SP) e reúne uniformes completos dos mais variados clubes brasileiros, internacionais e seleções - dos mais consagrados aos menos conhecidos. Com a maior variedade em camisas de times de futebol no mercado nacional, a FutFanatics trabalha em parceria com as principais marcas esportivas para comercializar somente produtos originais e com garantia de qualidade.</td>
                 </tr>
             </tbody>
             

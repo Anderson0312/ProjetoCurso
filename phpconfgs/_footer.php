@@ -1,25 +1,32 @@
 
     <footer>
 
-        <div class=''>
+        <div class='footer-init'>
             <div class="img-logo">
-                <img src="" alt="">
-                <h5></h5>
+                <img src="/imgbanner/ICONM.png" alt="">
+                <p>Alimentamos sua paixão pelo esporte e pelo seu time de coração,<br> com o manto do seu time.</p>
             </div>
-            <div class=''> 
-                <div class=''>
-                    <h3>SUPORTE</h3>
-                    <a href="">Central de atendimento</a>
-                    <a href="">Rastrear envio</a>
-                    <a href="">Trocas e Devoluções</a>
-                    <a href="">Política de entrega</a>
+            <div class='footer-infos'> 
+                <div class='info'>
+                    <h3>MINHA CONTA</h3>
+                    <a href="/user/logged.php"><p>> Painel</p></a>
+                    <a href="/user/request.php"><p>> Meus Pedidos</p></a>
+                    <a href="/user/logged.php"><p>> Alterar Dados</p></a>
+                    <a href="/user/logged.php"><p>> Aterar Endereço</p></a>
                 </div>
-                <div class=''>
+                <div class='info'>
+                    <h3>SUPORTE</h3>
+                    <a href=""><p>> Central de atendimento</p></a>
+                    <a href=""><p>> Rastrear envio</p></a>
+                    <a href=""><p>> Trocas e Devoluções</p></a>
+                    <a href=""><p>> Política de entrega</p></a>
+                </div>
+                <div class='info'>
                     <h3>INSTITUCIONAL</h3>
-                    <a href="">Sobre nós</a>
-                    <a href="">Tabela de medidas</a>
-                    <a href="">Seja um revendedor</a>
-                    <a href="">Política de privacidade</a>
+                    <a href=""><p>> Sobre nós</p></a>
+                    <a href=""><p>> Tabela de medidas</p></a>
+                    <a href=""><p>> Seja um revendedor</p></a>
+                    <a href=""><p>> Política de privacidade</p></a>
                 </div>
             </div>
         </div>
@@ -29,9 +36,9 @@
         <div class="midiass">
             <h3 class="h3foot"><?php echo $site_name ?></h3>
             <ul class="social-list">
-                <li><a href="https://www.instagram.com/sportsmgl/" target='_blank'><i class='bx bxl-facebook-circle social'></i></a></li>
-                <li><a href="https://www.instagram.com/sportsmgl/" target='_blank'><i class='bx bxl-twitter social' ></i></a></li>
-                <li><a href="https://www.instagram.com/sportsmgl/" target='_blank'><i class='bx bxl-instagram-alt social'></i></a></li>
+                <li><a href="https://www.instagram.com/sportsmgl/" target='_blank'><i class='bx x bxl-facebook-circle social'></i></a></li>
+                <li><a href="https://www.instagram.com/sportsmgl/" target='_blank'><i class='bx x bxl-twitter social' ></i></a></li>
+                <li><a href="https://www.instagram.com/sportsmgl/" target='_blank'><i class='bx x bxl-instagram-alt social'></i></a></li>
             </ul>
             <div class="copy">
             <p class="txtfot">
@@ -64,7 +71,7 @@
                 0:{
                     items:2
                 },
-                600:{
+                500:{
                     items:3
                 },
                 960:{

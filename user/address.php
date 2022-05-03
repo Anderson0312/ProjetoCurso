@@ -11,7 +11,7 @@ $form['feedback'] = '';
 $show_form = true;
 
 // Se não estiver logado, vai para a 'index'.
-if  ($_COOKIE['user'] == '') header('Location:http://projetocurso.localhost/pagsprincipais/index.php');
+if (!isset($_COOKIE['user'])) header('Location:http://projetocurso.localhost/user/login.php');
 
 if (isset($_POST['send-address'])) :
 

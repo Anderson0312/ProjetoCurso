@@ -14,6 +14,8 @@ $page_title = "";
 $page_menu = "logged";
 
 
+// Verifica se é o Usuario está logado tentando entrar na pagina
+if (!isset($_COOKIE['user'])) header('Location:http://projetocurso.localhost/user/login.php');
 
 // Inclui o cbeçalho da página
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
@@ -22,10 +24,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 <link rel="stylesheet" href="/css/styleprofil.css">
 
-<?php
-// Verifica se é o Usuario está logado tentando entrar na pagina
-if  ($_COOKIE['user'] == '') header('Location:http://projetocurso.localhost/pagsprincipais/index.php');
-?>
 
 <div class='secondheader'>
     <h2>MINHA CONTA</h2>

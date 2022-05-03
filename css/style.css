@@ -8,6 +8,7 @@
     --color-dark: #363949;
     --color-dark-variant: #677483;
     --color-primary-variant: #ff7782;
+    --color-red: #D51717;
     --color-background: #bebec7;
 }
 
@@ -377,7 +378,9 @@ aside .logo {
     margin-bottom: 4px;
 }
 
-
+.x:hover {
+    color: var(--color-red);
+}
 
 
 
@@ -386,7 +389,52 @@ footer {
     width: 100%;
     text-align: center;
     bottom: 0;
+
 }
+
+.footer-init {
+    background: black;
+    color: white;
+    padding: 4rem;
+}
+
+.img-logo img {
+    margin-left: 1.5rem;
+    padding-top: 2rem;
+
+}
+
+.img-logo p {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    text-align: left;
+    color: white;
+    font-weight: 100;
+    font-size:.9rem;
+}
+
+.footer-infos {
+    color: white;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info {
+    margin: 1rem;
+}
+
+.info h3 {
+    color:white;
+    text-align: left;
+}
+.info p {
+    color:white;
+    text-align: left;
+    padding: .3rem;
+}
+
+
 
 footer .midiass {
     position: absolute;
@@ -421,12 +469,12 @@ footer .midiass {
 }
 
 .social-list a i {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     transition: var(--color-primary);
 }
 
 .social-list a:hover i {
-    color: var(--color-primary-variant)
+    color: var(--color-red)
 }
 
 footer .copy {
@@ -474,6 +522,11 @@ footer .copy {
         top: 1px;
     }
 
+    .footer-init {
+        background: black;
+        color: white;
+        display:flex;
+    }
 }
 
 

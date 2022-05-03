@@ -12,7 +12,7 @@ $form['feedback'] = '';
 $show_form = true;
 
 // Se não estiver logado, vai para a 'index'.
-if  ($_COOKIE['user'] != ''):
+if (!isset($_COOKIE['user'])):
 
 if (isset($_POST['send-profile'])) :
 
