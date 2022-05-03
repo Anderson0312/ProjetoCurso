@@ -77,7 +77,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
             <th>ID</th>
             <th>Produto</th>
             <th>Preço</th>
-            <th>Fabricante</th>
+            <th>Times</th>
             <th>Foto</th>
             <th>Editar</th>
             <th>Deletar</th>

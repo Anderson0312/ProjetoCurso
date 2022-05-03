@@ -17,6 +17,7 @@ $form = [
     'img4' => '',
     'descript' => '',
     'team' => '',
+    'pais' => '',
     'size' => '',
     'colors' => '',
     'pric' => '',
@@ -43,6 +44,7 @@ if (isset($_POST['send'])):
     $form['img4'] = sanitize('file4', 'string');
     $form['descript'] = sanitize('descript', 'string');
     $form['team'] = sanitize('team', 'string');
+    $form['pais'] = sanitize('pais', 'string');
     $form['size'] = sanitize('size', 'string');
     $form['colors'] = sanitize('colors', 'string');
     $form['pric'] = sanitize('pric', 'string');
@@ -52,7 +54,7 @@ if (isset($_POST['send'])):
 
         
     // Verifica se todos os campos form preenchidos
-    if ($form['nome'] === '' or $form['descript'] === '' or $form['team'] === '' or $form['size'] === '' or $form['colors'] === '' or $form['pric'] === '' or $form['amount'] === ''):
+    if ($form['nome'] === '' or $form['descript'] === '' or $form['pais'] === ''  or $form['size'] === '' or $form['colors'] === '' or $form['pric'] === '' or $form['amount'] === ''):
         $form['feedback'] = '<h3 style="color:red">Erro: por favor, preencha todos os campos!</h3>';
 
     else :
@@ -74,6 +76,7 @@ if (isset($_POST['send'])):
         shirts_image_4,
         shirts_descript, 
         shirts_team,
+        shirts_pais,
         shirts_size, 
         shirts_colors,
         shirts_price,
@@ -86,6 +89,7 @@ if (isset($_POST['send'])):
             '{$form['img4']}',
             '{$form['descript']}',
             '{$form['team']}',
+            '{$form['pais']}',
             '{$form['size']}',
             '{$form['colors']}',
             '{$form['pric']}',
@@ -163,6 +167,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
         <div>
                 <label for="cpf">Time *</label>
                 <input type="text" name="team" id="team" class="dados">
+        </div>
+
+        <div>
+                <label for="pais">Pais *</label>
+                <input type="text" name="pais" id="pais" class="dados">
         </div>
 
         <div>

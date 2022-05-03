@@ -76,6 +76,9 @@ CREATE TABLE registros (
 
 
 
+-- Selecionar o banco de dados criado.
+USE php_app;
+
 
 -- Cria tabela para armazenar os {shirts} para test do aplicativo.
 CREATE TABLE shirts (
@@ -88,6 +91,7 @@ CREATE TABLE shirts (
     shirts_image_4 VARCHAR(255)  COMMENT 'Caminho absoluto da imagem.',
     shirts_descript VARCHAR(255) NOT NULL,
     shirts_team VARCHAR(50) NOT NULL,
+    shirts_pais VARCHAR(50) NOT NULL,
     shirts_size VARCHAR(50) NOT NULL,
     shirts_colors VARCHAR(50) NOT NULL,
     shirts_price float NOT NULL,
@@ -292,7 +296,7 @@ INSERT INTO `shirts` (
 149,   
 100),
 
-('Camisa Botafogo' 
+('Camisa Botafogo', 
 '/imgproduct/Camisas/Brasil/CamisaKappaBotafogoI20-21-TorcedorMasculina/0.jpg', 
 '/imgproduct/Camisas/Brasil/CamisaKappaBotafogoI20-21-TorcedorMasculina/27a72644.jpg',  
 '/imgproduct/Camisas/Brasil/CamisaKappaBotafogoI20-21-TorcedorMasculina/5433ad50.jpg',   
@@ -356,6 +360,7 @@ INSERT INTO `shirts` (
 'Preta',
 149,
 100);
+
 
 
 

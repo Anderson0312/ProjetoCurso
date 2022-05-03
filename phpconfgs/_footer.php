@@ -29,6 +29,9 @@
                     <a href=""><p>> Política de privacidade</p></a>
                 </div>
             </div>
+            <div class='pagamentos-cartao'>
+                
+            </div>
         </div>
 
 
