@@ -30,8 +30,9 @@ body {
 /*--------------------ITENS--------------------*/
 
 .img_itens {
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
+    border-radius: 1rem 1rem 0 0;
     filter: drop-shadow(5px 10px 15px rgb(8,9,13,.4));
 }
 
@@ -51,10 +52,10 @@ body {
 .product-item {
     align-items: center;
     width: 180px;
-    height: 240px;
+    height: 285px;
     background-color: var(--color-primary);
     margin: 10px;
-    border-radius: 2rem .5rem;
+    border-radius: 2rem 2rem;
     box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.356);
     justify-content: space-between;
     box-sizing:  border-box;
@@ -62,7 +63,9 @@ body {
     text-align:center;
     padding-bottom:10px;
 }
-
+.product-item-desc {
+    margin-top: .4rem;
+}
 
 .product-item:hover {
     background-color: var(--color-background);

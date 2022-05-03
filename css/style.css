@@ -261,6 +261,7 @@ aside .logo {
     font-size: .8rem;
     color: var(--color-black);
     margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .product-price {
@@ -349,6 +350,7 @@ aside .logo {
     height: auto;
     margin: auto;
     filter: drop-shadow(5px 5px 8px rgb(8,9,13,.4));
+    border-radius: 1rem 1rem 0 0
 }
 
 .card {
