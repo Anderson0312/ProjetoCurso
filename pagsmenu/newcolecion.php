@@ -69,13 +69,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 <?php // Conteúdo ?>
 
-<link rel="stylesheet" href="/css/styleitens.css">
+
 
 <!----------------- CONTEUDO-------------------->
 
 
+<div>  
+    <h2 class="secondheader">
+    NOVA COLEÇÃO
+    </h2>
+</div>
 
-<h1 class="title-colecion">NOVA COLEÇÃO</h1>
+
 <div class="container-catalogo">
    
     <?php echo $newcolecion_list ?>

@@ -75,8 +75,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <!----------------- CONTEUDO-------------------->
 
 
+<div>  
+    <h2 class="secondheader">
+    TIMES BRASILEIROS
+    </h2>
+</div>
 
-<h1 class="title-colecion">TIMES BRASILEIROS</h1>
 <div class="container-catalogo">
    
     <?php echo $shirts_list ?>

@@ -14,6 +14,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 $product_cart =  '' ;
 $total = 0;
 
+// verifica se o array do carrinho foi criado se não foi criado cria
+if(!isset($_SESSION['carrinho']))
+{
+   $_SESSION['carrinho'] = array();
+  };
 
 // obtém o ID da camisa a ser salva no carrinho.
     if (isset($_GET['id'])) {
@@ -26,6 +31,15 @@ $total = 0;
         }
     } else {
         $product_id = 0;
+    };
+
+    //pega o id do url 
+    if (isset($_GET['del'][$product_id])) {
+        $iddell = intval($_GET['del']); // adicioan o id na variavel
+        if (isset($_SESSION['carrinho'][$iddell])) { // verifica se o id tem no carrinho
+            unset($_SESSION['carrinho'][$iddell]); // deleta o id desejado
+
+        }
     }
 
        
@@ -59,7 +73,7 @@ if ($product_id >= 0  )  {
             
             <div class="product-item-cart">    
                 <div class="product-item-cart-img">
-                <a href='' id='x'><i class='bx bx-x' ></i></>
+                <a href="/pagsprincipais/cart.php?del={$product['shirts_id']}" id='x'><i class='bx bx-x' ></i></>
                     <a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
                 </div>
     
@@ -101,12 +115,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <link rel="stylesheet" href="/css/cartstyle.css">
 
 <div>  
-    <h2 class="title-cart">
+    <h2 class="secondheader">
         CARRINHO DE COMPRAS
     </h2>
 </div>
 
-<form class="container-cart-all">
+<form class="container-cart-all" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
 
     <div class="container-product-cart">
         <div class="product-mount">

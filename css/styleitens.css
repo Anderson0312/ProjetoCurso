@@ -65,6 +65,11 @@ body {
 }
 .product-item-desc {
     margin-top: .4rem;
+        
+}
+
+.product-item-cart-img {
+    margin-right: 4rem;
 }
 
 .product-item:hover {
@@ -144,7 +149,12 @@ body {
     .product-item {
         width: 42%;
         height: auto;
+        
     } 
+
+    .product-item-cart-img {
+        margin-right: 1rem;
+    }
 
     .product-item-desc {
         font-size: .3rem;

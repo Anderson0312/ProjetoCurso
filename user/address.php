@@ -128,7 +128,7 @@ endif;
  
 ?>
 
-<link rel="stylesheet" href="/css/styleprofil.css">
+
 
 <div class='secondheader'>
     <h2>MINHA CONTA</h2>

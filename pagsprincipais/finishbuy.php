@@ -51,6 +51,7 @@ if (isset($_POST['finish-buy'])) :
     // Verifica se todos os campos form preenchidos
     if ($form['registros_birth'] === '' or $form['registros_email'] === '' or $form['registros_namefrist'] === '' or $form['registros_cpf'] === '' or $form['registros_cep'] === '' or $form['registros_street'] === '' or $form['registros_number'] === '' or $form['registros_district'] === '' or $form['registros_city'] === '' or $form['registros_telefone'] === '') :
         $form['feedback'] = '<h3 style="color:red">Erro: por favor, preencha todos os campos!</h3>';
+  
 
     else :
 
@@ -141,6 +142,14 @@ SQL;
 endif; // if (isset($_POST['send']))
 
 
+    //pega o id do url 
+    if (isset($_GET['del'])) {
+        $iddell = intval($_GET['del']); // adicioan o id na variavel
+        if (isset($_SESSION['carrinho'][$iddell])) { // verifica se o id tem no carrinho
+            unset($_SESSION['carrinho'][$iddell]); // deleta o id desejado
+
+        }
+    }
 
 // verifica se tem algo no produto para finalizar a compra
 if ($_SESSION['carrinho'] >= 0  ):
@@ -167,7 +176,7 @@ if ($_SESSION['carrinho'] >= 0  ):
 
                 <div class="product-item-cart">    
                     <div class="product-item-cart-img">
-                    <a href=''><i class='bx bx-x' ></i></>
+                    <a href="/pagsprincipais/finishbuy.php?del={$product['shirts_id']}"><i class='bx bx-x' ></i></>
                         <a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
                     </div>
         
@@ -195,6 +204,13 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 ?>
 
 <link rel="stylesheet" href="/css/cartstyle.css">
+
+<div>  
+    <h2 class="secondheader">
+        FINALIZAR PEDIDO
+    </h2>
+</div>
+
 
 <div class="form-finish-buy">
     <div class="form-details">
