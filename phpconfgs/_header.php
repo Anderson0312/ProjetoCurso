@@ -56,10 +56,11 @@ if ($page_title == '') {
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <header class='header-container'>
     <div class="overside">
         <span>Aproveite o frete grátis em pedidos acima de 200!</span>
     </div>
-    <header class="header">
+    <div class="header">
     <h1> <a href="/pagsprincipais/index.php" class="title x"><?php echo $site_name; ?></a></h1>
         <div class="right">
         <?php if (!isset($_COOKIE['user'])) : ?>
@@ -75,12 +76,8 @@ if ($page_title == '') {
                 <a href="/pagsprincipais/cart.php"><span class="material-icons-sharp x">shopping_cart</span></a>
             </div>
         </div>
-    </header>
-
-
-    <!----------------- END OF HEADER -------------------->
-
-
+    </div>
+    
     <div class="container">
         <button class="btn-menu">
             <a href="#"><span class="material-icons-sharp x">menu</span></a>
@@ -110,5 +107,11 @@ if ($page_title == '') {
             </div>
         </aside>
     </div>
+    </header>
+
+    <!----------------- END OF HEADER -------------------->
+
+
+
 
     
