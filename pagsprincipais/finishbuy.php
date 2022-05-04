@@ -30,6 +30,7 @@ $form = [
 
 $show_form = true;
 $product_cart =  '' ;
+$total= 0;
 
 if (!isset($_COOKIE['user'])) header('Location: /user/login.php');
 
@@ -188,9 +189,9 @@ if ($_SESSION['carrinho'] >= 0  ):
                 </div>
 
                 HTML;
-
+        $total = $product['shirts_price']+$total;
         endwhile;
-            
+        
     };
 
 endif;
@@ -260,6 +261,10 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
             </div>
             <div>
                 <?php echo $product_cart ?>
+            </div>
+            <div class='tot-pedido'>
+                TOTAL
+                <span>R$<?php echo$total ?></span>
             </div>
         </div>
     </div>

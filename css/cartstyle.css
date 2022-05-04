@@ -267,6 +267,15 @@ a .bx {
     font-weight: bold;
 }
 
+.tot-pedido {
+    font-weight: bold;
+    font-size:1rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+}
+
+
 @media(min-width: 769px) {
     .container-cart-all {
         display: flex;

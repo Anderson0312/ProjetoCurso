@@ -19,7 +19,7 @@ if(!isset($_SESSION['carrinho']))
 {
    $_SESSION['carrinho'] = array();
   };
-
+  
 // obtém o ID da camisa a ser salva no carrinho.
     if (isset($_GET['id'])) {
         $product_id = intval($_GET['id']);
@@ -38,11 +38,9 @@ if(!isset($_SESSION['carrinho']))
         $iddell = intval($_GET['del']); // adicioan o id na variavel
         if (isset($_SESSION['carrinho'][$iddell])) { // verifica se o id tem no carrinho
             unset($_SESSION['carrinho'][$iddell]); // deleta o id desejado
-
         }
     }
 
-       
 
 // verifica se tem algo no carrinho
 //perguntar para o professor pq o id não esta carregando aqui
@@ -50,7 +48,6 @@ if(!isset($_SESSION['carrinho']))
 if ($product_id >= 0  )  {
 
     foreach($_SESSION['carrinho'] as $value) {
-        
         // Consulta a camisa pelo ID para
         $sql = <<<SQL
 
@@ -95,10 +92,7 @@ if ($product_id >= 0  )  {
     HTML;
     $total = $product['shirts_price']+$total;
 endwhile;
-
-
 };
-
 };
 
 
