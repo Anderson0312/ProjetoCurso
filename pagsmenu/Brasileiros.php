@@ -19,9 +19,9 @@ $shirts_list = '';
  */
 $sql = <<<SQL
 
-SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_colors, shirts_price
+SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_team, shirts_colors, shirts_price
 FROM shirts 
-WHERE shirts_status = 'on' AND shirts_date <= NOW() 
+WHERE shirts_status = 'on' AND shirts_date <= NOW()  AND shirts_pais = 'Brasil'
 ORDER BY shirts_id desc;
 
 SQL;
@@ -77,7 +77,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 <div>  
     <h2 class="secondheader">
-        CAMISAS DE TIME
+        TIMES BRASILEIROS
     </h2>
 </div>
 

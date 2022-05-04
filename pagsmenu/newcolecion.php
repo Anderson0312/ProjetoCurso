@@ -21,7 +21,7 @@ $newcolecion_list = '';
 SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_colors, shirts_price
 FROM shirts 
 WHERE shirts_status = 'on' AND shirts_date <= NOW() 
-ORDER BY shirts_date DESC LIMIT 10;
+ORDER BY shirts_date DESC LIMIT 20;
 
 SQL;
 

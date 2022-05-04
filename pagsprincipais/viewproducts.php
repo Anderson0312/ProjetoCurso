@@ -184,7 +184,6 @@ HTML;
 
 
 
-
 /*
  * Query que obtém só Camisa:
  *    Ordenados pelo mais recente.

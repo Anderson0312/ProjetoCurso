@@ -101,11 +101,11 @@ if ($page_title == '') {
                 <a href="/pagsmenu/Brasileiros.php">
                     <h3>Nacionais</h3>
                 </a>
-                <a href="/pagsmenu/Acessorios.php">
-                    <h3>Acessorios</h3>
+                <a href="/pagsmenu/Internacionais.php">
+                    <h3>Internacionais</h3>
                 </a>
-                <a href="/pagsmenu/Casacos.php">
-                    <h3>Casacos</h3>
+                <a href="/pagsmenu/Selecao.php">
+                    <h3>Selecão</h3>
                 </a>
             </div>
         </aside>

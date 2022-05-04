@@ -15,7 +15,7 @@
     $page_title = 'MGL';
 
     // logo do site
-    $site_logo = '/imgbanner/ICONM.png';
+    $site_logo = '/imgbanner/Logo.png';
 
     // rodapé do site 
     $site_rodap = 'AndersonM';

@@ -423,25 +423,3 @@ CREATE TABLE accessories (
 
 
 
-
-
-
-
-CREATE TABLE `shirts` (
-  `shirts_id` int(11) NOT NULL,
-  `shirts_date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `shirts_title` varchar(127) NOT NULL,
-  `shirts_image` varchar(255) DEFAULT NULL COMMENT 'Caminho absoluto da imagem.',
-  `shirts_image_2` varchar(255) DEFAULT NULL COMMENT 'Caminho absoluto da imagem.',
-  `shirts_image_3` varchar(255) DEFAULT NULL COMMENT 'Caminho absoluto da imagem.',
-  `shirts_image_4` varchar(255) DEFAULT NULL COMMENT 'Caminho absoluto da imagem.',
-  `shirts_descript` varchar(255) NOT NULL,
-  `shirts_team` varchar(50) NOT NULL,
-  `shirts_pais` varchar(50) NOT NULL,
-  `shirts_size` varchar(50) NOT NULL,
-  `shirts_colors` varchar(50) NOT NULL,
-  `shirts_price` float NOT NULL,
-  `shirts_amount` int(11) NOT NULL,
-  `shirts_status` enum('on','off','deleted') NOT NULL DEFAULT 'on'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-

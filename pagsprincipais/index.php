@@ -10,7 +10,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_confg.php";
 
 
 // Define o titilo dessa pagina
-$page_title = '';
+$page_title = 'Inicio';
 
 // Opção ativa no menu
 $page_menu = "index";
@@ -112,7 +112,6 @@ while ($shirts = $res->fetch_assoc()) {
 
 
 
-
 /*********************************************
  * Seu código PHP desta página termina aqui! *
  *********************************************/
@@ -123,10 +122,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 
 ?>
 
-<?php // Conteúdo 
-?>
-
-
 
 
 <!----------------- END OF ASIDE -------------------->
@@ -136,22 +131,115 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
     <div class="owl-carousel" id="carousel1">
         <div>
             <source media="(max-width: 426px)" srcset="../imgbanner/bannerMobile.jpeg">
-            <img class='bannerimg' src="../imgbanner/bannerG.jpeg" alt="">
+            <img class='bannerimg' src="../imgbanner/bannerG.png" alt="">
         </div>
         <div>
             <source media="(max-width: 426px)" srcset="../imgbanner/bannerMobile.jpeg">
-            <img class='bannerimg' src="../imgbanner/comolavar.jpeg" alt="">
+            <img class='bannerimg' src="../imgbanner/mosaico-a-partir.png" alt="">
         </div>
         <div>
             <source media="(max-width: 426px)" srcset="../imgbanner/bannerMobile.jpeg">
             <img class='bannerimg' src="../imgbanner/sitenoar.jpeg" alt="">
+        </div>
+        <div>
+            <source media="(max-width: 426px)" srcset="../imgbanner/bannerMobile.jpeg">
+            <img class='bannerimg' src="../imgbanner/comolavar.jpeg" alt="">
         </div>
     </div>
 </div>
 
 
 <!----------------- END OF BANNER -------------------->
+<!----------------- SECTION -------------------->
 
+<section>
+    <div class='service-items'>
+        <div class='service-items'>
+            <div class='service-items-block'>
+                <div class='icon-service'>
+                    <i class='bx bx-package'></i>
+                </div>
+                <div>
+                    <h4>FRETE GRÁTIS</h4>
+                    <p>Para todo o Brasil</p>
+                </div>
+            </div>
+            <div class='service-items-block'>
+                <div class='icon-service'>
+                    <i class='bx bx-credit-card-front' ></i>
+                </div>
+                <div>
+                    <h4>PARCELE</h4>
+                    <p>Em até 12x</p>
+                </div>
+            </div>
+        </div>    
+
+        <div class='service-items'>
+            <div class='service-items-block'>
+                <div class='icon-service'>
+                <i class='bx bxl-whatsapp' ></i>
+                </div>
+                <div>
+                    <h4>ENTRE EM CONTATO</h4>
+                    <p>Fale diretamente conosco!</p>
+                </div>
+            </div>
+            <div class='service-items-block'>
+                <div class='icon-service'>
+                <i class='bx bx-check-shield'></i>
+                </div>
+                <div>
+                    <h4>SITE SEGURO</h4>
+                    <p>Compre suas comprar com certificado de segurança</p>
+                </div>
+            </div>
+        </div>  
+    </div>
+</section>
+<!----------------- END SECTION -------------------->
+<!----------------- CARD SESÕES -------------------->
+
+<div class='secao-cards'>
+    <a href="/pagsmenu/Brasileiros.php">
+    <div class='container-cards'>
+        <img src="/imgbanner/gabigol.jpg" class='img-card'>
+        <div class='textbanner'>
+            <h2>BRASILEIROS</h2>
+            <div class='btn'>
+                COMPRAR
+            </div>
+        </div>
+    </div>
+    </a>
+
+    <a href="/pagsmenu/Internacionais.php">
+    <div class='container-cards'>
+        <img src="/imgbanner/neymar.jpg" class='img-card'>
+        <div class='textbanner'>
+            <h2>EUROPEUS</h2>
+            <div class='btn'>
+                COMPRAR
+            </div>
+        </div>
+    </div>
+    </a>
+
+
+    <a href="/pagsmenu/Selecao.php">
+    <div class='container-cards'>
+        <img src="/imgbanner/messi.jpg" class='img-card'>
+        <div class='textbanner'>
+            <h2>SELEÇÂO</h2>
+            <div class='btn'>
+                COMPRAR
+            </div>
+        </div>
+    </div>
+    </a>
+</div>
+
+<!----------------- END OF SESÕES-------------------->
 <!----------------- CARD PRODUCT BEST SELLER  -------------------->
 <div class="title-colecion">
         <h1>MAIS VENDIDAS</h1>
