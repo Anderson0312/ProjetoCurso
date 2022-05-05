@@ -85,7 +85,6 @@ if ($page_title == '') {
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="" alt="">
                     <a href="/pagsprincipais/index.php" >
                         <h2 class='x'>MGL</h2>
                     </a>

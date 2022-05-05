@@ -631,7 +631,7 @@ footer .copy {
         border-radius: 1.3rem;
     }
 
-    .service-items-block:first-of-type {
+    .service-items-block:last-of-type {
         display:none;
     }
 }
