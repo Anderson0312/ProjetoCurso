@@ -474,6 +474,28 @@ aside .logo {
 
 }
 
+.politicas {
+    padding: 2rem;
+}
+
+
+.politicas .politicas-col{
+    padding: 2rem;
+    max-width: 50%;
+}
+
+.politicas .politicas-col li{
+    padding:  1rem 0 1rem 0;
+    font-weight: bold
+}
+
+.politicas .politicas-col p{
+    padding:  1rem 0 1rem 0;
+}
+
+
+
+
 
 /*----------------footer start-----------------*/
 footer {
@@ -619,7 +641,13 @@ footer .copy {
         display:flex;
     }
 
-    
+    .politicas {
+        padding: 2rem;
+        display:flex
+    }
+
+
+
 }
 
 @media (max-width: 950px) {
@@ -684,6 +712,12 @@ footer .copy {
         overflow:hidden;
         border-radius: 1.3rem;
     }
+
+    .politicas .politicas-col{
+        padding: .5rem;
+        max-width: 100%;
+    }
+
 
 }
 

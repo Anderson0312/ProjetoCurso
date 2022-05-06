@@ -12,21 +12,21 @@
                     <a href="/user/logged.php"><p>> Painel</p></a>
                     <a href="/user/request.php"><p>> Meus Pedidos</p></a>
                     <a href="/user/logged.php"><p>> Alterar Dados</p></a>
-                    <a href="/user/logged.php"><p>> Aterar Endereço</p></a>
+                    <a href="/user/logged.php"><p>> Alterar Endereço</p></a>
                 </div>
                 <div class='info'>
                     <h3>SUPORTE</h3>
-                    <a href=""><p>> Central de atendimento</p></a>
-                    <a href=""><p>> Rastrear envio</p></a>
-                    <a href=""><p>> Trocas e Devoluções</p></a>
-                    <a href=""><p>> Política de entrega</p></a>
+                    <a href="https://wa.me/qr/RZJYA7ESGTTPF1" target='_blank'><p>> Central de atendimento</p></a>
+                    <a href="https://rastreamento.correios.com.br/app/index.php" target='_blank'><p>> Rastrear envio</p></a>
+                    <a href="/politicas/troca_devolucao.php"><p>> Trocas e Devoluções</p></a>
+                    <a href="/politicas/politica_entrega.php"><p>> Política de entrega</p></a>
                 </div>
                 <div class='info'>
                     <h3>INSTITUCIONAL</h3>
-                    <a href=""><p>> Sobre nós</p></a>
-                    <a href=""><p>> Tabela de medidas</p></a>
-                    <a href=""><p>> Seja um revendedor</p></a>
-                    <a href=""><p>> Política de privacidade</p></a>
+                    <a href="/politicas/sobre_nos.php"><p>> Sobre nós</p></a>
+                    <a href="/politicas/tabela_medidas.php"><p>> Tabela de medidas</p></a>
+                    <a href="p"><p>> Seja um revendedor</p></a>
+                    <a href="/politicas/politica_privacidade.php"><p>> Política de privacidade</p></a>
                 </div>
             </div>
             <div class='pagamentos-cartao'>

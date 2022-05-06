@@ -58,7 +58,7 @@ if ($page_title == '') {
 
     <header class='header-container'>
     <div class="overside">
-        <span>Aproveite o frete grátis em pedidos acima de 200!</span>
+        <span>Aproveite o frete grátis para todo Brasil!</span>
     </div>
     <div class="header">
     <h1> <a href="/pagsprincipais/index.php" class="title x"><?php echo $site_name; ?></a></h1>

@@ -6,6 +6,7 @@
 -- Este arquivo deve ser APAGADO quando aplicativo for para o nível de "produção".
 -- *******************************************************************************
 
+
 -- Apaga o banco de dados caso ele exista.
 DROP DATABASE IF EXISTS php_app;
 

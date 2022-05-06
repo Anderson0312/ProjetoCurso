@@ -105,12 +105,17 @@ $shirt_view = <<<HTML
 
                 <a href="/pagsprincipais/cart.php? id={$shirt['shirts_id']}  "><button class="btn-buy">Adicionar no carrinho</button></a>
 
+
+        <form id="formDestino" action="">
             <div class="frete">
                 <p>Calcular o prazo e valor do frete</p>
 
-                <input type="text"><a href=""><button>CALCULAR</button></a>
-
+                <input name="sCepDestino" type="text">
+                <button type="button" id="calcular">Calcular</button>
+                <p id="resultado"></p>
             </div>
+            
+        </form>
         </div>
 
 
@@ -256,6 +261,21 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 
 </main>
+
+<script>
+            $('#calcular').click(function() {
+            let formSerialized = $('#formDestino').serialize();
+            $.post('/payments/calcular_cep.php', formSerialized, function(resultado) {
+                console.log(resultado);
+            return;
+                resultado = JSON.parse(resultado);
+                let valorFrete = resultado.preco;
+                let prazoEntrega = resultado.prazo;
+                $('#resultado').html(`O valor do frete é <b>R$ ${valorFrete}</b> e o prazo de entrega é <b>${prazoEntrega} dias úteis</b>.`);
+            });
+        });
+
+</script>
 
  
 <?php
