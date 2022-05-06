@@ -18,9 +18,12 @@
 
 require __DIR__.'/lib/vendor/autoload.php';
 
+
 use \App\WebService\Correios;
 
+
 $sobCorreios = new Correios();
+
 
 $codigoServico = Correios::SERVICO_SEDEX ;
 $cepOrigem = '21930376';
@@ -35,9 +38,11 @@ $maoPropria = false;
 $valorDeclarado = 0;
 $avisoRecebimento = false;
 
+
 $frete = $obCorreios-> CalcularFrete(
     $codigoServico, $cepOrigem, $cepDestino, $peso, $formato, $comprimeto, $altura, $largura, $diametro, $maoPropria, $valorDeclarado, $avisoRecebimento
 );
+
 
 echo "<pre>";
 print_r($frete);

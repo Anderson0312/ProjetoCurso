@@ -12,7 +12,7 @@ $form['feedback'] = '';
 $show_form = true;
 
 // Se não estiver logado, vai para a 'index'.
-if (!isset($_COOKIE['user'])):
+if (isset($_COOKIE['user'])):
 
 if (isset($_POST['send-profile'])) :
 
@@ -234,4 +234,8 @@ endif;
 // Inclui o rodapé da página
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
 
+
+
 ?>
+
+

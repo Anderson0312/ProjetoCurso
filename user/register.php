@@ -52,6 +52,8 @@ if (isset($_POST['send'])) :
     $form['district'] = sanitize('district', 'string');
     $form['city'] = sanitize('city', 'string');
 
+
+
     // Verifica se todos os campos form preenchidos
     if ($form['email'] === '' or $form['cpf'] === '' or $form['name'] === '' or $form['birth'] === '' or $form['genero'] === '' or $form['password'] === '' or $form['password2'] === '' or $form['telefone'] === '' or $form['nomedest'] === '' or $form['cep'] === '' or $form['address'] === '' or $form['number'] === '' or $form['district'] === '' or $form['city'] === '') :
         $form['feedback'] = '<h3 style="color:red">Erro: por favor, preencha todos os campos!</h3>';
@@ -173,6 +175,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
  * Seu código PHP desta página termina aqui! *
  *********************************************/
 
+ 
 ?>
 
 
