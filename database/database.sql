@@ -125,7 +125,7 @@ INSERT INTO `shirts` (
  'Alemanha',
  'P',
  'Whith', 
- 149,
+ 150,
  100 ),
 
 ('Camisa Bayern Munich',
@@ -138,7 +138,7 @@ INSERT INTO `shirts` (
 'Alemanha',
 'P',   
 'Vermelha',  
-149,  
+150,  
 100),
 
 ('Camisa RB Leipzig',   
@@ -151,7 +151,7 @@ INSERT INTO `shirts` (
 'Alemanha',
 'P',   
 'Vermelha',  
-149,  
+150,  
 100),
 
 ('Camisa Borussia Dortmund',
@@ -164,7 +164,7 @@ INSERT INTO `shirts` (
 'Alemanha',
 'P',   
 'Amarela',
-149,   
+150,   
 100),
 
 ('Camisa Seleção da Alemanha',  
@@ -177,7 +177,7 @@ INSERT INTO `shirts` (
 'Alemanha',
 'P',   
 'Preta',  
-149,
+150,
 100),
 
 ('Camisa Seleção da Alemanha',  
@@ -190,7 +190,7 @@ INSERT INTO `shirts` (
 'Alemanha',
 'P',   
 'Preta',  
-149 ,
+150 ,
 100),
 
 ('Camisa Boca Juniors', 
@@ -203,7 +203,7 @@ INSERT INTO `shirts` (
 'Argentina', 
 'M',
 'Azul',
-149,   
+150,   
 100),
 
 ('Camisa River Plate',  
@@ -216,7 +216,7 @@ INSERT INTO `shirts` (
 'Argentina',
 'M',   
 'Preta',  
-149 ,
+150 ,
 100),
 
 ('Camisa Seleção da Argentina', 
@@ -229,7 +229,7 @@ INSERT INTO `shirts` (
 'Argentina',
 'M',   
 'Branca', 
-149,
+150,
 100),
 
 ('Camisa Flamengo', 
@@ -242,7 +242,7 @@ INSERT INTO `shirts` (
 'Brasil', 
 'M',
 'Preta' ,  
-149,  
+150,  
 100),
 
 ('Camisa Flamengo', 
@@ -255,7 +255,7 @@ INSERT INTO `shirts` (
 'Brasil', 
 'M',
 'Rosa',
-149,   
+150,   
 100),
 
 ('Camisa São Paulo',
@@ -268,7 +268,7 @@ INSERT INTO `shirts` (
 'Brasil', 
 'M',
 'Branca',  
-149,
+150,
 100),
 
 ('Camisa Corinthians',
@@ -281,7 +281,7 @@ INSERT INTO `shirts` (
 'Brasil',
 'M',   
 'Branca', 
-149,
+150,
 100),
 
 ('Camisa Fluminense',   
@@ -294,7 +294,7 @@ INSERT INTO `shirts` (
 'Brasil',   
 'M',  
 'Branca',
-149,   
+150,   
 100),
 
 ('Camisa Botafogo', 
@@ -307,7 +307,7 @@ INSERT INTO `shirts` (
 'Brasil',
 'M',   
 'Branca', 
-149,
+150,
 100),
 
 ('Camisa Vasco',
@@ -320,7 +320,7 @@ INSERT INTO `shirts` (
 'Brasil',  
 'M', 
 'Branca',   
-149,  
+150,  
 100),
 
 ('Camisa Flamengo', 
@@ -333,7 +333,7 @@ INSERT INTO `shirts` (
 'Brasil', 
 'M',
 'Vermelha',
-149,   
+150,   
 100),
 
 ('Camisa Fluminense',   
@@ -346,7 +346,7 @@ INSERT INTO `shirts` (
 'Brasil',
 'M',  
 'Verde' ,
-149,
+150,
 100),
 
 ('Camisa Vasco',
@@ -359,7 +359,7 @@ INSERT INTO `shirts` (
 'Brasil' , 
 'M',
 'Preta',
-149,
+150,
 100);
 
 

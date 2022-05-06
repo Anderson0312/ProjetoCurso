@@ -129,7 +129,7 @@ Após manifestado o interesse, você tem até 10 dias corridos para nos enviar o
             </li>
         </ul> 
         <p>
-        1- Nos avise em nosso e-mail contato@wantedind.com
+        1- Nos avise em nosso e-mail andersonmoura812@gmail.com
 2- Conte para gente o motivo de você querer trocar/cancelar o pedido;
 3- O time irá te instruir sobre como proceder e sobre o endereço para o qual enviar as peças;
 4- Geramos um código de troca para você postar o pedido nos correios, o valor de todo
@@ -142,7 +142,7 @@ termos acima.
 financeiro, no mesmo meio de pagamento utilizado para pagar pelo pedido original. Será
 descontado os custos que tivemos com o envio, embalagem etc.
 
- Frete para devoluções ou troca fica por conta do cliente (exceto por defeito de fabricação ou manuseamento) . A devolução do produto ocorrerá por meio de postagem nos Correios. No sistema será gerado uma autorização de postagem. Assim que o produto chegar faremos a troca e pagaremos o retorno da mercadoria. O produto deverá ser apresentando devidamente embalado na embalagem original. Lembramos que o novo item ou a devolução do valor pago será realizada após retorno do produto a Wanted. Em casos de não acontecer a entrega por não ter alguém em casa ou por falta de recebimento ou qualquer outro motivo cujo fato gerador seja o cliente, fica por conta do cliente o custo do reenvio da mercadoria ou em caso de estorno do valor será descontado o valor do frete gasto.
+ Frete para devoluções ou troca fica por conta do cliente (exceto por defeito de fabricação ou manuseamento) . A devolução do produto ocorrerá por meio de postagem nos Correios. No sistema será gerado uma autorização de postagem. Assim que o produto chegar faremos a troca e pagaremos o retorno da mercadoria. O produto deverá ser apresentando devidamente embalado na embalagem original. Lembramos que o novo item ou a devolução do valor pago será realizada após retorno do produto a MGLsport. Em casos de não acontecer a entrega por não ter alguém em casa ou por falta de recebimento ou qualquer outro motivo cujo fato gerador seja o cliente, fica por conta do cliente o custo do reenvio da mercadoria ou em caso de estorno do valor será descontado o valor do frete gasto.
         </p>
     </div>
 </div> 

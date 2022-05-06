@@ -34,7 +34,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
             </li>
         </ul>
             <p>
-            O frete para devoluções ou troca fica por conta do cliente (exceto por defeito de fabricação ou manuseamento) . A devolução do produto ocorrerá por meio de postagem nos Correios. No sistema será gerado uma autorização de postagem. Assim que o produto chegar faremos a troca e pagaremos o retorno da mercadoria. O produto deverá ser apresentando devidamente embalado na embalagem original. Lembramos que o novo item ou a devolução do valor pago será realizada após retorno do produto a Wanted. Em casos de não acontecer a entrega por não ter alguém em casa ou por falta de recebimento ou qualquer outro motivo cujo fato gerador seja o cliente, fica por conta do cliente o custo do reenvio da mercadoria ou em caso de estorno do valor será descontado o valor do frete gasto.
+            O frete para devoluções ou troca fica por conta do cliente (exceto por defeito de fabricação ou manuseamento) . A devolução do produto ocorrerá por meio de postagem nos Correios. No sistema será gerado uma autorização de postagem. Assim que o produto chegar faremos a troca e pagaremos o retorno da mercadoria. O produto deverá ser apresentando devidamente embalado na embalagem original. Lembramos que o novo item ou a devolução do valor pago será realizada após retorno do produto a MGLsport. Em casos de não acontecer a entrega por não ter alguém em casa ou por falta de recebimento ou qualquer outro motivo cujo fato gerador seja o cliente, fica por conta do cliente o custo do reenvio da mercadoria ou em caso de estorno do valor será descontado o valor do frete gasto.
             </p>
         <ul>
             <li>

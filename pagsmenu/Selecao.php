@@ -21,7 +21,7 @@ $sql = <<<SQL
 
 SELECT shirts_id, shirts_title, shirts_image, shirts_descript, shirts_size, shirts_team, shirts_team, shirts_colors, shirts_price
 FROM shirts 
-WHERE shirts_status = 'on' AND shirts_date <= NOW()  AND shirts_team = 'Argentina'or'Alemanha'or'Austria'or'Belgica'or'Colômbia'or'Egito'or'Espanha'or 'Estados unidos'or 'França'or 'Inglaterra'or 'Italia'or 'Japão'or 'Korea'
+WHERE shirts_status = 'on' AND shirts_date <= NOW()  AND shirts_team in ('Argentina','Alemanha','Austria','Belgica','Colômbia','Egito','Espanha', 'Estados unidos', 'França', 'Inglaterra', 'Italia', 'Japão', 'Korea')
 ORDER BY shirts_id desc;
 
 SQL;
