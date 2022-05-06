@@ -1,10 +1,15 @@
 {
-    "require": {
-        "mercadopago/dx-php": "2.4.5"
-    },
-        "autoload":{
-            "psr-4":{
-                "App\\":"app/"
-            }
+    "name": "wdev/correios",
+    "description": "api correios",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
         }
+    },
+    "authors": [
+        {
+            "name": "anderson"
+        }
+    ],
+    "require": {}
 }
