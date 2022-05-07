@@ -69,7 +69,7 @@
     padding-top: 1rem;
 }
 
-.zise-shirt div p {
+.zise-shirt div button {
     color: black;
     width: 2.6rem;
     height: 2.6rem;
@@ -82,7 +82,7 @@
     margin-bottom: 0.4rem;
 }
 
-.zise-shirt div p:hover {
+.zise-shirt div button:hover {
     background-color: rgba(128, 128, 128, 0.384);
     border: 2px solid black;
 }
@@ -220,7 +220,7 @@ td{
     padding-top: 1rem;
 }
 
-.zise-shirt div p {
+.zise-shirt div button {
     color: black;
     width: 2.6rem;
     height: 2.6rem;
@@ -232,7 +232,7 @@ td{
     border-radius: 3px;
 }
 
-.zise-shirt div p:hover {
+.zise-shirt div button:hover {
     background-color: rgba(128, 128, 128, 0.384);
     border: 2px solid black;
 }

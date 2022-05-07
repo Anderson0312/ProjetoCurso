@@ -69,7 +69,7 @@ body {
 
 .table-finish {
     width: 92%;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .headertab{
@@ -288,12 +288,13 @@ a .bx {
     }
 
     .table-finish {
-        width: 50%;
+        width: 40%;
     }
 
     .container-cart {
         display: flex;
         flex-wrap: wrap;
+        width:700px;
     }
 
     .container-product-cart {

@@ -87,16 +87,17 @@ $shirt_view = <<<HTML
 
 
         <div class="zise-shirt">
-            <p id="p-size">Tamanho: </p>
+            <p id="p-size" >Tamanho: <strong><p id="demo" style='font-weigth:bold;'></p></strong></p>
+            
 
             <div> 
-                <p>P</p>
+                <button onclick="tamanhoP()">P</button>
 
-                <p>M</p>
+                <button onclick="tamanhoM()">M</button>
 
-                <p>G</p>  
+                <button onclick="tamanhoG()">G</button>  
 
-                <p>GG</p>  
+                <button onclick="tamanhoGG()">GG</button>  
             </div>
         </div>
             
@@ -263,6 +264,25 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 </main>
 
 <script>
+
+            function tamanhoP() {
+            document.getElementById("demo").innerHTML = "P";
+            var tamanhop = 'P'
+            // window.location.href = window.location.pathname +'?tamanho=' + tamanhop;
+            }
+            function tamanhoM() {
+            document.getElementById("demo").innerHTML = "M";
+            let tamanhom = 'M'
+            }
+            function tamanhoG() {
+            document.getElementById("demo").innerHTML = "G";
+            let tamanhog = 'G'
+            }
+            function tamanhoGG() {
+            document.getElementById("demo").innerHTML = "GG";
+            let tamanhogg = 'GG'
+            }
+
             $('#calcular').click(function() {
             let formSerialized = $('#formDestino').serialize();
             $.post('/payments/calcular_cep.php', formSerialized, function(resultado) {
