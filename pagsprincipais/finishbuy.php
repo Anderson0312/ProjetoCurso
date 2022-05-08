@@ -3,6 +3,7 @@
 session_start();
 // Inclui arquivo de configuração
 require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/payments/pay.php";
 
 
 /*******************************************
@@ -274,6 +275,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
         <div class="form-details">
             <div class="form-title-finishpbuy">
                 <h3>PAGAMENTOS</h3>
+            </div>
+            <div class='tot-pedido'>
+                <label for="scales">Pagamento com mercado pago</label>
+                <!-- <input type='checkbox' style='Border:1px solid black;'> -->
+                <img src="/payments/imgcarta/mercadopago.png" class="" alt="">
+            </div>
+            <div class='btn-finalizar-ped'>
+                <button class="btn-buy"><a href="<?php echo $link ?>">FINALIZAR COMPRA</a></button>
             </div>
         </div>
     </div>

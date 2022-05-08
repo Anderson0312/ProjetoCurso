@@ -7,10 +7,6 @@ namespace Composer\Autoload;
 class ComposerStaticInit347bfed917a262a2e8f2e516798c7cde
 {
     public static $prefixLengthsPsr4 = array (
-        'W' => 
-        array (
-            'Wdev\\Correios\\' => 14,
-        ),
         'P' => 
         array (
             'Psr\\Cache\\' => 10,
@@ -27,13 +23,13 @@ class ComposerStaticInit347bfed917a262a2e8f2e516798c7cde
             'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Wdev\\Correios\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
@@ -66,6 +62,10 @@ class ComposerStaticInit347bfed917a262a2e8f2e516798c7cde
         array (
             0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
             1 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

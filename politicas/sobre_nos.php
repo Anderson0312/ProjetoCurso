@@ -34,7 +34,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
             </li>
         </ul>
             <p>
-                
+            A Loja do MGLsport é uma loja online de artigos esportivos que oferece uma ampla variedade de produtos autênticos como acessórios, roupas e muito mais. Como atletas e amantes da natureza, nossa missão é garantir que nossos clientes recebam tudo do bom e do melhor. Navegue pelo site para ver tudo que oferecemos e o que podemos fazer por você.
             </p>
         <ul>
             <li>

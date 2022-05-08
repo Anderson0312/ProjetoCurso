@@ -62,6 +62,7 @@ if ($page_title == '') {
     </div>
     <div class="header">
     <h1> <a href="/pagsprincipais/index.php" class="title x"><?php echo $site_name; ?></a></h1>
+        
         <div class="right">
         <?php if (!isset($_COOKIE['user'])) : ?>
             <div class="btn-login">

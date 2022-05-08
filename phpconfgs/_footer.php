@@ -25,7 +25,6 @@
                     <h3>INSTITUCIONAL</h3>
                     <a href="/politicas/sobre_nos.php"><p>> Sobre nós</p></a>
                     <a href="/politicas/tabela_medidas.php"><p>> Tabela de medidas</p></a>
-                    <a href="p"><p>> Seja um revendedor</p></a>
                     <a href="/politicas/politica_privacidade.php"><p>> Política de privacidade</p></a>
                 </div>
             </div>

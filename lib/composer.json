@@ -11,5 +11,7 @@
             "name": "anderson"
         }
     ],
-    "require": {}
+    "require": {
+        "mercadopago/dx-php": "2.4.5"
+    }
 }

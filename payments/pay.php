@@ -1,8 +1,9 @@
 <?php
 
     require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_confg.php";
+    require_once $_SERVER['DOCUMENT_ROOT'] . "/pagsprincipais/finishbuy.php";
 
-    $access_token = 'TEST-3680958107309655-112921-7f26e8a5d9c8d64c4828ebd338ebcf8e-489141206';
+    $access_token = 'APP_USR-3680958107309655-112921-bcba49c90931f42fa0b2d96eefbe6342-489141206';
 
     require_once $_SERVER['DOCUMENT_ROOT'] . '/lib/vendor/autoload.php';
 
@@ -12,15 +13,17 @@
 
 
     $item = new MercadoPago\Item();
-    $item->title = 'Camisa de Time';
+    $item->id = '1';
+    $item->title = 'Camisas de Time';
     $item->quantity = 1;
-    $item->init_price = (double)54.00;
+    $item->unit_price = (double)300.00;
+
     $preference->items = array($item);
 
     $preference->back_urls = array(
-        'success'=>'http://projetocurso.localhost/payments/success.php',
-        'failure'=>'http://projetocurso.localhost/payments/failure.php',
-        'pending'=>'http://projetocurso.localhost/payments/status.php'
+        "success"=>'http://projetocurso.localhost/payments/success.php',
+        "failure"=>'http://projetocurso.localhost/payments/failure.php',
+        "pending"=>'http://projetocurso.localhost/payments/status.php'
     );
 
     $preference->notification_url = 'http://projetocurso.localhost/payments/notification.php';
@@ -28,8 +31,9 @@
     $preference->save();
 
     $link = $preference->init_point;
-    echo $link
+    
+    
+
 
 ?>
 
-<h1>pagar <?php  ?></h1>

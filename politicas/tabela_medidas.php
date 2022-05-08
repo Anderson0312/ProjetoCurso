@@ -27,32 +27,15 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 
 
 <div class='politicas'> 
-    <div class='politicas-col'>  
-        <ul>
-            <li>
-            Tabela de tamanhos
-            </li>
-        </ul>
+    <div class='politicas-col' style='display:flex; '>  
             <p>
-                
-            </p>
-        <ul>
-            <li>
-           
-            </li>
-        </ul>
-            <p>
-
+            <img src="https://galleryrock.vteximg.com.br/arquivos/ids/189678-767-767/tabela-de-medidas-camisetas-masculinas-adidas.jpg?v=637523735393770000" alt="tabela de tamanho masculina" srcset="">
       
             </p>
-        <ul>
-            <li>
-           
-            </li>
-        </ul>
             <p>
-     
+                <img src="https://galleryrock.vteximg.com.br/arquivos/ids/189663-767-767/tabela-de-medidas-camisetas-feminina-adidas.jpg?v=637523664891370000" alt="tabela de tamanho feminina">
             </p>
+
     </div>
 
 </div> 

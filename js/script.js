@@ -70,3 +70,40 @@ function full_image(){
         
 //         ?>
 //     })
+
+
+
+
+    function tamanhoP() {
+    document.getElementById("demo").innerHTML = "P";
+    var tamanhop = 'P'
+    // window.location.href = window.location.pathname +'?tamanho=' + tamanhop;
+    }
+
+    function tamanhoM() {
+    document.getElementById("demo").innerHTML = "M";
+    let tamanhom = 'M'
+    }
+
+    function tamanhoG() {
+    document.getElementById("demo").innerHTML = "G";
+    let tamanhog = 'G'
+    }
+
+    function tamanhoGG() {
+    document.getElementById("demo").innerHTML = "GG";
+    let tamanhogg = 'GG'
+    }
+
+    
+    $('#calcular').click(function() {
+    let formSerialized = $('#formDestino').serialize();
+    $.post('/lib/calcular_cep.php', formSerialized, function(resultado) {
+        console.log(resultado);
+    return;
+        resultado = JSON.parse(resultado);
+        let valorFrete = resultado.preco;
+        let prazoEntrega = resultado.prazo;
+        $('#resultado').html(`O valor do frete é <b>R$ ${valorFrete}</b> e o prazo de entrega é <b>${prazoEntrega} dias úteis</b>.`);
+    });
+});
