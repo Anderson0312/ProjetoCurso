@@ -254,13 +254,13 @@ body {
     padding: .2rem;
 }
 
-a .bx {
+a .bx-x {
     opacity:0.5;
     border-radius: 100%;
     border: 2px solid currentColor;
     font-weight: bold;
 }
-.bx:hover {
+.bx-x:hover {
     opacity:1;
     border-radius: 100%;
     border: 2px solid currentColor;

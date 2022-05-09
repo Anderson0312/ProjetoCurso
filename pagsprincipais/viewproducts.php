@@ -222,8 +222,8 @@ while ($carrocel = $res->fetch_assoc()) {
                 <div class="card">
                     <img src="{$carrocel['shirts_image']}" alt="">
                         <p class = "product-title">{$carrocel['shirts_title']}</p>
-                        <span class="product-price"> {$carrocel['shirts_price']}</span>
-                        <p class="product-desc">{$carrocel['shirts_descript']}</p>
+                        <span class="product-price">R$ {$carrocel['shirts_price']}</span>
+                        <p class="product-desc"> {$carrocel['shirts_descript']}</p>
                 </div>
             </div>
         </a>

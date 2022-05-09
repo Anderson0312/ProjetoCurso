@@ -13,6 +13,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
 // Variável que contém a lista de camisas (string).
 $product_cart =  '' ;
 $total = 0;
+$_SESSION['totalcarrinho'] = array();
 
 // verifica se o array do carrinho foi criado se não foi criado cria
 if(!isset($_SESSION['carrinho']))
@@ -92,6 +93,8 @@ if ($product_id >= 0  )  {
     HTML;
     $total = $product['shirts_price']+$total;
 endwhile;
+
+$_SESSION['totalcarrinho'] = array('valorfinal' => $total);
 };
 };
 

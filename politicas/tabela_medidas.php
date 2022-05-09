@@ -27,16 +27,20 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 
 
 <div class='politicas'> 
-    <div class='politicas-col' style='display:flex; '>  
+        <div class='politicas-col' style='display:flex; '>  
             <p>
-            <img src="https://galleryrock.vteximg.com.br/arquivos/ids/189678-767-767/tabela-de-medidas-camisetas-masculinas-adidas.jpg?v=637523735393770000" alt="tabela de tamanho masculina" srcset="">
+            <img src="https://galleryrock.vteximg.com.br/arquivos/ids/189678-767-767/tabela-de-medidas-camisetas-masculinas-adidas.jpg?v=637523735393770000" alt="tabela de tamanho masculina" srcset="" style='widht:100%'>
       
             </p>
+
+        </div>
+
+        <div class='politicas-col'>
             <p>
-                <img src="https://galleryrock.vteximg.com.br/arquivos/ids/189663-767-767/tabela-de-medidas-camisetas-feminina-adidas.jpg?v=637523664891370000" alt="tabela de tamanho feminina">
+                <img src="https://galleryrock.vteximg.com.br/arquivos/ids/189663-767-767/tabela-de-medidas-camisetas-feminina-adidas.jpg?v=637523664891370000" alt="tabela de tamanho feminina" style='widht:100%' >
             </p>
 
-    </div>
+        </div>
 
 </div> 
 
