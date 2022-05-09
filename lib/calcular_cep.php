@@ -59,7 +59,7 @@ class Correios{
             'sCdMaoPropria' => $maoPropria ? 'S' : 'N',
             'nVlValorDeclarado' => $valorDeclarado,
             'sCdAvisoRecebimento' => $avisoRecebimento ? 'S' : 'N',
-            'StrRetorno' => 'xml'    
+            'StrRetorno' => 'xml'
         ];
 
         $query = http_build_query($parametros);

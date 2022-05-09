@@ -11,7 +11,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 <div>  
     <h2 class="secondheader">
-        STATUS DO PAGAMENTO
+        NOTIFICAÇÃO DO PAGAMENTO
     </h2>
 </div>
 
