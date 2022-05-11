@@ -11,7 +11,7 @@ $form['feedback'] = '';
 $show_form = true;
 
 // Se não estiver logado, vai para a 'index'.
-if (!isset($_COOKIE['user'])) header('Location:http://projetocurso.localhost/user/login.php');
+if (!isset($_COOKIE['user'])) header('Location: /projetocurso/user/login.php');
 
 if (isset($_POST['send-address'])) :
 
@@ -99,7 +99,7 @@ SQL;
     $res = $conn->query($sql);
 
     // Se não retornar nada, volta para profile.
-    if ($res->num_rows !== 1) header('Location: /user/profile.php');
+    if ($res->num_rows !== 1) header('Location: /projetocurso/user/profile.php');
 
     // Associa os dados ao formulário
     $form = $res->fetch_assoc();

@@ -101,7 +101,7 @@ SQL;
     $res = $conn->query($sql);
 
     // Se não retornar nada, volta para profile.
-    if ($res->num_rows !== 1) header('Location: /user/profile.php');
+    if ($res->num_rows !== 1) header('Location: /projetocurso/user/profile.php');
 
     // Associa os dados ao formulário
     $form = $res->fetch_assoc();
@@ -112,8 +112,10 @@ SQL;
 endif;
 
 else:
-    header('Location:http://projetocurso.localhost/pagsprincipais/index.php');
+    header('Location: https://9fb4-2804-14d-5c71-8c83-e5ca-24a9-5f73-b86c.sa.ngrok.io/projetocurso/user/login.php');
 endif;
+
+
 
  // Define o título DESTA página.
  $page_title = "";

@@ -9,7 +9,7 @@ $page_title = '';
 
 
 // Se usuário já está logado, redireciona para a index.php
-if (isset($_COOKIE['user'])) header('Location: /projetocurso/');
+if (!isset($_COOKIE['user'])) header('/projetocurso/user/login.php');
 
 // Variáveis desta página
 $form = [
@@ -79,7 +79,7 @@ SQL;
             setcookie('user', json_encode($user), $cookie_live, '/');
             
             // Tudo certo? Carregue a página de feedback.
-            header ('Location: projetocurso/user/logged.php');
+            header ('Location: /projetocurso/user/logged.php');
 
         endif;
 

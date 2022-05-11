@@ -7,7 +7,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_confg.php";
  * Seu código PHP desta página entra aqui! *
  *******************************************/
 // Se não estiver logado, vai para a 'index'.
-if (!isset($_COOKIE['user'])) header('Location:http://projetocurso.localhost/user/login.php');
+if (!isset($_COOKIE['user'])) header('Location: /projetocurso/user/login.php');
 
 // Realmente quer sair
 if (isset($_GET['logout'])) :
@@ -16,7 +16,7 @@ if (isset($_GET['logout'])) :
     setcookie('user', NULL, time() - 3600, '/');
 
     // Redireciona para a 'index'
-    header('Location: /pagsprincipais/index.php');
+    header('Location: /projetocurso/index.php');
 
 endif;
 
@@ -32,7 +32,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
 
 ?>
 
-<link rel="stylesheet" href="/css/styleprofil.css">
+<link rel="stylesheet" href="/projetocurso/css/styleprofil.css">
 
 
 <div class='secondheader'>
@@ -102,12 +102,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
     </div>
 
     <div class="buttons">
-        <a href="/user/logged.php"><p>Painel</p></a>
+        <a href="/projetocurso/user/logged.php"><p>Painel</p></a>
         <a href=""><p>Pedidos</p></a>
-        <a href="/user/address.php"><p>Endereço</p></a>
-        <a href="/user/profile.php"><p>Detalhes da conta</p></a>
-        <a href="/user/password.php"><p>Alterar senha</p></a>
-        <a href="/user/logout.php"><p>Sair</p></a>
+        <a href="/projetocurso/user/address.php"><p>Endereço</p></a>
+        <a href="/projetocurso/user/profile.php"><p>Detalhes da conta</p></a>
+        <a href="/projetocurso/user/password.php"><p>Alterar senha</p></a>
+        <a href="/projetocurso/user/logout.php"><p>Sair</p></a>
     </div>
 
 

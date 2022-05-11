@@ -33,7 +33,7 @@ $show_form = true;
 $product_cart =  '' ;
 $totalpedidos = $_SESSION['totalcarrinho']['valorfinal'];
 
-if (!isset($_COOKIE['user'])) header('Location: /user/login.php');
+if (!isset($_COOKIE['user'])) header('Location: /projetocurso/user/login.php');
 
 if (isset($_POST['finish-buy'])) :
 
