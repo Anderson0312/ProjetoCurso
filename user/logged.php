@@ -15,7 +15,7 @@ $page_menu = "logged";
 
 
 // Verifica se é o Usuario está logado tentando entrar na pagina
-if (!isset($_COOKIE['user'])) header('/projetocurso/user/login.php');
+if (!isset($_COOKIE['user'])) header('Location: /projetocurso/user/login.php');
 
 // Inclui o cbeçalho da página
 require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";

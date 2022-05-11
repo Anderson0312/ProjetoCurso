@@ -112,7 +112,7 @@ SQL;
 endif;
 
 else:
-    header('Location: https://9fb4-2804-14d-5c71-8c83-e5ca-24a9-5f73-b86c.sa.ngrok.io/projetocurso/user/login.php');
+    header('Location: /projetocurso/user/login.php');
 endif;
 
 
