@@ -2,7 +2,7 @@
 
 session_start();
 // Inclui arquivo de configuração
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_confg.php";
 
 
 /*******************************************
@@ -71,12 +71,12 @@ if ($product_id >= 0  )  {
             
             <div class="product-item-cart">    
                 <div class="product-item-cart-img">
-                <a href="/pagsprincipais/cart.php?del={$product['shirts_id']}" id='x'><i class='bx bx-x' ></i></>
-                    <a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
+                <a href="/projetocurso/pagsprincipais/cart.php?del={$product['shirts_id']}" id='x'><i class='bx bx-x' ></i></>
+                    <a href="/projetocurso/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
                 </div>
     
                 <div class="product-item-desc">
-                    <h3><a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}">{$product['shirts_title']}</a></h3>
+                    <h3><a href="/projetocurso/pagsprincipais/viewproducts.php?id={$product['shirts_id']}">{$product['shirts_title']}</a></h3>
                     <p class="description">{$product['shirts_descript']}</p>
                     <span class="product-price">R$ {$product['shirts_price']}</span>
                 </div>
@@ -104,12 +104,12 @@ $page_title = '';
 
 
 // Inclui o cbeçalho da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
 ?>
 
 <?php // Conteúdo ?>
 
-<link rel="stylesheet" href="/css/cartstyle.css">
+
 
 <div>  
     <h2 class="secondheader">
@@ -131,7 +131,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
             
         </div >
 
-        <button class="buttonpadrao"><a href="./">CONTINUAR COMPRANDO</a></button>
+        <button class="buttonpadrao"><a href="/projetocurso/">CONTINUAR COMPRANDO</a></button>
     </div>
 
 
@@ -164,7 +164,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
         </div>
 
         <div class="btn-finish-cart">
-            <button><a href="/pagsprincipais/finishbuy.php">FINALIZAR COMPRA</a> </button>
+            <button><a href="/projetocurso/pagsprincipais/finishbuy.php">FINALIZAR COMPRA</a> </button>
         </div>
 
         <div class="table-cupom">
@@ -185,6 +185,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <?php
 
 // Inclui o rodapé da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_footer.php";
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
 // Inclui arquivo de configuração
-require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_confg.php";
 
 
 /*******************************************
@@ -48,7 +48,7 @@ while ($shirts = $res->fetch_assoc()) {
 
        
     <div class="item">
-        <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+        <a href="/projetocurso/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
             <div class="card-content">
                 <div class="card">
                     <img src="{$shirts['shirts_image']}" alt="">
@@ -90,7 +90,7 @@ while ($shirts = $res->fetch_assoc()) {
 
        
     <div class="item">
-        <a href="/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
+        <a href="/projetocurso/pagsprincipais/viewproducts.php?id={$shirts['shirts_id']}">
             <div class="card-content">
                 <div class="card">
                     <img src="{$shirts['shirts_image']}" alt="">
@@ -118,7 +118,7 @@ while ($shirts = $res->fetch_assoc()) {
 
 
 // Inclui o cbeçalho da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
 
 ?>
 
@@ -130,20 +130,20 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 <div class="banner">
     <div class="owl-carousel" id="carousel1">
         <div>
-            <source media="(max-width: 426px)" srcset="../imgbanner/bannerMobile.jpeg">
-            <img class='bannerimg' src="../imgbanner/bannerG.png" alt="">
+            <source media="(max-width: 426px)" srcset="/projetocurso/imgbanner/bannerMobile.jpeg">
+            <img class='bannerimg' src="/projetocurso/imgbanner/bannerG.png" alt="">
         </div>
         <div>
-            <source media="(max-width: 426px)" srcset="../imgbanner/bannerMobile.jpeg">
-            <img class='bannerimg' src="../imgbanner/mosaico-a-partir.png" alt="">
+            <source media="(max-width: 426px)" srcset="/projetocurso/imgbanner/bannerMobile.jpeg">
+            <img class='bannerimg' src="/projetocurso/imgbanner/mosaico-a-partir.png" alt="">
         </div>
         <div>
-            <source media="(max-width: 426px)" srcset="../imgbanner/bannerMobile.jpeg">
-            <img class='bannerimg' src="../imgbanner/sitenoar.jpeg" alt="">
+            <source media="(max-width: 426px)" srcset="/projetocurso/imgbanner/bannerMobile.jpeg">
+            <img class='bannerimg' src="/projetocurso/imgbanner/sitenoar.jpeg" alt="">
         </div>
         <div>
-            <source media="(max-width: 426px)" srcset="../imgbanner/bannerMobile.jpeg">
-            <img class='bannerimg' src="../imgbanner/comolavar.jpeg" alt="">
+            <source media="(max-width: 426px)" srcset="/projetocurso/imgbanner/bannerMobile.jpeg">
+            <img class='bannerimg' src="/projetocurso/imgbanner/comolavar.jpeg" alt="">
         </div>
     </div>
 </div>
@@ -201,9 +201,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 <!----------------- CARD SESÕES -------------------->
 
 <div class='secao-cards'>
-    <a href="/pagsmenu/Brasileiros.php">
+    <a href="/projetocurso/pagsmenu/Brasileiros.php">
     <div class='container-cards'>
-        <img src="/imgbanner/gabigol.jpg" class='img-card'>
+        <img src="/projetocurso/imgbanner/gabigol.jpg" class='img-card'>
         <div class='textbanner'>
             <h2>BRASILEIROS</h2>
             <div class='btn'>
@@ -213,9 +213,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
     </div>
     </a>
 
-    <a href="/pagsmenu/Internacionais.php">
+    <a href="/projetocurso/pagsmenu/Internacionais.php">
     <div class='container-cards'>
-        <img src="/imgbanner/neymar.jpg" class='img-card'>
+        <img src="/projetocurso/imgbanner/neymar.jpg" class='img-card'>
         <div class='textbanner'>
             <h2>EUROPEUS</h2>
             <div class='btn'>
@@ -226,9 +226,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
     </a>
 
 
-    <a href="/pagsmenu/Selecao.php">
+    <a href="/projetocurso/pagsmenu/Selecao.php">
     <div class='container-cards'>
-        <img src="/imgbanner/messi.jpg" class='img-card'>
+        <img src="/projetocurso/imgbanner/messi.jpg" class='img-card'>
         <div class='textbanner'>
             <h2>SELEÇÂO</h2>
             <div class='btn'>
@@ -273,6 +273,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 <?php
 
 // Inclui o rodapé da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_footer.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_footer.php";
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 
 // Inclui arquivo de configuração
-require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_confg.php";
 
 
 /*******************************************
@@ -15,7 +15,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_confg.php";
 
 
 // Inclui o cbeçalho da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
 
 ?>
 
@@ -48,6 +48,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_header.php";
 <?php
 
 // Inclui o rodapé da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_footer.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_footer.php";
 
 ?>

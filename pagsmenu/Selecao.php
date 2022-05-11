@@ -1,7 +1,7 @@
 <?php
 
 // Inclui arquivo de configuração
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_confg.php";
 
 
 /*******************************************
@@ -37,11 +37,11 @@ while ($art = $res->fetch_assoc()) {
 <div class="product-item">
     
     <div class="product-item-img">
-        <a href="/pagsprincipais/viewproducts.php?id={$art['shirts_id']}"><img src="{$art['shirts_image']}" class="img_itens" alt="{$art['shirts_title']}"></a>
+        <a href="/projetocurso/pagsprincipais/viewproducts.php?id={$art['shirts_id']}"><img src="{$art['shirts_image']}" class="img_itens" alt="{$art['shirts_title']}"></a>
     </div>
 
     <div class="product-item-desc">
-        <h3><a href="/pagsprincipais/viewproducts.php?id={$art['shirts_id']}">{$art['shirts_title']}</a></h3>
+        <h3><a href="/projetocurso/pagsprincipais/viewproducts.php?id={$art['shirts_id']}">{$art['shirts_title']}</a></h3>
         <p class="description">{$art['shirts_descript']}</p>
         <span class="product-price">R$ {$art['shirts_price']}</span>
     </div>
@@ -63,7 +63,7 @@ $page_title = '';
 $page_menu = "index";
 
 // Inclui o cbeçalho da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
 
 ?>
 
@@ -97,6 +97,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <?php
 
 // Inclui o rodapé da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_footer.php";
 
 ?>

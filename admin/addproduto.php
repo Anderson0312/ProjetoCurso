@@ -1,7 +1,7 @@
 <?php
 
 // Inclui arquivo de configuração
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_confg.php";
 
 /*******************************************
  * Seu código PHP desta página entra aqui! *
@@ -105,7 +105,7 @@ if (isset($_POST['send'])):
         $conn->query($sql);
 
         //Joga para pagina de painel
-        header('Location:http://projetocurso.localhost/admin/painelproduto.php');
+        header('Location:http://projetocurso/admin/painelproduto.php');
         // Cria mensagem de confirmação.
         $form['feedback'] = <<<OUT
             
@@ -129,7 +129,7 @@ $page_title = '';
 
 
 // Inclui o cbeçalho da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
 
 /*********************************************
  * Seu código PHP desta página termina aqui! *
@@ -137,7 +137,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 ?>
 
-<link rel="stylesheet" href="/css/styleregister.css">
+<link rel="stylesheet" href="/projetocurso/css/styleregister.css">
 
 <div class='secondheader'>
     <h2>PAINEL DE PRODUTOS</h2>
@@ -225,6 +225,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <?php
 
 // Inclui o rodapé da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_footer.php";
 
 ?>

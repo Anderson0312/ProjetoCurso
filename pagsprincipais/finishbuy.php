@@ -2,8 +2,8 @@
 
 session_start();
 // Inclui arquivo de configuração
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/payments/pay.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/payments/pay.php";
 
 
 /*******************************************
@@ -178,12 +178,12 @@ if ($_SESSION['carrinho'] >= 0  ):
 
                 <div class="product-item-cart">    
                     <div class="product-item-cart-img">
-                    <a href="/pagsprincipais/finishbuy.php?del={$product['shirts_id']}"><i class='bx bx-x' ></i></>
-                        <a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
+                    <a href="/projetocurso/pagsprincipais/finishbuy.php?del={$product['shirts_id']}"><i class='bx bx-x' ></i></>
+                        <a href="/projetocurso/pagsprincipais/viewproducts.php?id={$product['shirts_id']}"><img src="{$product['shirts_image']}" class="img_itens" alt="{$product['shirts_title']}"></a>
                     </div>
         
                     <div class="product-item-desc">
-                        <h3><a href="/pagsprincipais/viewproducts.php?id={$product['shirts_id']}">{$product['shirts_title']}</a></h3>
+                        <h3><a href="/projetocurso/pagsprincipais/viewproducts.php?id={$product['shirts_id']}">{$product['shirts_title']}</a></h3>
                         <p class="description">{$product['shirts_descript']}</p>
                         <span class="product-price">R$ {$product['shirts_price']}</span>
                     </div>
@@ -200,7 +200,7 @@ endif;
 
 
 // Inclui o cbeçalho da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
 
 
 ?>
@@ -279,7 +279,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
             <div class='tot-pedido'>
                 <label for="scales">Pagamento com mercado pago</label>
                 <!-- <input type='checkbox' style='Border:1px solid black;'> -->
-                <img src="/payments/imgcarta/mercadopago.png" class="" alt="">
+                <img src="/projetocurso/payments/imgcarta/mercadopago.png" class="" alt="">
             </div>
             <div class='btn-finalizar-ped'>
                 <button class="btn-buy"><a href="<?php echo $link ?>">FINALIZAR COMPRA</a></button>
@@ -296,6 +296,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <?php
 
 // Inclui o rodapé da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_footer.php";
 
 ?>

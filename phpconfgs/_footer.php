@@ -9,23 +9,23 @@
             <div class='footer-infos'> 
                 <div class='info'>
                     <h3>MINHA CONTA</h3>
-                    <a href="/user/logged.php"><p>> Painel</p></a>
-                    <a href="/user/request.php"><p>> Meus Pedidos</p></a>
-                    <a href="/user/logged.php"><p>> Alterar Dados</p></a>
-                    <a href="/user/logged.php"><p>> Alterar Endereço</p></a>
+                    <a href="/projetocurso/user/logged.php"><p>> Painel</p></a>
+                    <a href="/projetocurso/user/request.php"><p>> Meus Pedidos</p></a>
+                    <a href="/projetocurso/user/logged.php"><p>> Alterar Dados</p></a>
+                    <a href="/projetocurso/user/logged.php"><p>> Alterar Endereço</p></a>
                 </div>
                 <div class='info'>
                     <h3>SUPORTE</h3>
                     <a href="https://wa.me/qr/RZJYA7ESGTTPF1" target='_blank'><p>> Central de atendimento</p></a>
                     <a href="https://rastreamento.correios.com.br/app/index.php" target='_blank'><p>> Rastrear envio</p></a>
-                    <a href="/politicas/troca_devolucao.php"><p>> Trocas e Devoluções</p></a>
-                    <a href="/politicas/politica_entrega.php"><p>> Política de entrega</p></a>
+                    <a href="/projetocurso/politicas/troca_devolucao.php"><p>> Trocas e Devoluções</p></a>
+                    <a href="/projetocurso/politicas/politica_entrega.php"><p>> Política de entrega</p></a>
                 </div>
                 <div class='info'>
                     <h3>INSTITUCIONAL</h3>
-                    <a href="/politicas/sobre_nos.php"><p>> Sobre nós</p></a>
-                    <a href="/politicas/tabela_medidas.php"><p>> Tabela de medidas</p></a>
-                    <a href="/politicas/politica_privacidade.php"><p>> Política de privacidade</p></a>
+                    <a href="/projetocurso/politicas/sobre_nos.php"><p>> Sobre nós</p></a>
+                    <a href="/projetocurso/politicas/tabela_medidas.php"><p>> Tabela de medidas</p></a>
+                    <a href="/projetocurso/politicas/politica_privacidade.php"><p>> Política de privacidade</p></a>
                 </div>
             </div>
             <div class='pagamentos-cartao'>
@@ -83,6 +83,6 @@
         })
     </script>
 
-    <script src="/js/script.js"></script>
+    <script src="/projetocurso/js/script.js"></script>
 </body>
 </html>

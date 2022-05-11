@@ -4,7 +4,7 @@
 namespace App\WebService;
 
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_confg.php";
 
 
 

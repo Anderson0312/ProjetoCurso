@@ -20,14 +20,18 @@ if ($page_title == '') {
 
     <title>MGLsport</title>
 
-    <link rel="shortcut icon" href="/imgbanner/ICONM.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/projetocurso/imgbanner/ICONM.png" type="image/x-icon">
 
     <link rel="shortcut icon" href="" type="image/x-icon">
 
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/stylelogin.css">
-    <link rel="stylesheet" href="/css/styleitens.css">
-    <link rel="stylesheet" href="/css/styleprofil.css">
+    <link rel="stylesheet" href="/projetocurso/css/style.css">
+    <link rel="stylesheet" href="/projetocurso/css/stylelogin.css">
+    <link rel="stylesheet" href="/projetocurso/css/styleitens.css">
+    <link rel="stylesheet" href="/projetocurso/css/styleprofil.css">
+    <link rel="stylesheet" href="/projetocurso/css/cartstyle.css">
+    <link rel="stylesheet" href="/projetocurso/css/styleview.css">
+    <link rel="stylesheet" href="/projetocurso/css/styleprofil.css">
+
 
 
     <!------------------ bootstrap ------------------>
@@ -61,20 +65,20 @@ if ($page_title == '') {
         <span>Aproveite o frete grátis para todo Brasil!</span>
     </div>
     <div class="header">
-    <h1> <a href="/pagsprincipais/index.php" class="title x"><?php echo $site_name; ?></a></h1>
+    <h1> <a href="/projetocurso/index.php" class="title x"><?php echo $site_name; ?></a></h1>
         
         <div class="right">
         <?php if (!isset($_COOKIE['user'])) : ?>
             <div class="btn-login">
-                <a href="/user/login.php"><span class="material-icons-sharp x">person</span></a>
+                <a href="/projetocurso/user/login.php"><span class="material-icons-sharp x">person</span></a>
             </div>
         <?php else : ?>     
             <div class="btn-login">
-                <a href="/user/logged.php"><span class="material-icons-sharp x">person</span></a>
+                <a href="/projetocurso/user/logged.php"><span class="material-icons-sharp x">person</span></a>
             </div>
         <?php endif; ?>
             <div class="btn-shopping-cart">
-                <a href="/pagsprincipais/cart.php"><span class="material-icons-sharp x">shopping_cart</span></a>
+                <a href="/projetocurso/pagsprincipais/cart.php"><span class="material-icons-sharp x">shopping_cart</span></a>
             </div>
         </div>
     </div>
@@ -92,16 +96,16 @@ if ($page_title == '') {
                 </div>
             </div>
             <div class="sidebar">
-                <a href="/pagsmenu/newcolecion.php" class="active">
+                <a href="/projetocurso/pagsmenu/newcolecion.php" class="active">
                     <h3>Nova coleção</h3>
                 </a>
-                <a href="/pagsmenu/Brasileiros.php">
+                <a href="/projetocurso/pagsmenu/Brasileiros.php">
                     <h3>Nacionais</h3>
                 </a>
-                <a href="/pagsmenu/Internacionais.php">
+                <a href="/projetocurso/pagsmenu/Internacionais.php">
                     <h3>Internacionais</h3>
                 </a>
-                <a href="/pagsmenu/Selecao.php">
+                <a href="/projetocurso/pagsmenu/Selecao.php">
                     <h3>Selecão</h3>
                 </a>
             </div>

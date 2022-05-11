@@ -1,7 +1,7 @@
 <?php
 
 // Inclui arquivo de configuração
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_confg.php";
 
 
 // Define o titilo dessa pagina
@@ -9,7 +9,7 @@ $page_title = '';
 
 
 // Se usuário já está logado, redireciona para a index.php
-if (isset($_COOKIE['user'])) header('Location: /');
+if (isset($_COOKIE['user'])) header('Location: /projetocurso/');
 
 // Variáveis desta página
 $form = [
@@ -79,7 +79,7 @@ SQL;
             setcookie('user', json_encode($user), $cookie_live, '/');
             
             // Tudo certo? Carregue a página de feedback.
-            header ('Location: /user/logged.php');
+            header ('Location: projetocurso/user/logged.php');
 
         endif;
 
@@ -88,7 +88,7 @@ SQL;
 endif; // if (isset($_POST['send']))
 
 // Inclui o cbeçalho da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
 
 
 
@@ -131,7 +131,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
                 <p id="">Esqueceu sua senha? <a href="#" class="txtefet">Clique aqui</a> para recebê-la por e-mail </p>
 
-                <p id="register"><a href="register.php" class="txtefet">Efetuar cadastrado</a> </p>
+                <p id="register"><a href="/projetocurso/user/register.php" class="txtefet">Efetuar cadastrado</a> </p>
             <?php endif; ?>
         </form>
 
@@ -142,6 +142,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <?php
 
 // Inclui o rodapé da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_footer.php";
 
 ?>

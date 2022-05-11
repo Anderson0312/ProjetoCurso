@@ -15,7 +15,7 @@
     $page_title = 'MGL';
 
     // logo do site
-    $site_logo = '/imgbanner/Logo.png';
+    $site_logo = '/projetocurso/imgbanner/Logo.png';
 
     // rodapé do site 
     $site_rodap = 'AndersonM';
@@ -24,7 +24,7 @@
 
     // Faz conexão com MySQL/MariaDB
     // Os dados da conexão estão em "_config.ini"
-    $i = parse_ini_file($_SERVER['DOCUMENT_ROOT'] . '/_confg.ini', true);
+    $i = parse_ini_file($_SERVER['DOCUMENT_ROOT'] . 'projetocurso/_confg.ini', true);
 
     foreach ($i as $key => $value) :
         if ($_SERVER['SERVER_NAME'] == $key) :

@@ -1,7 +1,7 @@
 <?php
 
 // Inclui arquivo de configuração
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_confg.php";
 
 /*******************************************
  * Seu código PHP desta página entra aqui! *
@@ -38,9 +38,9 @@ if  ($user['registros_permission'] == 'admin'):
                     <td> {$shirts['shirts_price']} </td>
                     <td> {$shirts['shirts_team']} </td>
                     <td><img class='painel-img-product' src="{$shirts['shirts_image']}" ></td>
-                    <td><a href="/admin/editproduto.php?id={$shirts['shirts_id']}" class="button-edit-product">Editar</a></td>
+                    <td><a href="/projetocurso/admin/editproduto.php?id={$shirts['shirts_id']}" class="button-edit-product">Editar</a></td>
 
-                    <td><a class="button-delet-product" href="/admin/deletproduto.php?id={$shirts['shirts_id']}">
+                    <td><a class="button-delet-product" href="/projetocurso/admin/deletproduto.php?id={$shirts['shirts_id']}">
                     Deletar
                     </a></td>
                 </tr>
@@ -54,7 +54,7 @@ if  ($user['registros_permission'] == 'admin'):
 endif;
 
 // Inclui o cbeçalho da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
 
 /*********************************************
  * Seu código PHP desta página termina aqui! *
@@ -68,7 +68,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 </div>
 
 <div class='txtbutton-painel'>
-        <a href="/admin/addproduto.php" class="button-add-product">ADICIONAR PRODUTO</a>
+        <a href="/projetocurso/admin/addproduto.php" class="button-add-product">ADICIONAR PRODUTO</a>
     </div>
 <div class="container-table">
     
@@ -97,6 +97,5 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 <?php
 
 // Inclui o rodapé da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
-
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_footer.php";
 ?>

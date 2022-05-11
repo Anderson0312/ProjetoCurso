@@ -2,8 +2,8 @@
 
 session_start();
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "./phpconfgs/_confg.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "./lib/calcular_cep.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/lib/calcular_cep.php";
 
 /*******************************************
  * Seu código PHP desta página entra aqui! *
@@ -105,7 +105,7 @@ $shirt_view = <<<HTML
 
         <div class="inputs-buy">
 
-                <a href="/pagsprincipais/cart.php? id={$shirt['shirts_id']}  "><button class="btn-buy">Adicionar no carrinho</button></a>
+                <a href="/projetocurso/pagsprincipais/cart.php? id={$shirt['shirts_id']}  "><button class="btn-buy">Adicionar no carrinho</button></a>
 
 
         <form id='formDestino' >
@@ -217,7 +217,7 @@ while ($carrocel = $res->fetch_assoc()) {
 
        
     <div class="item">
-        <a href="/pagsprincipais/viewproducts.php?id={$carrocel['shirts_id']}">
+        <a href="/projetocurso/pagsprincipais/viewproducts.php?id={$carrocel['shirts_id']}">
             <div class="card-content">
                 <div class="card">
                     <img src="{$carrocel['shirts_image']}" alt="">
@@ -236,11 +236,11 @@ while ($carrocel = $res->fetch_assoc()) {
 
 
 // Inclui o cbeçalho da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
 
 ?>
 
-<link rel="stylesheet" href="/css/styleview.css">
+
 
 <main>
 
@@ -277,7 +277,7 @@ console.log(texto);
 <?php
 
 // Inclui o rodapé da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_footer.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_footer.php";
 
 ?>
 

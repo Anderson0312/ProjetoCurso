@@ -1,7 +1,7 @@
 <?php
 
 // Inclui arquivo de configuração
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_confg.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_confg.php";
 
 /*******************************************
  * Seu código PHP desta página entra aqui! *
@@ -62,12 +62,12 @@ OUT;
 endif;
 
 // Joga para pagina de painel
-header('Location:http://projetocurso.localhost/admin/painelproduto.php');
+header('projetocurso/admin/painelproduto.php');
 
 
 
 // Inclui o cbeçalho da página
-require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
 
 /*********************************************
  * Seu código PHP desta página termina aqui! *
@@ -82,3 +82,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/phpconfgs/_header.php";
 
 </main>
 
+
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_footer.php";
+?>
