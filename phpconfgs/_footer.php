@@ -44,7 +44,7 @@
             </ul>
             <div class="copy">
             <p class="txtfot">
-            copyright &copy; 2022 <?php if (date('Y') > '2022') echo ' - ' . date('Y') ?> <?php echo $site_rodap ?>
+            copyright &copy; 2022 <?php if (date('Y') > '2022') echo ' - ' . date('Y') ?> <a href="https://www.instagram.com/andersonmnt/" target='_blank'><?php echo $site_rodap ?><a>
             </p>
         </div>
         </div>       

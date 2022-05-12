@@ -90,7 +90,7 @@ if ($page_title == '') {
         <aside>
             <div class="top">
                 <div class="logo">
-                    <a href="/pagsprincipais/index.php" >
+                    <a href="/projetocurso/index.php" >
                         <h2 class='x'>MGL</h2>
                     </a>
                 </div>
