@@ -51,7 +51,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "projetocurso/phpconfgs/_header.php";
             <h3>PEDIDOS</h3>
         </a>
 
-        <a href="/projetocurso/address.php">
+        <a href="/projetocurso/user/address.php">
             <h3>ENDEREÇO</h3>
         </a>
 
