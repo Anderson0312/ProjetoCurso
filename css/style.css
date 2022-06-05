@@ -809,4 +809,18 @@ footer .copy {
     .service-items-block .icon-service i {
         font-size:2.5rem;
     }
+
+    .footer-init {
+        background: rgb(0 0 0);
+        color: rgb(255 255 255);
+    }
+
+    .footer-infos {
+        color: rgb(255 255 255);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        padding-left: 1rem;
+    }
+
 }
